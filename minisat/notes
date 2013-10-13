@@ -1,0 +1,16 @@
+//ychen
+
+The files in this directory are imported from CAMUS 1.0.1.
+
+The following files are skipped:
+mcs/camus_mcs.cpp,
+mcs/MAKEFILE,
+mus/camus_mus.cpp,
+mus/MAKEFILE.
+
+The following files are renamed:
+mcs/LICENSE -> LICENSE_CAMCS,
+mus/LICENSE -> LICENSE_CAMUS.
+
+
+Yin Chen 2010/02/01

@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="90">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <itemPath>include/CNFUtils.h</itemPath>
+      <itemPath>include/ClakeCompletion.h</itemPath>
+      <itemPath>include/DependenceGraph.h</itemPath>
+      <itemPath>include/NNFUtils.h</itemPath>
+      <itemPath>include/Rule.h</itemPath>
+      <itemPath>include/SATSolver.h</itemPath>
+      <itemPath>include/Utils.h</itemPath>
+      <itemPath>include/Vocabulary.h</itemPath>
+      <itemPath>include/structs.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="minisat" displayName="minisat" projectFiles="true">
+      <itemPath>minisat/Constraints.C</itemPath>
+      <itemPath>minisat/Constraints.h</itemPath>
+      <itemPath>minisat/Global.h</itemPath>
+      <itemPath>minisat/Heap.h</itemPath>
+      <itemPath>minisat/LICENSE_MiniSAT</itemPath>
+      <itemPath>minisat/Queue.h</itemPath>
+      <itemPath>minisat/Solver.C</itemPath>
+      <itemPath>minisat/Solver.h</itemPath>
+      <itemPath>minisat/SolverTypes.h</itemPath>
+      <itemPath>minisat/Sort.h</itemPath>
+      <itemPath>minisat/VarOrder.h</itemPath>
+      <itemPath>minisat/notes</itemPath>
+    </logicalFolder>
+    <logicalFolder name="parse" displayName="parse" projectFiles="true">
+      <itemPath>parse/clean.sh</itemPath>
+      <itemPath>parse/generate.sh</itemPath>
+      <itemPath>parse/lex.l</itemPath>
+      <itemPath>parse/parse.y</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+      <logicalFolder name="input" displayName="input" projectFiles="true">
+        <itemPath>res/input/IOFile.in</itemPath>
+        <itemPath>res/input/hc1gr.in</itemPath>
+        <itemPath>res/input/hc2grgai.in</itemPath>
+        <itemPath>res/input/hcgr.in</itemPath>
+        <itemPath>res/input/labyin.in</itemPath>
+        <itemPath>res/input/sample.in</itemPath>
+        <itemPath>res/input/sample2.in</itemPath>
+      </logicalFolder>
+      <logicalFolder name="output" displayName="output" projectFiles="true">
+        <itemPath>res/output/aspOutput.out</itemPath>
+        <itemPath>res/output/benchmark1.out</itemPath>
+        <itemPath>res/output/benchmark2.out</itemPath>
+        <itemPath>res/output/sample.out</itemPath>
+        <itemPath>res/output/sample2.out</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>src/CNFUtils.cpp</itemPath>
+      <itemPath>src/ClakeCompletion.cpp</itemPath>
+      <itemPath>src/DependenceGraph.cpp</itemPath>
+      <itemPath>src/NNFUtils.cpp</itemPath>
+      <itemPath>src/Rule.cpp</itemPath>
+      <itemPath>src/SATSolver.cpp</itemPath>
+      <itemPath>src/Utils.cpp</itemPath>
+      <itemPath>src/Vocabulary.cpp</itemPath>
+      <itemPath>src/global.cpp</itemPath>
+      <itemPath>src/lex.cpp</itemPath>
+      <itemPath>src/main.cpp</itemPath>
+      <itemPath>src/parse.cpp</itemPath>
+      <itemPath>src/parse.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>include</Elem>
+    <Elem>res</Elem>
+    <Elem>src</Elem>
+    <Elem>parse</Elem>
+    <Elem>minisat</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <standard>4</standard>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>minisat</pElem>
+          </incDir>
+        </ccTool>
+        <asmTool>
+          <commandlineTool>as</commandlineTool>
+        </asmTool>
+      </compileType>
+      <item path="include/CNFUtils.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/ClakeCompletion.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/DependenceGraph.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/NNFUtils.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/Rule.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/SATSolver.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/Utils.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/Vocabulary.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/structs.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="minisat/Constraints.C" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="minisat/Constraints.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="minisat/Global.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="minisat/Heap.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="minisat/LICENSE_MiniSAT" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="minisat/Queue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="minisat/Solver.C" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="minisat/Solver.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="minisat/SolverTypes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="minisat/Sort.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="minisat/VarOrder.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="minisat/notes" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parse/clean.sh" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parse/generate.sh" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parse/lex.l" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parse/parse.y" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/input/IOFile.in" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/input/hc1gr.in" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/input/hc2grgai.in" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/input/hcgr.in" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/input/labyin.in" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/input/sample.in" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/input/sample2.in" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/output/aspOutput.out" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/output/benchmark1.out" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/output/benchmark2.out" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/output/sample.out" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/output/sample2.out" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/CNFUtils.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/ClakeCompletion.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/DependenceGraph.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/NNFUtils.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Rule.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/SATSolver.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Utils.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Vocabulary.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/global.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/lex.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/parse.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/parse.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="include/CNFUtils.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/ClakeCompletion.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/DependenceGraph.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/NNFUtils.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/Rule.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/SATSolver.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/Utils.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/Vocabulary.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/structs.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="minisat/Constraints.C" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="minisat/Constraints.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="minisat/Global.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="minisat/Heap.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="minisat/LICENSE_MiniSAT" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="minisat/Queue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="minisat/Solver.C" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="minisat/Solver.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="minisat/SolverTypes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="minisat/Sort.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="minisat/VarOrder.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="minisat/notes" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parse/clean.sh" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parse/generate.sh" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parse/lex.l" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parse/parse.y" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/input/IOFile.in" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/input/hc1gr.in" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/input/hc2grgai.in" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/input/hcgr.in" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/input/labyin.in" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/input/sample.in" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/input/sample2.in" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/output/aspOutput.out" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/output/benchmark1.out" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/output/benchmark2.out" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/output/sample.out" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/output/sample2.out" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/CNFUtils.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/ClakeCompletion.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/DependenceGraph.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/NNFUtils.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Rule.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/SATSolver.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Utils.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Vocabulary.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/global.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/lex.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/parse.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/parse.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
