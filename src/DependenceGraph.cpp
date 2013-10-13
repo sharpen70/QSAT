@@ -22,11 +22,11 @@
 
 DependenceGraph::DependenceGraph(vector<Rule> _nlp) :
                 nlp(_nlp) {
-    map< pair<int, int>, bool> graph;
+   // map< pair<int, int>, bool> graph;
     set<int> nodeSet;
      
     for(vector<Rule>::iterator it = _nlp.begin(); it != _nlp.end(); it++) {        
-        if(it->head > 0 && it->positive_literals.size() > 0) {
+        if(it->type == RULE) {
             nodeSet.insert(it->head);
             for(vector<int>::iterator p_it = it->positive_literals.begin(); p_it != it->positive_literals.end(); p_it++) {
                 dpdGraph[it->head].insert(*p_it);
@@ -35,7 +35,15 @@ DependenceGraph::DependenceGraph(vector<Rule> _nlp) :
         }
     }
     
-    FILE* out = fopen("res/output/sample.out", "w");
+    nodeNumber = nodeSet.size();
+    
+    visit = new bool[nodeNumber + 1];
+    memset(visit, false, sizeof(bool) * (nodeNumber + 1));
+    DFN = new int[nodeNumber + 1];
+    memset(DFN, false, sizeof(int) * (nodeNumber + 1));
+    Low = new int[nodeNumber + 1];
+    memset(Low, false, sizeof(int) * (nodeNumber + 1));
+  /*  FILE* out = fopen("res/output/sample.out", "w");
     
     edgePointer = 0;
     nodeNumber = *(--nodeSet.end());
@@ -65,7 +73,7 @@ DependenceGraph::DependenceGraph(vector<Rule> _nlp) :
                 fprintf(out, "%d %d\n", it->first, *p_it);
             }           
         }
-    }
+    }*/
                    
     
     loops.clear();
@@ -76,72 +84,111 @@ DependenceGraph::~DependenceGraph() {
     loops.clear();
     
     nodeNumber = edgeNumber = edgePointer = 0;
-
+    
+    delete[] visit;
+    delete[] DFN;
+    delete[] Low;
+    
     if (heads) {
         delete[] heads;
         heads = NULL;
     }
 
-    if (edges) {
-        delete[] edges;
-        edges = NULL;
-    }
+//    if (edges) {
+//        delete[] edges;
+//        edges = NULL;
+//    }
 }
 
-void DependenceGraph::addEdge(int x, int y) {
-    edges[edgePointer].x = x;
-    edges[edgePointer].y = y;
-    edges[edgePointer].next = heads[x];
-    heads[x] = edgePointer ++;
-}
-
-void DependenceGraph::dfs(int depth, int x, Info &info) {
-    int *path = info.path;
-    bool *vis = info.vis;
-    
-    if (x < info.startPoint) return ;
-    
-    path[depth] = x;
-
-    if (depth > 0 && x == info.startPoint) {
-        Hash hash(path, depth);
-        if (!info.m[hash]) {
-            info.m[hash] = true;
-            Loop loop;
-            for (int i = 0; i < depth; i ++) {
-                loop.loopNodes.insert(path[i]);
-            }
-            Hash lhash(loop.loopNodes);
-            if(!loopHash[lhash]) {
-                loopHash[lhash] = true;
-                loops.push_back(loop);
-            }
-        }
-    }
-
-    for (int i = heads[x]; i != -1; i = edges[i].next) {
-        if (!vis[i]) {
-            vis[i] = true;
-            dfs(depth + 1, edges[i].y, info);
-            vis[i] = false;
+void DependenceGraph::findSCC() {
+    for(map<int, set<int> >::iterator it = dpdGraph.begin(); it != dpdGraph.end(); it++) {
+        if(!visit[it->first]) {
+            Index = 0;
+            tarjan(it->first);
         }
     }
 }
 
-void DependenceGraph::find() {
-    Info info;
-
-    info.path = new int[edgeNumber];
-    memset(info.path, -1, sizeof(int) * edgeNumber);
-
-    info.vis = new bool[edgeNumber];
-    memset(info.vis, false, sizeof(bool) * edgeNumber);
-
-    for (int i = 1; i <= nodeNumber; i ++) {
-        info.startPoint = i;
-        dfs(0, info.startPoint, info);
+void DependenceGraph::tarjan(int u) {
+    DFN[u] = Low[u] = ++Index;
+    vs.push(u);
+    for(set<int>::iterator it = dpdGraph[u].begin(); it != dpdGraph[u].end(); it++) {
+        if(!visit[*it]) {
+            tarjan(*it);
+            if(Low[u] > Low[*it]) Low[u] = Low[*it];
+        }
+        else {
+            if(Low[u] > DFN[*it]) Low[u] = DFN[*it];
+        }
+        if(Low[u] == DFN[u]) {
+            if(vs.top() != u) {
+                Loop l;
+                while(vs.top() != u) {                  
+                    l.loopNodes.insert(vs.top());
+                    vs.pop();
+                }
+                l.loopNodes.insert(u);
+                vs.pop();
+                SCCs.push_back(l);
+            }
+        }
     }
 }
+
+//void DependenceGraph::addEdge(int x, int y) {
+//    edges[edgePointer].x = x;
+//    edges[edgePointer].y = y;
+//    edges[edgePointer].next = heads[x];
+//    heads[x] = edgePointer ++;
+//}
+//
+//void DependenceGraph::dfs(int depth, int x, Info &info) {
+//    int *path = info.path;
+//    bool *vis = info.vis;
+//    
+//    if (x < info.startPoint) return ;
+//    
+//    path[depth] = x;
+//
+//    if (depth > 0 && x == info.startPoint) {
+//        Hash hash(path, depth);
+//        if (!info.m[hash]) {
+//            info.m[hash] = true;
+//            Loop loop;
+//            for (int i = 0; i < depth; i ++) {
+//                loop.loopNodes.insert(path[i]);
+//            }
+//            Hash lhash(loop.loopNodes);
+//            if(!loopHash[lhash]) {
+//                loopHash[lhash] = true;
+//                loops.push_back(loop);
+//            }
+//        }
+//    }
+//
+//    for (int i = heads[x]; i != -1; i = edges[i].next) {
+//        if (!vis[i]) {
+//            vis[i] = true;
+//            dfs(depth + 1, edges[i].y, info);
+//            vis[i] = false;
+//        }
+//    }
+//}
+//
+//void DependenceGraph::find() {
+//    Info info;
+//
+//    info.path = new int[edgeNumber];
+//    memset(info.path, -1, sizeof(int) * edgeNumber);
+//
+//    info.vis = new bool[edgeNumber];
+//    memset(info.vis, false, sizeof(bool) * edgeNumber);
+//
+//    for (int i = 1; i <= nodeNumber; i ++) {
+//        info.startPoint = i;
+//        dfs(0, info.startPoint, info);
+//    }
+//}
 
 void DependenceGraph::findESRules() {
     for(vector<Loop>::iterator it = loops.begin(); it != loops.end(); it++) {
@@ -154,8 +201,8 @@ void DependenceGraph::findESRules() {
             }
             
             if(Utils::inList(r->head, it->loopNodes) && 
-                    (!(Utils::crossList(r->positive_literals, it->loopNodes)) && 
-                    !(Utils::crossList(r->negative_literals, it->loopNodes)))) {
+                    !(Utils::crossList(r->positive_literals, it->loopNodes))/* && 
+                    !(Utils::crossList(r->negative_literals, it->loopNodes)))*/) {
                 it->ESRules.push_back(index);              
             }
         }

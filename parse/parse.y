@@ -69,10 +69,12 @@ rule
         $$ = (_rule*)malloc(sizeof(_rule));
         $$->head = $1;
         $$->length = 0;
+        $$->type = FACT;
     }
     | literal S_IMPL literals PERIOD{
         $$ = (_rule*)malloc(sizeof(_rule));
         $$->head = $1;
+        $$->type = RULE;
         
         for(int i = 0; i < ($3->length); i++) {
             $$->body[i] = $3->atoms[i];
@@ -82,7 +84,8 @@ rule
     | S_IMPL literals PERIOD{
         $$ = (_rule*)malloc(sizeof(_rule));
         $$->head = -1;
-        
+        $$->type = CONSTRANT;
+
         for(int i = 0; i < ($2->length); i++) {
             $$->body[i] = $2->atoms[i];
         }

@@ -5,7 +5,7 @@
 #include <cstdlib>
 
 Rule::Rule(_rule* r) : 
-        head(r->head), body_length(r->length){
+        head(r->head), body_length(r->length), type(r->type) {
     printf("length %d", body_length);
     for(int i = 0; i < (r->length); i++) {
         if(r->body[i] > 0) {

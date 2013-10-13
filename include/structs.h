@@ -1,23 +1,31 @@
-#include <map>
-
 #ifndef STRUCTS_H
 #define	STRUCTS_H
 
 #define MAX_ATOM_LENGTH 512
 #define MAX_ATOM_NUMBER 1024
 
+#include <map>
+#include <set>
+#include <vector>
 // Type definition
 ////////////////////////////////////////////////////////////////////////////////
+
 enum BOOL {
     FALSE = 0,
-    TRUE = 1,
+    TRUE = 1
 };
 
 enum SYMBOL_TYPE {
     VARIABLE = 0,
     FUNCTION,
     PREDICATE,
-    DOMAIN,
+    DOMAIN
+};
+
+enum RULE_TYPE {
+    FACT = 0,
+    CONSTRANT,
+    RULE
 };
 
 enum FORMULA_TYPE {
@@ -27,7 +35,7 @@ enum FORMULA_TYPE {
     DISJ,		//disjunction
     IMPL,		//implication
     UNIV,		//universal
-    EXIS,		//existential
+    EXIS		//existential
 };
 
 // Structures
@@ -35,6 +43,7 @@ typedef struct __rule {
     int head;
     int body[MAX_ATOM_LENGTH];
     int length;
+    RULE_TYPE type;
 }_rule;
 
 typedef struct __literals {
@@ -55,7 +64,9 @@ typedef struct __formula {
     };
 }_formula;
 
-
+struct _loop {
+    set<int> a;
+};
 #endif
 
 

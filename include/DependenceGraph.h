@@ -11,10 +11,41 @@
 #include <vector>
 #include <map>
 #include <set>
+#include <stack>
 #include "Rule.h"
 #include "Utils.h"
 
-struct Edge {
+struct Loop {
+    set<int> loopNodes;
+    vector<int> ESRules;
+    vector<_formula*> loopFormulas;
+    
+    Loop() {
+        loopNodes.clear();
+        loopFormulas.clear();
+        ESRules.clear();
+    }
+    Loop(const Loop& l) {
+        loopNodes = l.loopNodes;
+        ESRules = l.ESRules;
+        for(vector<_formula*>::const_iterator it = l.loopFormulas.begin(); 
+                it != l.loopFormulas.end(); it++) {
+            loopFormulas.push_back(Utils::copyFormula(*it));
+        }
+    }
+    
+    ~Loop() {
+        for(vector<_formula*>::iterator it = loopFormulas.begin(); 
+                it != loopFormulas.end(); it++) {
+            Utils::deleteFormula(*it);
+        }
+        loopNodes.clear();
+        loopFormulas.clear();
+        ESRules.clear();
+    }
+};
+
+/*struct Edge {
     int x, y;
     int next;
 };
@@ -97,46 +128,14 @@ struct Info {
             delete[] vis; vis = NULL;
         }
     }
-};
-
-struct Loop {
-    set<int> loopNodes;
-    vector<int> ESRules;
-    vector<_formula*> loopFormulas;
-    
-    Loop() {
-        loopNodes.clear();
-        loopFormulas.clear();
-        ESRules.clear();
-    }
-    Loop(const Loop& l) {
-        loopNodes = l.loopNodes;
-        ESRules = l.ESRules;
-        for(vector<_formula*>::const_iterator it = l.loopFormulas.begin(); 
-                it != l.loopFormulas.end(); it++) {
-            loopFormulas.push_back(Utils::copyFormula(*it));
-        }
-    }
-    
-    ~Loop() {
-        for(vector<_formula*>::iterator it = loopFormulas.begin(); 
-                it != loopFormulas.end(); it++) {
-            Utils::deleteFormula(*it);
-        }
-        loopNodes.clear();
-        loopFormulas.clear();
-        ESRules.clear();
-    }
-};
+};*/
 
 class DependenceGraph {
 public:
     DependenceGraph(vector<Rule> _dlp);
     DependenceGraph(const DependenceGraph& orig);
     ~DependenceGraph();
-    void DFSFindLoops();        //find loop
-    void BFSFindLoops();        //null
-    void find();
+//    void find();
 //    void test();                //nonsense, just for test
     
     vector<_formula*> computeLoopFormulas(Loop loop);
@@ -145,7 +144,8 @@ public:
     vector<int> getESRSizes();
     
     vector<Loop> loops;
-    
+    vector<Loop> SCCs;
+    void findSCC();
     
 private:
     vector<Rule> nlp;
@@ -155,13 +155,22 @@ private:
     
     void findESRules();
     void addEdge(int x, int y);
-    void dfs(int depth, int x, Info &info);
-
+ //   void dfs(int depth, int x, Info &info);
+    
+    void tarjan(int u);
+    
     int nodeNumber, edgeNumber;
     int edgePointer;
     int *heads;
-    Edge *edges;
-    map<Hash, bool> loopHash;
+ //   Edge *edges;
+ //   map<Hash, bool> loopHash;
+    
+    //SCC
+    bool *visit;
+    int *DFN;
+    int *Low;
+    int Index;
+    stack<int> vs;
 };
 
 #endif	/* DEPENDENCEGRAPH_H */
