@@ -55,7 +55,7 @@ int main(int argc, char** argv) {
 //    yyparse();
 //    fclose(yyin);
     
-    yyin = fopen("res/input/hc1gr.in", "r");
+    yyin = fopen("res/input/sample.in", "r");
     yyparse();
     fclose(yyin);
 
@@ -70,33 +70,29 @@ int main(int argc, char** argv) {
     
     SATSolver sat(input, Vocabulary::instance().apSize());
     sat.invokeSAT();
-    printf("Models: %d", sat.models.size());
+    printf("Models: %d\n", sat.models.size());
     sat.outputResult();
 
     DependenceGraph dpg(G_NLP);
     dpg.operateGraph();
+    dpg.printfLoop();
     vector<int> k = dpg.getESRSizes();
-
+    
     for(vector<int>::iterator kit = k.begin(); kit != k.end(); kit++) {
         vector<Loop> loops = dpg.getLoopWithESRuleSize(*kit);
-        printf("size:%d\n", loops.size());
         for(vector<Loop>::iterator it = loops.begin(); it != loops.end(); it++) {
             vector<_formula*> lfs = dpg.computeLoopFormulas(*it);
 
             for(vector<_formula*>::iterator ilfs = lfs.begin(); ilfs != lfs.end(); ilfs++) {
-                Utils::formulaOutput(stdout, *ilfs);
-                printf("\n");
-                fflush(stdout);
                 set<int>  lits;
                 Utils::convertCNFformulaToLits(*ilfs, lits);
                 input.push_back(lits);
             }            
         }
-        fflush(stdout);
 
         SATSolver sats(input, Vocabulary::instance().apSize());
         sats.invokeSAT();
-        printf("Models: %d", sats.models.size());
+        printf("Models: %d\n", sats.models.size());
    }
     
     return 0;

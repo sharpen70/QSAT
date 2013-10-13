@@ -66,10 +66,10 @@ bool SATSolver::isExistModel() {
         }        
         models.push_back(model_set);
         
-        for(set<int>::iterator it = model_set.begin(); it != model_set.end(); it++) {
-            printf("%d ", *it);
-        }
-        printf("\n");
+//        for(set<int>::iterator it = model_set.begin(); it != model_set.end(); it++) {
+//            printf("%d ", *it);
+//        }
+//        printf("\n");
         if(!sat.addClause(new_clause)) {
             return false;
         }

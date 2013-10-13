@@ -45,97 +45,11 @@ struct Loop {
     }
 };
 
-/*struct Edge {
-    int x, y;
-    int next;
-};
-
-struct Hash {
-    int sum, squareSum;
-
-    friend bool operator <(const Hash &a, const Hash &b) {
-        if (a.sum != b.sum) {
-            return a.sum < b.sum;
-        }
-        else {
-            return a.squareSum < b.squareSum;
-        }
-    }
-
-    Hash() {
-        sum = squareSum = 0;
-    }
-
-    Hash(int *array, int size) {
-        sum = getSum(array, size);
-        squareSum = getSquareSum(array, size);
-    }
-    
-    Hash(set<int> array) {
-        sum = getSum(array);
-        squareSum = getSquareSum(array);
-    }
-    
-    int getSum(int *array, int size) {
-        int res = 0;
-        for (int i = 0; i < size; i ++) {
-            res += array[i];
-        }
-        return res;
-    }
-    
-    int getSum(set<int> array) {
-        int res = 0;
-        for (set<int>::iterator it = array.begin(); it != array.end(); it++) {
-            res += *it;
-        }
-        return res;
-    }
-    
-    int getSquareSum(set<int> array) {
-        int res = 0;
-        for (set<int>::iterator it = array.begin(); it != array.end(); it++) {
-            res += (*it) * (*it);
-        }
-        return res;
-    }
-    
-    int getSquareSum(int* array, int size) {
-        int res = 0;
-        for (int i = 0; i < size; i ++) {
-            res += array[i] * array[i];
-        }
-        return res;
-    }
-};
-
-struct Info {
-    int startPoint;
-    int *path;
-    bool *vis;
-    map<Hash, bool> m;
-
-    Info():startPoint(0), path(NULL), vis(NULL) {
-        m.clear();
-    };
-    ~Info() {
-        startPoint = 0;
-        m.clear();
-        if (path) {
-            delete[] path; path = NULL;
-        }
-        if (vis) {
-            delete[] vis; vis = NULL;
-        }
-    }
-};*/
-
 class DependenceGraph {
 public:
     DependenceGraph(vector<Rule> _dlp);
     DependenceGraph(const DependenceGraph& orig);
     ~DependenceGraph();
-//    void find();
 //    void test();                //nonsense, just for test
     
     vector<_formula*> computeLoopFormulas(Loop loop);
@@ -147,24 +61,18 @@ public:
     vector<Loop> SCCs;
     void findSCC();
     
+    void printfLoop();
 private:
     vector<Rule> nlp;
     map<int, set<int> > dpdGraph;
     
     map<int, vector<Loop> > loopWithESSize;
     
+    int nodeNumber;
     void findESRules();
-    void addEdge(int x, int y);
- //   void dfs(int depth, int x, Info &info);
     
     void tarjan(int u);
-    
-    int nodeNumber, edgeNumber;
-    int edgePointer;
-    int *heads;
- //   Edge *edges;
- //   map<Hash, bool> loopHash;
-    
+
     //SCC
     bool *visit;
     int *DFN;

@@ -64,9 +64,6 @@ typedef struct __formula {
     };
 }_formula;
 
-struct _loop {
-    set<int> a;
-};
 #endif
 
 

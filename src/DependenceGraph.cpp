@@ -22,7 +22,6 @@
 
 DependenceGraph::DependenceGraph(vector<Rule> _nlp) :
                 nlp(_nlp) {
-   // map< pair<int, int>, bool> graph;
     set<int> nodeSet;
      
     for(vector<Rule>::iterator it = _nlp.begin(); it != _nlp.end(); it++) {        
@@ -40,42 +39,10 @@ DependenceGraph::DependenceGraph(vector<Rule> _nlp) :
     visit = new bool[nodeNumber + 1];
     memset(visit, false, sizeof(bool) * (nodeNumber + 1));
     DFN = new int[nodeNumber + 1];
-    memset(DFN, false, sizeof(int) * (nodeNumber + 1));
+    memset(DFN, 0, sizeof(int) * (nodeNumber + 1));
     Low = new int[nodeNumber + 1];
-    memset(Low, false, sizeof(int) * (nodeNumber + 1));
-  /*  FILE* out = fopen("res/output/sample.out", "w");
-    
-    edgePointer = 0;
-    nodeNumber = *(--nodeSet.end());
-    edgeNumber = 0;
-    
-    fprintf(out, "%d ", nodeNumber);
-  
-    
-    for(map<int, set<int> >::iterator it = dpdGraph.begin(); it != dpdGraph.end(); it++) {
-        edgeNumber += it->second.size();
-    }
-    
-    fprintf(out, "%d\n", edgeNumber);
-    
-    heads = new int[nodeNumber + 1];
-    memset(heads, -1, sizeof(int) * (nodeNumber + 1));
+    memset(Low, 0, sizeof(int) * (nodeNumber + 1));
 
-    edges = new Edge[edgeNumber];
-    memset(edges, -1, sizeof(Edge) * edgeNumber);
-    
-    for(map<int, set<int> >::iterator it = dpdGraph.begin(); it != dpdGraph.end(); it++) {
-        for(set<int>::iterator p_it = it->second.begin(); p_it != it->second.end(); p_it++) {
-            pair<int, int> temp = make_pair(it->first, *p_it);
-            if(graph[temp] != true) {
-                graph[temp] = true;
-                addEdge(it->first, *p_it);
-                fprintf(out, "%d %d\n", it->first, *p_it);
-            }           
-        }
-    }*/
-                   
-    
     loops.clear();
 }
 
@@ -83,21 +50,9 @@ DependenceGraph::~DependenceGraph() {
     dpdGraph.clear();
     loops.clear();
     
-    nodeNumber = edgeNumber = edgePointer = 0;
-    
     delete[] visit;
     delete[] DFN;
     delete[] Low;
-    
-    if (heads) {
-        delete[] heads;
-        heads = NULL;
-    }
-
-//    if (edges) {
-//        delete[] edges;
-//        edges = NULL;
-//    }
 }
 
 void DependenceGraph::findSCC() {
@@ -112,6 +67,7 @@ void DependenceGraph::findSCC() {
 void DependenceGraph::tarjan(int u) {
     DFN[u] = Low[u] = ++Index;
     vs.push(u);
+    visit[u] = true;
     for(set<int>::iterator it = dpdGraph[u].begin(); it != dpdGraph[u].end(); it++) {
         if(!visit[*it]) {
             tarjan(*it);
@@ -120,95 +76,49 @@ void DependenceGraph::tarjan(int u) {
         else {
             if(Low[u] > DFN[*it]) Low[u] = DFN[*it];
         }
-        if(Low[u] == DFN[u]) {
-            if(vs.top() != u) {
-                Loop l;
-                while(vs.top() != u) {                  
-                    l.loopNodes.insert(vs.top());
-                    vs.pop();
-                }
-                l.loopNodes.insert(u);
+    }
+    if(Low[u] == DFN[u]) {
+        if(vs.top() != u) {
+            Loop l;
+            while(vs.top() != u) {                  
+                l.loopNodes.insert(vs.top());
                 vs.pop();
-                SCCs.push_back(l);
             }
+            l.loopNodes.insert(u);
+            vs.pop();
+            SCCs.push_back(l);
+        }
+        else {
+            vs.pop();
         }
     }
 }
 
-//void DependenceGraph::addEdge(int x, int y) {
-//    edges[edgePointer].x = x;
-//    edges[edgePointer].y = y;
-//    edges[edgePointer].next = heads[x];
-//    heads[x] = edgePointer ++;
-//}
-//
-//void DependenceGraph::dfs(int depth, int x, Info &info) {
-//    int *path = info.path;
-//    bool *vis = info.vis;
-//    
-//    if (x < info.startPoint) return ;
-//    
-//    path[depth] = x;
-//
-//    if (depth > 0 && x == info.startPoint) {
-//        Hash hash(path, depth);
-//        if (!info.m[hash]) {
-//            info.m[hash] = true;
-//            Loop loop;
-//            for (int i = 0; i < depth; i ++) {
-//                loop.loopNodes.insert(path[i]);
-//            }
-//            Hash lhash(loop.loopNodes);
-//            if(!loopHash[lhash]) {
-//                loopHash[lhash] = true;
-//                loops.push_back(loop);
-//            }
-//        }
-//    }
-//
-//    for (int i = heads[x]; i != -1; i = edges[i].next) {
-//        if (!vis[i]) {
-//            vis[i] = true;
-//            dfs(depth + 1, edges[i].y, info);
-//            vis[i] = false;
-//        }
-//    }
-//}
-//
-//void DependenceGraph::find() {
-//    Info info;
-//
-//    info.path = new int[edgeNumber];
-//    memset(info.path, -1, sizeof(int) * edgeNumber);
-//
-//    info.vis = new bool[edgeNumber];
-//    memset(info.vis, false, sizeof(bool) * edgeNumber);
-//
-//    for (int i = 1; i <= nodeNumber; i ++) {
-//        info.startPoint = i;
-//        dfs(0, info.startPoint, info);
-//    }
-//}
-
 void DependenceGraph::findESRules() {
-    for(vector<Loop>::iterator it = loops.begin(); it != loops.end(); it++) {
+    for(vector<Loop>::iterator it = SCCs.begin(); it != SCCs.end(); it++) {
         int index = -1;
         for(vector<Rule>::iterator r = nlp.begin(); r != nlp.end(); r++) {
             index++;
             
-            if(r->body_length == 0) {
-                continue;
-            }
-            
-            if(Utils::inList(r->head, it->loopNodes) && 
+            if(r->type == RULE) {
+                if(Utils::inList(r->head, it->loopNodes) && 
                     !(Utils::crossList(r->positive_literals, it->loopNodes))/* && 
                     !(Utils::crossList(r->negative_literals, it->loopNodes)))*/) {
-                it->ESRules.push_back(index);              
-            }
+                    it->ESRules.push_back(index); 
+                }
+            }            
         }
     }
 }
 
+void DependenceGraph::printfLoop() {
+    for(vector<Loop>::iterator it = SCCs.begin(); it != SCCs.end(); it++) {
+        for(set<int>::iterator nit = it->loopNodes.begin(); nit != it->loopNodes.end(); nit++) {
+            printf("%d ", *nit);
+        }
+        printf("\n");
+    }
+}
 
 //void DependenceGraph::test() {   
 //    printf("\nThe dependence graph :\n");
@@ -314,7 +224,7 @@ vector<_formula*> DependenceGraph::computeLoopFormulas(Loop loop) {
         }
     }
     _formula* _body = NULL;
-    printf("loop es size%d", loop.ESRules.size()); fflush(stdout);
+    printf("loop es size %d ", loop.ESRules.size()); 
     for(vector<int>::iterator rit = loop.ESRules.begin(); rit != loop.ESRules.end();
             rit++) {
         char newAtom[MAX_ATOM_LENGTH];
@@ -352,16 +262,12 @@ vector<_formula*> DependenceGraph::computeLoopFormulas(Loop loop) {
 } 
 
 void DependenceGraph::operateGraph() {
-    find();     //If use function DependenceGraph::test(), delete this line.
+    findSCC();     //If use function DependenceGraph::test(), delete this line.
     findESRules();
        
-    printf("The loops size : %d\n", loops.size());
+    printf("The loops size : %d\n", SCCs.size());
     
-    for(vector<Loop>::iterator it = loops.begin(); it != loops.end(); it++) {
-       
-        
-//        loopWithESSize[it->ESRules.size()] = Utils::joinFormulas(
-//                loopWithESSize[it->ESRules.size()], it);
+    for(vector<Loop>::iterator it = SCCs.begin(); it != SCCs.end(); it++) {
         loopWithESSize[it->ESRules.size()].push_back(*it);
     }
 }

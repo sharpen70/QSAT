@@ -70,12 +70,13 @@ rule
         $$->head = $1;
         $$->length = 0;
         $$->type = FACT;
+        printf("FACT\n");
     }
     | literal S_IMPL literals PERIOD{
         $$ = (_rule*)malloc(sizeof(_rule));
         $$->head = $1;
         $$->type = RULE;
-        
+        printf("Rule\n");
         for(int i = 0; i < ($3->length); i++) {
             $$->body[i] = $3->atoms[i];
         }
@@ -85,7 +86,7 @@ rule
         $$ = (_rule*)malloc(sizeof(_rule));
         $$->head = -1;
         $$->type = CONSTRANT;
-
+        printf("CONSTRAN\n");
         for(int i = 0; i < ($2->length); i++) {
             $$->body[i] = $2->atoms[i];
         }

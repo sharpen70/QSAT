@@ -21,6 +21,7 @@ Rule::Rule(_rule* r) :
 Rule::Rule(const Rule& _rhs) : 
         head(_rhs.head),
         body_length(_rhs.body_length),
+        type(_rhs.type),
         positive_literals(_rhs.positive_literals),
         negative_literals(_rhs.negative_literals) {
 }
