@@ -22,7 +22,6 @@ public:
     vector<int> negative_literals;
     vector<int> positive_literals;
     int head;
-    int body_length;
     
     RULE_TYPE type;
 public:

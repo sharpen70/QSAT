@@ -40,6 +40,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/CNFUtils.o \
 	${OBJECTDIR}/src/ClakeCompletion.o \
 	${OBJECTDIR}/src/DependenceGraph.o \
+	${OBJECTDIR}/src/GLTranslator.o \
 	${OBJECTDIR}/src/NNFUtils.o \
 	${OBJECTDIR}/src/Rule.o \
 	${OBJECTDIR}/src/SATSolver.o \
@@ -99,6 +100,11 @@ ${OBJECTDIR}/src/DependenceGraph.o: src/DependenceGraph.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/DependenceGraph.o src/DependenceGraph.cpp
+
+${OBJECTDIR}/src/GLTranslator.o: src/GLTranslator.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/GLTranslator.o src/GLTranslator.cpp
 
 ${OBJECTDIR}/src/NNFUtils.o: src/NNFUtils.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src

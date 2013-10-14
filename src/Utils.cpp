@@ -170,7 +170,7 @@ _formula* Utils::convertRuleBodyToFormula(const Rule& rule) {
     
     Rule _rule(rule);
     
-    if(rule.body_length == 0) return NULL;
+    if(rule.type == FACT) return NULL;
     
     for(vector<int>::iterator it = _rule.positive_literals.begin(); it != 
             _rule.positive_literals.end(); it++) {

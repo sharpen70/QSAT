@@ -5,8 +5,7 @@
 #include <cstdlib>
 
 Rule::Rule(_rule* r) : 
-        head(r->head), body_length(r->length), type(r->type) {
-    printf("length %d", body_length);
+        head(r->head), type(r->type) {
     for(int i = 0; i < (r->length); i++) {
         if(r->body[i] > 0) {
             printf("p l\n");
@@ -20,7 +19,6 @@ Rule::Rule(_rule* r) :
 }
 Rule::Rule(const Rule& _rhs) : 
         head(_rhs.head),
-        body_length(_rhs.body_length),
         type(_rhs.type),
         positive_literals(_rhs.positive_literals),
         negative_literals(_rhs.negative_literals) {
@@ -40,7 +38,7 @@ void Rule::output(FILE* _out) const {
     if(head > 0)
         fprintf(_out, "%s", Vocabulary::instance().getAtom(head));
     
-    if(body_length > 0) {
+    if(type != FACT) {
         fprintf(_out, " :- ");
         for(int i = 0; i < positive_literals.size(); i++) {
             fprintf(_out, "%s", Vocabulary::instance().getAtom(positive_literals.at(i)));

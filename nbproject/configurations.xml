@@ -7,6 +7,7 @@
       <itemPath>include/CNFUtils.h</itemPath>
       <itemPath>include/ClakeCompletion.h</itemPath>
       <itemPath>include/DependenceGraph.h</itemPath>
+      <itemPath>include/GLTranslator.h</itemPath>
       <itemPath>include/NNFUtils.h</itemPath>
       <itemPath>include/Rule.h</itemPath>
       <itemPath>include/SATSolver.h</itemPath>
@@ -60,6 +61,7 @@
       <itemPath>src/CNFUtils.cpp</itemPath>
       <itemPath>src/ClakeCompletion.cpp</itemPath>
       <itemPath>src/DependenceGraph.cpp</itemPath>
+      <itemPath>src/GLTranslator.cpp</itemPath>
       <itemPath>src/NNFUtils.cpp</itemPath>
       <itemPath>src/Rule.cpp</itemPath>
       <itemPath>src/SATSolver.cpp</itemPath>
@@ -117,6 +119,8 @@
       </item>
       <item path="include/DependenceGraph.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="include/GLTranslator.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="include/NNFUtils.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/Rule.h" ex="false" tool="3" flavor2="0">
@@ -190,6 +194,8 @@
       <item path="src/ClakeCompletion.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/DependenceGraph.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/GLTranslator.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/NNFUtils.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -239,6 +245,8 @@
       </item>
       <item path="include/DependenceGraph.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="include/GLTranslator.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="include/NNFUtils.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/Rule.h" ex="false" tool="3" flavor2="0">
@@ -312,6 +320,8 @@
       <item path="src/ClakeCompletion.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/DependenceGraph.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/GLTranslator.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/NNFUtils.cpp" ex="false" tool="1" flavor2="0">
       </item>
