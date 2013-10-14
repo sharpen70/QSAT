@@ -35,13 +35,13 @@ DependenceGraph::DependenceGraph(vector<Rule> _nlp) :
     }
     
     nodeNumber = nodeSet.size();
-    
-    visit = new bool[nodeNumber + 1];
-    memset(visit, false, sizeof(bool) * (nodeNumber + 1));
-    DFN = new int[nodeNumber + 1];
-    memset(DFN, 0, sizeof(int) * (nodeNumber + 1));
-    Low = new int[nodeNumber + 1];
-    memset(Low, 0, sizeof(int) * (nodeNumber + 1));
+    int max = *(--nodeSet.end());
+    visit = new bool[max + 1];
+    memset(visit, false, sizeof(bool) * (max + 1));
+    DFN = new int[max + 1];
+    memset(DFN, 0, sizeof(int) * (max + 1));
+    Low = new int[max + 1];
+    memset(Low, 0, sizeof(int) * (max + 1));
 
     loops.clear();
 }
@@ -114,7 +114,7 @@ void DependenceGraph::findESRules() {
 void DependenceGraph::printfLoop() {
     for(vector<Loop>::iterator it = SCCs.begin(); it != SCCs.end(); it++) {
         for(set<int>::iterator nit = it->loopNodes.begin(); nit != it->loopNodes.end(); nit++) {
-            printf("%d ", *nit);
+            printf("%d %s", *nit, Vocabulary::instance().getAtom(*nit));
         }
         printf("\n");
     }
