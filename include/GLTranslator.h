@@ -15,17 +15,13 @@ using namespace std;
 
 class GLTranslator {
 public:
-    GLTranslator(vector<Rule> nlp, set<int> _Mset);
+    GLTranslator(vector<Rule> nlp);
     GLTranslator(const GLTranslator& orig);
     ~GLTranslator();
-    bool isAnswerSet();
+    bool isAnswerSet(set<int> Mset);
+    void printfCons();
 private:
-    void calCons();
-    
-    vector<Rule> GL_nlp;
-    vector<int> facts;
-    set<int> Mset;
-    set<int> Cons;
+    vector<Rule> nlp;
 };
 
 #endif	/* GLTRANSLATOR_H */

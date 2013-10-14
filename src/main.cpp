@@ -14,6 +14,7 @@
 #include "SATSolver.h"
 #include "DependenceGraph.h"
 #include "CNFUtils.h"
+#include "GLTranslator.h"
 #include <set>
 #include <iostream>
 #include <unistd.h>
@@ -72,28 +73,33 @@ int main(int argc, char** argv) {
     sat.invokeSAT();
     printf("Models: %d\n", sat.models.size());
     sat.outputResult();
-
-    DependenceGraph dpg(G_NLP);
-    dpg.operateGraph();
-    dpg.printfLoop();
-    vector<int> k = dpg.getESRSizes();
     
-    for(vector<int>::iterator kit = k.begin(); kit != k.end(); kit++) {
-        vector<Loop> loops = dpg.getLoopWithESRuleSize(*kit);
-        for(vector<Loop>::iterator it = loops.begin(); it != loops.end(); it++) {
-            vector<_formula*> lfs = dpg.computeLoopFormulas(*it);
-
-            for(vector<_formula*>::iterator ilfs = lfs.begin(); ilfs != lfs.end(); ilfs++) {
-                set<int>  lits;
-                Utils::convertCNFformulaToLits(*ilfs, lits);
-                input.push_back(lits);
-            }            
-        }
-
-        SATSolver sats(input, Vocabulary::instance().apSize());
-        sats.invokeSAT();
-        printf("Models: %d\n", sats.models.size());
-   }
+    for(vector< set<int> >::iterator it = sat.models.begin(); it != sat.models.end(); it++) {
+        GLTranslator glt(G_NLP);
+        if(glt.isAnswerSet(*it)) printf("Is answer set\n");
+        else printf("Not answer set\n");
+    }
+//    DependenceGraph dpg(G_NLP);
+//    dpg.operateGraph();
+//    dpg.printfLoop();
+//    vector<int> k = dpg.getESRSizes();
+//    
+//    for(vector<int>::iterator kit = k.begin(); kit != k.end(); kit++) {
+//        vector<Loop> loops = dpg.getLoopWithESRuleSize(*kit);
+//        for(vector<Loop>::iterator it = loops.begin(); it != loops.end(); it++) {
+//            vector<_formula*> lfs = dpg.computeLoopFormulas(*it);
+//
+//            for(vector<_formula*>::iterator ilfs = lfs.begin(); ilfs != lfs.end(); ilfs++) {
+//                set<int>  lits;
+//                Utils::convertCNFformulaToLits(*ilfs, lits);
+//                input.push_back(lits);
+//            }            
+//        }
+//
+//        SATSolver sats(input, Vocabulary::instance().apSize());
+//        sats.invokeSAT();
+//        printf("Models: %d\n", sats.models.size());
+//    }
     
     return 0;
 }
