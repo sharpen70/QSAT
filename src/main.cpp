@@ -56,7 +56,7 @@ int main(int argc, char** argv) {
 //    yyparse();
 //    fclose(yyin);
     
-    yyin = fopen("res/input/sample.in", "r");
+    yyin = fopen("res/input/hc2grgai.in", "r");
     yyparse();
     fclose(yyin);
 
@@ -66,6 +66,7 @@ int main(int argc, char** argv) {
     printf("\n");
 
     ClakeCompletion::instance().setDlp(G_NLP);
+//    ClakeCompletion::instance().test();
     vector<_formula*> completion = ClakeCompletion::instance().convert();
     vector< set<int> > input = Utils::convertToSATInput(completion);
     
@@ -79,27 +80,27 @@ int main(int argc, char** argv) {
         if(glt.isAnswerSet(*it)) printf("Is answer set\n");
         else printf("Not answer set\n");
     }
-//    DependenceGraph dpg(G_NLP);
-//    dpg.operateGraph();
-//    dpg.printfLoop();
-//    vector<int> k = dpg.getESRSizes();
-//    
-//    for(vector<int>::iterator kit = k.begin(); kit != k.end(); kit++) {
-//        vector<Loop> loops = dpg.getLoopWithESRuleSize(*kit);
-//        for(vector<Loop>::iterator it = loops.begin(); it != loops.end(); it++) {
-//            vector<_formula*> lfs = dpg.computeLoopFormulas(*it);
-//
-//            for(vector<_formula*>::iterator ilfs = lfs.begin(); ilfs != lfs.end(); ilfs++) {
-//                set<int>  lits;
-//                Utils::convertCNFformulaToLits(*ilfs, lits);
-//                input.push_back(lits);
-//            }            
-//        }
-//
-//        SATSolver sats(input, Vocabulary::instance().apSize());
-//        sats.invokeSAT();
-//        printf("Models: %d\n", sats.models.size());
-//    }
+    DependenceGraph dpg(G_NLP);
+    dpg.operateGraph();
+    dpg.printfLoop();
+    vector<int> k = dpg.getESRSizes();
+    
+    for(vector<int>::iterator kit = k.begin(); kit != k.end(); kit++) {
+        vector<Loop> loops = dpg.getLoopWithESRuleSize(*kit);
+        for(vector<Loop>::iterator it = loops.begin(); it != loops.end(); it++) {
+            vector<_formula*> lfs = dpg.computeLoopFormulas(*it);
+
+            for(vector<_formula*>::iterator ilfs = lfs.begin(); ilfs != lfs.end(); ilfs++) {
+                set<int>  lits;
+                Utils::convertCNFformulaToLits(*ilfs, lits);
+                input.push_back(lits);
+            }            
+        }
+
+        SATSolver sats(input, Vocabulary::instance().apSize());
+        sats.invokeSAT();
+        printf("Models: %d\n", sats.models.size());
+    }
     
     return 0;
 }

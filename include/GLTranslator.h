@@ -22,6 +22,7 @@ public:
     void printfCons();
 private:
     vector<Rule> nlp;
+   // void simplifyLP(vector<Rule>& GL_nlp, int fact, set<int> answer);
 };
 
 #endif	/* GLTRANSLATOR_H */
