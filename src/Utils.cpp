@@ -101,7 +101,7 @@ void Utils::deleteFormula(_formula* _fml) {
     free(_fml);
 }
 
-bool Utils::inList(int tag, set<int> list) {
+bool Utils::inSet(int tag, set<int> list) {
     if(list.find(tag) != list.end()) {
         return true;
     }
@@ -109,24 +109,9 @@ bool Utils::inList(int tag, set<int> list) {
     return false;
 }
 
-vector<int> Utils::divideListAt(int tag, vector<int> list) {
-    vector<int> result;
-    bool find = false;
-    
-    for(int i = 0; i < list.size(); i++) {
-        if(tag == list.at(i)) find = true;
-        
-        if(find) {
-            result.push_back(list.at(i));
-        }
-    }
-    
-    return result;
-}
-
-bool Utils::crossList(vector<int> l1, set<int> l2) {
-    for(vector<int>::iterator it = l1.begin(); it != l1.end(); it++) {
-        if(inList(*it, l2)) return true;
+bool Utils::crossSet(set<int> l1, set<int> l2) {
+    for(set<int>::iterator it = l1.begin(); it != l1.end(); it++) {
+        if(l2.find(*it) != l2.end()) return true;
     }
     
     return false;
@@ -172,14 +157,14 @@ _formula* Utils::convertRuleBodyToFormula(const Rule& rule) {
     
     if(rule.type == FACT) return NULL;
     
-    for(vector<int>::iterator it = _rule.positive_literals.begin(); it != 
+    for(set<int>::iterator it = _rule.positive_literals.begin(); it != 
             _rule.positive_literals.end(); it++) {
         if(fml == NULL) fml = Utils::compositeToAtom(*it);
         else {
             fml = Utils::compositeByConnective(CONJ, fml, Utils::compositeToAtom(*it));
         }
     }
-    for(vector<int>::iterator it = _rule.negative_literals.begin(); it !=
+    for(set<int>::iterator it = _rule.negative_literals.begin(); it !=
             _rule.negative_literals.end(); it++) {
         _formula* nega = Utils::compositeByConnective(NEGA, Utils::compositeToAtom(*it));
         if(fml == NULL) fml = nega;
@@ -355,6 +340,26 @@ bool Utils::compareAnswerSet(vector< vector<char*> >& claspAnswer, vector< set<i
             }
         }
         if(!exis) return false;
+    }
+    
+    return true;
+}
+
+bool Utils::setContains(const set<int>& a, const set<int>& b) {
+    set<int>::iterator ait = a.begin();
+    set<int>::iterator bit = b.begin();
+    
+    while(bit != b.end()) {
+        if(*bit == *ait) {
+            ait++;
+            bit++;
+        }
+        else if(*bit > *ait) {
+            ait++;
+        }
+        else {
+            return false;
+        }
     }
     
     return true;

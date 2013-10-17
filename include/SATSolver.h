@@ -15,19 +15,22 @@ using namespace std;
 
 class SATSolver {
 public:
-    SATSolver(vector< set<int> > cnf, int num_lits);
+    SATSolver(int num_lits);
     SATSolver(const SATSolver& orig);
     ~SATSolver();
     
 //    void invokeSAT();
     int invokeSAT();
+    bool isExistModel();
+    bool addClauses(vector< set<int> > newClauses);
+    bool addClause(set<int> newClause);
     void outputResult();
     vector< set<int> > models;
     
 private:
     Solver sat; 
     int num_lits_in_NLP;
-    bool isExistModel();
+    
 };
 
 #endif	/* SATSOLVER_H */

@@ -27,7 +27,7 @@ DependenceGraph::DependenceGraph(vector<Rule> _nlp) :
     for(vector<Rule>::iterator it = _nlp.begin(); it != _nlp.end(); it++) {        
         if(it->type == RULE) {
             nodeSet.insert(it->head);
-            for(vector<int>::iterator p_it = it->positive_literals.begin(); p_it != it->positive_literals.end(); p_it++) {
+            for(set<int>::iterator p_it = it->positive_literals.begin(); p_it != it->positive_literals.end(); p_it++) {
                 dpdGraph[it->head].insert(*p_it);
                 nodeSet.insert(*p_it);
             }
@@ -35,42 +35,47 @@ DependenceGraph::DependenceGraph(vector<Rule> _nlp) :
     }
     
     nodeNumber = nodeSet.size();
-    int max = *(--nodeSet.end());
-    visit = new bool[max + 1];
-    memset(visit, false, sizeof(bool) * (max + 1));
-    DFN = new int[max + 1];
-    memset(DFN, 0, sizeof(int) * (max + 1));
-    Low = new int[max + 1];
-    memset(Low, 0, sizeof(int) * (max + 1));
-
-    loops.clear();
+    maxNode = *(--nodeSet.end());
+    visit = new bool[maxNode + 1];
+    memset(visit, false, sizeof(bool) * (maxNode + 1));
+    DFN = new int[maxNode + 1];
+    memset(DFN, 0, sizeof(int) * (maxNode + 1));
+    Low = new int[maxNode + 1];
+    memset(Low, 0, sizeof(int) * (maxNode + 1));
+    involved = new bool[maxNode + 1];
+    memset(involved, true, sizeof(bool) * (maxNode + 1));
 }
 
 DependenceGraph::~DependenceGraph() {
     dpdGraph.clear();
-    loops.clear();
     
     delete[] visit;
     delete[] DFN;
     delete[] Low;
 }
 
-void DependenceGraph::findSCC() {
+vector<Loop> DependenceGraph::findSCC() {
+    vector<Loop> loops;
+    
     for(map<int, set<int> >::iterator it = dpdGraph.begin(); it != dpdGraph.end(); it++) {
-        if(!visit[it->first]) {
+        if(!visit[it->first] && involved[it->first]) {
             Index = 0;
-            tarjan(it->first);
+            tarjan(it->first, loops);
         }
     }
+    
+    return loops;
 }
 
-void DependenceGraph::tarjan(int u) {
+void DependenceGraph::tarjan(int u, vector<Loop>& loops) {
     DFN[u] = Low[u] = ++Index;
     vs.push(u);
     visit[u] = true;
     for(set<int>::iterator it = dpdGraph[u].begin(); it != dpdGraph[u].end(); it++) {
+        if(!involved[*it]) continue;
+        
         if(!visit[*it]) {
-            tarjan(*it);
+            tarjan(*it, loops);
             if(Low[u] > Low[*it]) Low[u] = Low[*it];
         }
         else {
@@ -86,7 +91,7 @@ void DependenceGraph::tarjan(int u) {
             }
             l.loopNodes.insert(u);
             vs.pop();
-            SCCs.push_back(l);
+            loops.push_back(l);
         }
         else {
             vs.pop();
@@ -94,20 +99,25 @@ void DependenceGraph::tarjan(int u) {
     }
 }
 
-void DependenceGraph::findESRules() {
+void DependenceGraph::findESRules(Loop& loop) {
+    int index = -1;
+    
+    for(vector<Rule>::iterator r = nlp.begin(); r != nlp.end(); r++) {
+        index++;
+
+        if(r->type == RULE) {
+            if(loop.loopNodes.find(r->head) != loop.loopNodes.end() && 
+                !(Utils::crossSet(r->positive_literals, loop.loopNodes))/* && 
+                !(Utils::crossList(r->negative_literals, it->loopNodes)))*/) {
+                loop.ESRules.insert(index); 
+            }
+        }            
+    }    
+}
+
+void DependenceGraph::findAllESRules() {
     for(vector<Loop>::iterator it = SCCs.begin(); it != SCCs.end(); it++) {
-        int index = -1;
-        for(vector<Rule>::iterator r = nlp.begin(); r != nlp.end(); r++) {
-            index++;
-            
-            if(r->type == RULE) {
-                if(Utils::inList(r->head, it->loopNodes) && 
-                    !(Utils::crossList(r->positive_literals, it->loopNodes))/* && 
-                    !(Utils::crossList(r->negative_literals, it->loopNodes)))*/) {
-                    it->ESRules.push_back(index); 
-                }
-            }            
-        }
+        findESRules(*it);
     }
 }
 
@@ -225,7 +235,7 @@ vector<_formula*> DependenceGraph::computeLoopFormulas(Loop loop) {
     }
     _formula* _body = NULL;
     printf("loop es size %d ", loop.ESRules.size()); 
-    for(vector<int>::iterator rit = loop.ESRules.begin(); rit != loop.ESRules.end();
+    for(set<int>::iterator rit = loop.ESRules.begin(); rit != loop.ESRules.end();
             rit++) {
         char newAtom[MAX_ATOM_LENGTH];
         sprintf(newAtom, "Rule_%d", *rit);
@@ -261,9 +271,82 @@ vector<_formula*> DependenceGraph::computeLoopFormulas(Loop loop) {
     return result;
 } 
 
+vector<Loop> DependenceGraph::findCompMaximal(set<int> comp) {
+    vector<Loop> maximals;
+    
+    memset(involved, false, sizeof(bool) * (maxNode + 1));
+    for(set<int>::iterator it = comp.begin(); it != comp.end(); it++) {
+        involved[*it] = true;
+    }
+    vector<Loop> sccs = findSCC();
+    for(vector<Loop>::iterator it = sccs.begin(); it != sccs.end(); it++) {
+        findESRules(*it); 
+        maximals.push_back(findLoopMaximal(*it));
+    }
+    
+    return maximals;
+}
+
+Loop DependenceGraph::findLoopMaximal(Loop scc) {      
+    if(scc.ESRules.size() == 0) return scc;
+    
+    memset(involved, false, sizeof(bool) * (maxNode + 1));
+    
+    for(set<int>::iterator it = scc.loopNodes.begin(); it != scc.loopNodes.end(); it++) {
+        involved[*it] = true;      
+    }  
+    
+    int tempR = 0;
+    
+    for(set<int>::iterator it = scc.ESRules.begin(); it != scc.ESRules.end(); it++) {
+        int r = nlp.at(*it).head;
+        involved[tempR] = true;
+        involved[r] = false;
+        tempR = r;
+        
+        vector<Loop> sccs = findSCC();
+        if(sccs.size() == 0) continue;  
+        else {
+            for(vector<Loop>::iterator sit = sccs.begin(); sit != sccs.end(); sit++) {
+                findESRules(*sit);
+                set<int> moreoverRules;
+                for(set<int>::iterator es = sit->ESRules.begin(); es != sit->ESRules.end();
+                        es++) {
+                    if(scc.ESRules.find(*es) == scc.ESRules.end()) {
+                        moreoverRules.insert(*es);
+                    }
+                }
+                if(moreoverRules.size() == 0) {
+                    return findLoopMaximal(*sit);
+                }
+                else {
+                    memset(involved, false, sizeof(bool) * (maxNode + 1));
+    
+                    for(set<int>::iterator lit = sit->loopNodes.begin(); 
+                            lit != sit->loopNodes.end(); lit++) {
+                        involved[*lit] = true;      
+                    } 
+                    for(set<int>::iterator mit = moreoverRules.begin(); 
+                            mit != moreoverRules.end(); mit++) {
+                        involved[nlp.at(*mit).head] = false;      
+                    }
+                    
+                    vector<Loop> mscc = findSCC();
+                    if(mscc.size() != 0) {
+                        findESRules(mscc.front());
+                        return findLoopMaximal(mscc.front());
+                    }
+                }
+            }
+        }
+    }
+   
+    return scc;    
+}
+
 void DependenceGraph::operateGraph() {
-    findSCC();     //If use function DependenceGraph::test(), delete this line.
-    findESRules();
+    SCCs = findSCC();     //If use function DependenceGraph::test(), delete this line.
+    findAllESRules();
        
     printf("The loops size : %d\n", SCCs.size());
     

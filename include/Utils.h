@@ -34,9 +34,8 @@ public:
     
     static vector<_formula*> joinFormulas(vector<_formula*> des_list, vector<_formula*> join_list);
     
-    static bool inList(int tag, set<int> list);
-    static vector<int> divideListAt(int tag, vector<int> list);
-    static bool crossList(vector<int> l1, set<int> l2);
+    static bool inSet(int tag, set<int> list);
+    static bool crossSet(set<int> l1, set<int> l2);
     
     static vector< set<int> > convertToSATInput(vector<_formula*> cnfDlp);
     static void convertCNFformulaToLits(_formula* rule, set<int>& lits);
@@ -51,7 +50,8 @@ public:
     
     static bool compareSingleModel(vector<char*>& claspModel, set<int>& satModel);
     static bool compareAnswerSet(vector< vector<char*> >& claspAnswer, vector< set<int> >& satAnswer);
-    
+
+    static bool setContains(const set<int>& a, const set<int>& b);
 };
 
 

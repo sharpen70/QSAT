@@ -66,41 +66,68 @@ int main(int argc, char** argv) {
     printf("\n");
 
     ClakeCompletion::instance().setDlp(G_NLP);
-//    ClakeCompletion::instance().test();
     vector<_formula*> completion = ClakeCompletion::instance().convert();
     vector< set<int> > input = Utils::convertToSATInput(completion);
     
-    SATSolver sat(input, Vocabulary::instance().apSize());
-    sat.invokeSAT();
-    printf("Models: %d\n", sat.models.size());
-    sat.outputResult();
-    
-    for(vector< set<int> >::iterator it = sat.models.begin(); it != sat.models.end(); it++) {
-        GLTranslator glt(G_NLP);
-        if(glt.isAnswerSet(*it)) printf("Is answer set\n");
-        else printf("Not answer set\n");
-    }
+//    SATSolver sat(input, Vocabulary::instance().apSize());
+//    sat.invokeSAT();
+//    printf("Models: %d\n", sat.models.size());
+ //   sat.outputResult();
+   
     DependenceGraph dpg(G_NLP);
-    dpg.operateGraph();
-    dpg.printfLoop();
-    vector<int> k = dpg.getESRSizes();
+ //   dpg.operateGraph();
     
-    for(vector<int>::iterator kit = k.begin(); kit != k.end(); kit++) {
-        vector<Loop> loops = dpg.getLoopWithESRuleSize(*kit);
-        for(vector<Loop>::iterator it = loops.begin(); it != loops.end(); it++) {
-            vector<_formula*> lfs = dpg.computeLoopFormulas(*it);
+ //   dpg.printfLoop();
 
-            for(vector<_formula*>::iterator ilfs = lfs.begin(); ilfs != lfs.end(); ilfs++) {
-                set<int>  lits;
-                Utils::convertCNFformulaToLits(*ilfs, lits);
-                input.push_back(lits);
-            }            
+// ASSAT
+    vector< set<int> > AnswerSets;
+    GLTranslator glt(G_NLP);
+    
+    SATSolver sat(Vocabulary::instance().apSize());
+    sat.addClauses(input);
+    
+    while(sat.isExistModel()) {
+        set<int> model = sat.models.back();
+        set<int> comp = glt.getComplementSet(model);
+        
+        if(comp.size() == 0) {
+            AnswerSets.push_back(model);
         }
+        else {
+            vector<Loop> mls = dpg.findCompMaximal(comp);
+            //dpg.findESRules(ml);
+            
+            for(vector<Loop>::iterator imls = mls.begin(); imls != mls.end();
+                    imls++) {
+                vector<_formula*> lfs = dpg.computeLoopFormulas(*imls);
 
-        SATSolver sats(input, Vocabulary::instance().apSize());
-        sats.invokeSAT();
-        printf("Models: %d\n", sats.models.size());
+                for(vector<_formula*>::iterator ilfs = lfs.begin(); ilfs != lfs.end(); ilfs++) {
+                    set<int>  lits;
+                    Utils::convertCNFformulaToLits(*ilfs, lits);
+                    sat.addClause(lits);
+                }
+            }
+        }
     }
-    
+// use SCC to cancel model
+//    vector<int> k = dpg.getESRSizes();
+//    
+//    for(vector<int>::iterator kit = k.begin(); kit != k.end(); kit++) {
+//        vector<Loop> loops = dpg.getLoopWithESRuleSize(*kit);
+//        for(vector<Loop>::iterator it = loops.begin(); it != loops.end(); it++) {
+//            vector<_formula*> lfs = dpg.computeLoopFormulas(*it);
+//
+//            for(vector<_formula*>::iterator ilfs = lfs.begin(); ilfs != lfs.end(); ilfs++) {
+//                set<int>  lits;
+//                Utils::convertCNFformulaToLits(*ilfs, lits);
+//                input.push_back(lits);
+//            }            
+//        }
+//
+//        SATSolver sats(input, Vocabulary::instance().apSize());
+//        sats.invokeSAT();
+//        printf("Models: %d\n", sats.models.size());
+//    }
+//    
     return 0;
 }

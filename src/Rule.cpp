@@ -9,11 +9,11 @@ Rule::Rule(_rule* r) :
     for(int i = 0; i < (r->length); i++) {
         if(r->body[i] > 0) {
             printf("p l\n");
-            this->positive_literals.push_back(r->body[i]);
+            this->positive_literals.insert(r->body[i]);
         }
         else {
             printf("n l\n");
-            this->negative_literals.push_back(-1 * r->body[i]);
+            this->negative_literals.insert(-1 * r->body[i]);
         }
     }
 }
@@ -40,17 +40,19 @@ void Rule::output(FILE* _out) const {
     
     if(type != FACT) {
         fprintf(_out, " :- ");
-        for(int i = 0; i < positive_literals.size(); i++) {
-            fprintf(_out, "%s", Vocabulary::instance().getAtom(positive_literals.at(i)));
-            if(i != positive_literals.size() - 1) {
+        for(set<int>::iterator pit = positive_literals.begin(); pit != 
+                positive_literals.end(); pit++) {
+            fprintf(_out, "%s", Vocabulary::instance().getAtom(*pit));
+            if(pit != (--positive_literals.end())) {
                 fprintf(_out, ",");
             }
         }
-        for(int i = 0; i < negative_literals.size(); i++) {
+        for(set<int>::iterator nit = negative_literals.begin(); nit !=
+                negative_literals.end(); nit++) {
             if(positive_literals.size() != 0) {
                 fprintf(_out, ",");
             }
-            fprintf(_out, "not %s", Vocabulary::instance().getAtom(negative_literals.at(i)));            
+            fprintf(_out, "not %s", Vocabulary::instance().getAtom(*nit));            
         }
     }
     

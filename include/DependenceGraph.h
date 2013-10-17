@@ -17,7 +17,7 @@
 
 struct Loop {
     set<int> loopNodes;
-    vector<int> ESRules;
+    set<int> ESRules;
     vector<_formula*> loopFormulas;
     
     Loop() {
@@ -57,9 +57,13 @@ public:
     vector<Loop> getLoopWithESRuleSize(int k);
     vector<int> getESRSizes();
     
-    vector<Loop> loops;
+    //vector<Loop> loops;
     vector<Loop> SCCs;
-    void findSCC();
+    vector<Loop> findSCC();
+    vector<Loop> findCompMaximal(set<int> comp);
+    Loop findLoopMaximal(Loop scc);
+    void findESRules(Loop& loop);
+    void findAllESRules();
     
     void printfLoop();
 private:
@@ -69,12 +73,13 @@ private:
     map<int, vector<Loop> > loopWithESSize;
     
     int nodeNumber;
-    void findESRules();
+    int maxNode;
     
-    void tarjan(int u);
+    void tarjan(int u, vector<Loop>& loops);
 
     //SCC
     bool *visit;
+    bool *involved;
     int *DFN;
     int *Low;
     int Index;

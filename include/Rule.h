@@ -19,8 +19,8 @@ using namespace std;
  */
 class Rule {
 public:
-    vector<int> negative_literals;
-    vector<int> positive_literals;
+    set<int> negative_literals;
+    set<int> positive_literals;
     int head;
     
     RULE_TYPE type;

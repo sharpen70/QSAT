@@ -8,32 +8,11 @@
 #include "SATSolver.h"
 #include "Vocabulary.h"
 
-SATSolver::SATSolver(vector< set<int> > cnf, int num_lits) {
+SATSolver::SATSolver(int num_lits) {
     num_lits_in_NLP = num_lits;
     
     while(num_lits > sat.nVars) {
         sat.newVar();
-    }
-    
-    for(vector< set<int> >::iterator it = cnf.begin(); it != cnf.end(); it++) {
-        int var;
-        vec<Lit> lits;
-        
-        for(set<int>::iterator l_it = it->begin(); l_it != it->end(); l_it++) {
-            var = abs(*l_it) - 1;
-            lits.push((*l_it > 0) ? Lit(var) : ~Lit(var));
-        }
-        
-        if(lits.size() == 1) {
-            if(!sat.addUnit(lits[0])) {
-                printf("addUnit failed");
-            }
-        }
-        else {
-            if(!sat.addClause(lits)) {
-                printf("addClause failed");
-            }
-        }
     }
 }
 
@@ -45,6 +24,37 @@ int SATSolver::invokeSAT() {
     while(isExistModel())
         i++;
     return i;
+}
+
+bool SATSolver::addClause(set<int> newClause) {
+    int var;
+    vec<Lit> lits;
+
+    for(set<int>::iterator l_it = newClause.begin(); l_it != newClause.end(); l_it++) {
+        var = abs(*l_it) - 1;
+        lits.push((*l_it > 0) ? Lit(var) : ~Lit(var));
+    }
+
+    if(lits.size() == 1) {
+        if(!sat.addUnit(lits[0])) {
+            printf("addUnit failed");
+            return false;
+        }
+    }
+    else {
+        if(!sat.addClause(lits)) {
+            printf("addClause failed");
+            return false;
+        }
+    }
+}
+
+bool SATSolver::addClauses(vector<set<int> > newClauses) {
+    for(vector< set<int> >::iterator it = newClauses.begin(); it != newClauses.end(); it++) {
+        if(!addClause(*it)) return false;
+    } 
+    
+    return true;
 }
 
 bool SATSolver::isExistModel() {

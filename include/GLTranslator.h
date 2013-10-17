@@ -18,10 +18,12 @@ public:
     GLTranslator(vector<Rule> nlp);
     GLTranslator(const GLTranslator& orig);
     ~GLTranslator();
-    bool isAnswerSet(set<int> Mset);
+    set<int> getComplementSet(set<int> Mset);
     void printfCons();
 private:
     vector<Rule> nlp;
+    
+    bool satisfyConstrant(Rule cons, set<int> ans);
    // void simplifyLP(vector<Rule>& GL_nlp, int fact, set<int> answer);
 };
 

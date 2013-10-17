@@ -23,21 +23,32 @@ GLTranslator::~GLTranslator() {
 //void GLTranslator::simplifyLP(vector<Rule>& GL_nlp, int fact) {
 //    
 //}
-bool GLTranslator::isAnswerSet(set<int> Mset) {
+// don't have tp examine constrant
+//bool GLTranslator::satisfyConstrant(Rule cons, set<int> ans) {
+//    for(set<int>::iterator pit = cons.positive_literals.begin(); pit != 
+//            cons.positive_literals.end(); pit++) {
+//        if(ans.find(*pit) == ans.end()) return true;
+//    }
+//    for(set<int>::iterator nit = cons.negative_literals.begin(); nit != 
+//            cons.negative_literals.end(); nit++) {
+//        if(ans.find(*nit) != ans.end()) return true;
+//    }
+//    
+//    return false;
+//}
+
+set<int> GLTranslator::getComplementSet(set<int> Mset) {
     vector<Rule> _nlp = nlp;
     vector<Rule> GL_nlp;
     vector<int> facts;
-    set<int> answers;
+    set<int> cons;
     
     //GL_transformation
     for(vector<Rule>::iterator it = _nlp.begin(); it != _nlp.end(); it++) {
-        for(vector<int>::iterator nit = it->negative_literals.begin();
-                nit != it->negative_literals.end();) {
+        for(set<int>::iterator nit = it->negative_literals.begin();
+                nit != it->negative_literals.end(); nit++) {
             if(Mset.find(*nit) == Mset.end()) {
-                nit = it->negative_literals.erase(nit);
-            }
-            else {
-                nit++;
+                it->negative_literals.erase(nit);
             }
         }
     }
@@ -53,13 +64,13 @@ bool GLTranslator::isAnswerSet(set<int> Mset) {
         }
     }  
     for(int i = 0; i < facts.size(); i++) {
-        answers.insert(facts.at(i));
-        for(vector<Rule>::iterator nit = GL_nlp.begin(); nit != GL_nlp.end();) {
+        cons.insert(facts.at(i));
+        for(vector<Rule>::iterator nit = GL_nlp.begin(); nit != GL_nlp.end(); nit++) {
             if(facts.at(i) == nit->head) {
-                nit = GL_nlp.erase(nit);
+                GL_nlp.erase(nit);
                 continue;
             }
-            for(vector<int>::iterator pit = nit->positive_literals.begin();
+            for(set<int>::iterator pit = nit->positive_literals.begin();
                     pit != nit->positive_literals.end(); pit++) {
                 if(facts.at(i) == *pit) {
                     nit->positive_literals.erase(pit);
@@ -68,25 +79,38 @@ bool GLTranslator::isAnswerSet(set<int> Mset) {
             }
             if(nit->positive_literals.size() == 0) {
                 facts.push_back(nit->head);
-                answers.insert(nit->head);
-                nit = GL_nlp.erase(nit);
-            }
-            else {
-                nit++;               
+                cons.insert(nit->head);
+                GL_nlp.erase(nit);
             }
         }
     }
     
-    if(answers.size() != Mset.size()) return false;
+    set<int> Cset;
+    set<int>::iterator cit = cons.begin();
+    set<int>::iterator mit = Mset.begin();
+
+    while(mit != Mset.end()) {
+        if(*cit != *mit) {
+            Cset.insert(*mit);
+            mit++;
+        }
+        else {
+            mit++;
+            cit++;
+        }
+    }
+    
+    return Cset;
 //    for(set<int>::iterator it = Mset.begin(); it != Mset.end(); it++) {
 //        printf("%s ", Vocabulary::instance().getAtom(*it));
 //       // if(Mset.find(*it) == Mset.end()) return false;
 //    }
 //    printf("\n");
-    for(set<int>::iterator it = answers.begin(); it != answers.end(); it++) {
-        printf("%s ", Vocabulary::instance().getAtom(*it));
-        if(Mset.find(*it) == Mset.end()) return false;
-    }
     
-    return true;
+//  cons must be in Mset, don't need to judge
+//    for(set<int>::iterator it = cons.begin(); it != cons.end(); it++) {
+//        printf("%s ", Vocabulary::instance().getAtom(*it));
+//        if(Mset.find(*it) == Mset.end()) return false;
+//    }
+    
 }
