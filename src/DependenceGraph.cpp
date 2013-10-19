@@ -56,7 +56,8 @@ DependenceGraph::~DependenceGraph() {
 
 vector<Loop> DependenceGraph::findSCC() {
     vector<Loop> loops;
-    
+    memset(visit, false, sizeof(bool) * (maxNode + 1));
+
     for(map<int, set<int> >::iterator it = dpdGraph.begin(); it != dpdGraph.end(); it++) {
         if(!visit[it->first] && involved[it->first]) {
             Index = 0;
@@ -219,9 +220,10 @@ void DependenceGraph::printfLoop() {
 ////    }
 //}
 
-vector<_formula*> DependenceGraph::computeLoopFormulas(Loop loop) {
+int DependenceGraph::computeLoopFormulas(Loop& loop) {
     _formula* _head = NULL;
     vector<_formula*> result;
+    int newVar = 0;
         
     for(set<int>::iterator hit = loop.loopNodes.begin(); hit != loop.loopNodes.end();
             hit++) {
@@ -234,13 +236,13 @@ vector<_formula*> DependenceGraph::computeLoopFormulas(Loop loop) {
         }
     }
     _formula* _body = NULL;
-    printf("loop es size %d ", loop.ESRules.size()); 
     for(set<int>::iterator rit = loop.ESRules.begin(); rit != loop.ESRules.end();
             rit++) {
         char newAtom[MAX_ATOM_LENGTH];
         sprintf(newAtom, "Rule_%d", *rit);
         int id = Vocabulary::instance().queryAtom(newAtom);
         if(id < 0) {
+            newVar++;
             id = Vocabulary::instance().addAtom(strdup(newAtom));
             _formula* rule = Utils::convertRuleBodyToFormula(nlp.at(*rit));
             _formula* nega = Utils::compositeByConnective(NEGA, 
@@ -249,10 +251,8 @@ vector<_formula*> DependenceGraph::computeLoopFormulas(Loop loop) {
                     Utils::compositeToAtom(id));
             _formula* l2 = Utils::compositeByConnective(DISJ, rule,
                     Utils::compositeByConnective(NEGA, Utils::compositeToAtom(id)));
-            result = Utils::joinFormulas(result, 
-                    CNFUtils::convertCNF(l1));
-            result = Utils::joinFormulas(result, 
-                    CNFUtils::convertCNF(l2));
+            Utils::joinFormulas(loop.loopFormulas, CNFUtils::convertCNF(l1));
+            Utils::joinFormulas(loop.loopFormulas, CNFUtils::convertCNF(l2));
         }
 
         if(_body == NULL) {
@@ -266,9 +266,9 @@ vector<_formula*> DependenceGraph::computeLoopFormulas(Loop loop) {
     if(_body == NULL) lf = _head;
     else lf = Utils::compositeByConnective(DISJ, _head, _body);
 
-    result.push_back(lf); 
+    loop.loopFormulas.push_back(lf); 
     
-    return result;
+    return newVar;
 } 
 
 vector<Loop> DependenceGraph::findCompMaximal(set<int> comp) {
@@ -285,6 +285,7 @@ vector<Loop> DependenceGraph::findCompMaximal(set<int> comp) {
     }
     
     return maximals;
+    //return sccs;
 }
 
 Loop DependenceGraph::findLoopMaximal(Loop scc) {      

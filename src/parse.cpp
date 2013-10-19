@@ -461,8 +461,8 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    50,    50,    53,    57,    61,    68,    75,    85,    98,
-     102,   112,   117,   125,   132,   139,   145,   151,   154
+       0,    50,    50,    53,    57,    61,    68,    74,    83,    95,
+      99,   109,   113,   120,   126,   132,   138,   144,   147
 };
 #endif
 
@@ -1435,19 +1435,17 @@ yyreduce:
         (yyval.r)->head = (yyvsp[(1) - (2)].i);
         (yyval.r)->length = 0;
         (yyval.r)->type = FACT;
-        printf("FACT\n");
     }
     break;
 
   case 7:
 
 /* Line 1806 of yacc.c  */
-#line 75 "parse.y"
+#line 74 "parse.y"
     {
         (yyval.r) = (_rule*)malloc(sizeof(_rule));
         (yyval.r)->head = (yyvsp[(1) - (4)].i);
         (yyval.r)->type = RULE;
-        printf("Rule\n");
         for(int i = 0; i < ((yyvsp[(3) - (4)].l)->length); i++) {
             (yyval.r)->body[i] = (yyvsp[(3) - (4)].l)->atoms[i];
         }
@@ -1458,12 +1456,11 @@ yyreduce:
   case 8:
 
 /* Line 1806 of yacc.c  */
-#line 85 "parse.y"
+#line 83 "parse.y"
     {
         (yyval.r) = (_rule*)malloc(sizeof(_rule));
         (yyval.r)->head = -1;
         (yyval.r)->type = CONSTRANT;
-        printf("CONSTRAN\n");
         for(int i = 0; i < ((yyvsp[(2) - (3)].l)->length); i++) {
             (yyval.r)->body[i] = (yyvsp[(2) - (3)].l)->atoms[i];
         }
@@ -1474,7 +1471,7 @@ yyreduce:
   case 9:
 
 /* Line 1806 of yacc.c  */
-#line 98 "parse.y"
+#line 95 "parse.y"
     {
         (yyvsp[(1) - (3)].l)->atoms[(yyvsp[(1) - (3)].l)->length] = (yyvsp[(3) - (3)].i);
         (yyvsp[(1) - (3)].l)->length++;
@@ -1484,7 +1481,7 @@ yyreduce:
   case 10:
 
 /* Line 1806 of yacc.c  */
-#line 102 "parse.y"
+#line 99 "parse.y"
     {
         (yyval.l) = (__literals*)malloc(sizeof(_literals));
         memset((yyval.l)->atoms, 0, sizeof(int) * MAX_ATOM_LENGTH);
@@ -1497,10 +1494,9 @@ yyreduce:
   case 11:
 
 /* Line 1806 of yacc.c  */
-#line 112 "parse.y"
+#line 109 "parse.y"
     {
         id = Vocabulary::instance().addAtom((yyvsp[(2) - (2)].s));
-        printf("literal %d\n", id);
         (yyval.i) = -1 * id;
     }
     break;
@@ -1508,10 +1504,9 @@ yyreduce:
   case 12:
 
 /* Line 1806 of yacc.c  */
-#line 117 "parse.y"
+#line 113 "parse.y"
     {
         id = Vocabulary::instance().addAtom((yyvsp[(1) - (1)].s));
-        printf("literal %d\n", id);
         (yyval.i) = id;
     }
     break;
@@ -1519,9 +1514,8 @@ yyreduce:
   case 13:
 
 /* Line 1806 of yacc.c  */
-#line 125 "parse.y"
+#line 120 "parse.y"
     {
-        printf("atom\n");
         char str_buff[512];
         
         sprintf(str_buff, "%s(%s)", (yyvsp[(1) - (4)].s), (yyvsp[(3) - (4)].s));
@@ -1532,9 +1526,8 @@ yyreduce:
   case 14:
 
 /* Line 1806 of yacc.c  */
-#line 132 "parse.y"
+#line 126 "parse.y"
     {
-        printf("atom %s\n", (yyvsp[(1) - (1)].s));
         (yyval.s) = strdup((yyvsp[(1) - (1)].s));
     }
     break;
@@ -1542,7 +1535,7 @@ yyreduce:
   case 15:
 
 /* Line 1806 of yacc.c  */
-#line 139 "parse.y"
+#line 132 "parse.y"
     {
         char str_buff[512];
         
@@ -1554,7 +1547,7 @@ yyreduce:
   case 16:
 
 /* Line 1806 of yacc.c  */
-#line 145 "parse.y"
+#line 138 "parse.y"
     {
         (yyval.s) = strdup((yyvsp[(1) - (1)].s));
     }
@@ -1563,7 +1556,7 @@ yyreduce:
   case 17:
 
 /* Line 1806 of yacc.c  */
-#line 151 "parse.y"
+#line 144 "parse.y"
     {
         (yyval.s) = strdup((yyvsp[(1) - (1)].s));
     }
@@ -1572,7 +1565,7 @@ yyreduce:
   case 18:
 
 /* Line 1806 of yacc.c  */
-#line 154 "parse.y"
+#line 147 "parse.y"
     {
         (yyval.s) = strdup((yyvsp[(1) - (1)].s));
     }
@@ -1581,7 +1574,7 @@ yyreduce:
 
 
 /* Line 1806 of yacc.c  */
-#line 1585 "../src/parse.cpp"
+#line 1578 "../src/parse.cpp"
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1812,6 +1805,6 @@ yyreturn:
 
 
 /* Line 2067 of yacc.c  */
-#line 158 "parse.y"
+#line 151 "parse.y"
 
 

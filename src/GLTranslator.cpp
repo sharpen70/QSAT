@@ -63,11 +63,16 @@ set<int> GLTranslator::getComplementSet(set<int> Mset) {
             }   
         }
     }  
+    
+//    printf("GL:\n");
+//    for(vector<Rule>::iterator it = GL_nlp.begin(); it != GL_nlp.end(); it++) {
+//        it->output(stdout);
+//    }
     for(int i = 0; i < facts.size(); i++) {
         cons.insert(facts.at(i));
-        for(vector<Rule>::iterator nit = GL_nlp.begin(); nit != GL_nlp.end(); nit++) {
+        for(vector<Rule>::iterator nit = GL_nlp.begin(); nit != GL_nlp.end();) {
             if(facts.at(i) == nit->head) {
-                GL_nlp.erase(nit);
+                nit = GL_nlp.erase(nit);
                 continue;
             }
             for(set<int>::iterator pit = nit->positive_literals.begin();
@@ -80,11 +85,17 @@ set<int> GLTranslator::getComplementSet(set<int> Mset) {
             if(nit->positive_literals.size() == 0) {
                 facts.push_back(nit->head);
                 cons.insert(nit->head);
-                GL_nlp.erase(nit);
+                nit = GL_nlp.erase(nit);
+            }
+            else {
+                nit++;
             }
         }
     }
-    
+//    for(set<int>::iterator it = cons.begin(); it != cons.end(); it++) {
+//        printf("%s ", Vocabulary::instance().getAtom(*it));
+//    }
+//    printf("\n");
     set<int> Cset;
     set<int>::iterator cit = cons.begin();
     set<int>::iterator mit = Mset.begin();

@@ -8,8 +8,8 @@
 #include "SATSolver.h"
 #include "Vocabulary.h"
 
-SATSolver::SATSolver(int num_lits) {
-    num_lits_in_NLP = num_lits;
+SATSolver::SATSolver(int num_lits): init_num(num_lits), num_lits_in_NLP(num_lits) {
+    badEnd = false;
     
     while(num_lits > sat.nVars) {
         sat.newVar();
@@ -19,14 +19,22 @@ SATSolver::SATSolver(int num_lits) {
 SATSolver::~SATSolver() {
 }
 
+void SATSolver::addNewVar(int num) {
+    num_lits_in_NLP += num;
+    
+    while(num-- > 0) {
+        sat.newVar();
+    }
+}
+
 int SATSolver::invokeSAT() {
     int i = 0;
-    while(isExistModel())
+    while(isExistModel() && !badEnd)
         i++;
     return i;
 }
 
-bool SATSolver::addClause(set<int> newClause) {
+bool SATSolver::addNewClause(set<int> newClause) {
     int var;
     vec<Lit> lits;
 
@@ -38,20 +46,24 @@ bool SATSolver::addClause(set<int> newClause) {
     if(lits.size() == 1) {
         if(!sat.addUnit(lits[0])) {
             printf("addUnit failed");
+            badEnd = true;
             return false;
         }
     }
     else {
         if(!sat.addClause(lits)) {
             printf("addClause failed");
+            badEnd = true;
             return false;
         }
     }
+    
+    return true;
 }
 
-bool SATSolver::addClauses(vector<set<int> > newClauses) {
+bool SATSolver::addNewClauses(vector< set<int> > newClauses) {
     for(vector< set<int> >::iterator it = newClauses.begin(); it != newClauses.end(); it++) {
-        if(!addClause(*it)) return false;
+        if(!addNewClause(*it)) return false;
     } 
     
     return true;
@@ -67,7 +79,7 @@ bool SATSolver::isExistModel() {
     if(res) {
         for(int i = 0; i < num_lits_in_NLP; i++) {
             if(sat.model[i]) {
-                model_set.insert(i + 1);
+                if(i < init_num) model_set.insert(i + 1);
                 new_clause.push(~Lit(i));
             }
             else {
@@ -81,7 +93,7 @@ bool SATSolver::isExistModel() {
 //        }
 //        printf("\n");
         if(!sat.addClause(new_clause)) {
-            return false;
+            badEnd = true;
         }
         return true;
     }

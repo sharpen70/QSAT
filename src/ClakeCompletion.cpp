@@ -55,8 +55,8 @@ vector<_formula*> ClakeCompletion::convert() {
             _formula* impl_r = Utils::compositeByConnective(DISJ, ntr, tl);       
             
             
-            completion = Utils::joinFormulas(completion, CNFUtils::convertCNF(impl_l));
-            completion = Utils::joinFormulas(completion, CNFUtils::convertCNF(impl_r));
+            Utils::joinFormulas(completion, CNFUtils::convertCNF(impl_l));
+            Utils::joinFormulas(completion, CNFUtils::convertCNF(impl_r));
         }
         else {
             completion.push_back(tl);
@@ -78,7 +78,7 @@ vector<_formula*> ClakeCompletion::convert() {
         fc = NNFUtils::convertToNegativeNormalForm(fc);
         vector<_formula*> joinf;
         joinf.push_back(fc);
-        completion = Utils::joinFormulas(completion, joinf);
+        Utils::joinFormulas(completion, joinf);
     }
     return completion;
 }

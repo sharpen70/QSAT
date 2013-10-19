@@ -56,14 +56,14 @@ int main(int argc, char** argv) {
 //    yyparse();
 //    fclose(yyin);
     
-    yyin = fopen("res/input/hc2grgai.in", "r");
+    yyin = fopen("res/input/labyin.in", "r");
     yyparse();
     fclose(yyin);
 
-    for(int i = 0; i < G_NLP.size(); i++) {
-        G_NLP.at(i).output(stdout);
-    }
-    printf("\n");
+//    for(int i = 0; i < G_NLP.size(); i++) {
+//        G_NLP.at(i).output(stdout);
+//    }
+//    printf("\n");
 
     ClakeCompletion::instance().setDlp(G_NLP);
     vector<_formula*> completion = ClakeCompletion::instance().convert();
@@ -84,30 +84,65 @@ int main(int argc, char** argv) {
     GLTranslator glt(G_NLP);
     
     SATSolver sat(Vocabulary::instance().apSize());
-    sat.addClauses(input);
-    
+    sat.addNewClauses(input);
+//    sat.invokeSAT();
+//    sat.outputResult();
+    int id = 0;
     while(sat.isExistModel()) {
         set<int> model = sat.models.back();
+       // printf("%d", sat.models.size());
+        printf("Completion model %d ", id++);
+//        for(set<int>::iterator it = model.begin(); it != model.end(); it++) {
+//            printf("%s ", Vocabulary::instance().getAtom(*it));
+//        }
         set<int> comp = glt.getComplementSet(model);
-        
+        printf("comp:\n");
+        for(set<int>::iterator it = comp.begin(); it != comp.end(); it++) {
+            printf("%s ", Vocabulary::instance().getAtom(*it));
+        }
+        printf("\n");
         if(comp.size() == 0) {
             AnswerSets.push_back(model);
+            printf("is Answerset\n");
         }
         else {
+            printf("is't Answerset\n");
             vector<Loop> mls = dpg.findCompMaximal(comp);
             //dpg.findESRules(ml);
             
             for(vector<Loop>::iterator imls = mls.begin(); imls != mls.end();
                     imls++) {
-                vector<_formula*> lfs = dpg.computeLoopFormulas(*imls);
-
-                for(vector<_formula*>::iterator ilfs = lfs.begin(); ilfs != lfs.end(); ilfs++) {
+                printf("\nmaximal loop ");
+                for(set<int>::iterator ct = imls->loopNodes.begin(); ct != imls->loopNodes.end();
+                        ct++) {
+                    printf("%s ", Vocabulary::instance().getAtom(*ct));
+                }
+                printf("\n");
+                int newVarNum = dpg.computeLoopFormulas(*imls);
+                
+                sat.addNewVar(newVarNum);
+                for(vector<_formula*>::iterator ilfs = imls->loopFormulas.begin(); 
+                        ilfs != imls->loopFormulas.end(); ilfs++) {
                     set<int>  lits;
                     Utils::convertCNFformulaToLits(*ilfs, lits);
-                    sat.addClause(lits);
+//                    printf("\nlits\n");
+//                    for(set<int>::iterator dt = lits.begin(); dt != lits.end(); dt++) {
+//                        printf("%d ", *dt);
+//                    }
+                    sat.addNewClause(lits);
                 }
             }
         }
+        if(sat.badEnd) break;
+    }
+    
+    for(vector< set<int> >::iterator it = AnswerSets.begin(); it != AnswerSets.end();
+            it++) {
+        printf("Answerset:");
+        for(set<int>::iterator sit = it->begin(); sit != it->end(); sit++) {
+            printf("%d ", *sit);
+        }
+        printf("\n");
     }
 // use SCC to cancel model
 //    vector<int> k = dpg.getESRSizes();

@@ -70,13 +70,11 @@ rule
         $$->head = $1;
         $$->length = 0;
         $$->type = FACT;
-        printf("FACT\n");
     }
     | literal S_IMPL literals PERIOD{
         $$ = (_rule*)malloc(sizeof(_rule));
         $$->head = $1;
         $$->type = RULE;
-        printf("Rule\n");
         for(int i = 0; i < ($3->length); i++) {
             $$->body[i] = $3->atoms[i];
         }
@@ -86,7 +84,6 @@ rule
         $$ = (_rule*)malloc(sizeof(_rule));
         $$->head = -1;
         $$->type = CONSTRANT;
-        printf("CONSTRAN\n");
         for(int i = 0; i < ($2->length); i++) {
             $$->body[i] = $2->atoms[i];
         }
@@ -111,26 +108,22 @@ literals
 literal
     : S_NEGA atom {
         id = Vocabulary::instance().addAtom($2);
-        printf("literal %d\n", id);
         $$ = -1 * id;
     }
     | atom {
         id = Vocabulary::instance().addAtom($1);
-        printf("literal %d\n", id);
         $$ = id;
     }
 ;
 
 atom
     : S_ATOM LPAREN terms RPAREN {
-        printf("atom\n");
         char str_buff[512];
         
         sprintf(str_buff, "%s(%s)", $1, $3);
         $$ = strdup(str_buff);
     } 
     | S_ATOM {
-        printf("atom %s\n", $1);
         $$ = strdup($1);
     }
 ;

@@ -32,7 +32,7 @@ public:
     
     static void formulaOutput(FILE* out, const _formula* fml);
     
-    static vector<_formula*> joinFormulas(vector<_formula*> des_list, vector<_formula*> join_list);
+    static void joinFormulas(vector<_formula*>& des_list, vector<_formula*> join_list);
     
     static bool inSet(int tag, set<int> list);
     static bool crossSet(set<int> l1, set<int> l2);

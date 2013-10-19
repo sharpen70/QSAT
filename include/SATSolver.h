@@ -21,15 +21,19 @@ public:
     
 //    void invokeSAT();
     int invokeSAT();
+    void addNewVar(int num);
     bool isExistModel();
-    bool addClauses(vector< set<int> > newClauses);
-    bool addClause(set<int> newClause);
+    bool addNewClauses(vector< set<int> > newClauses);
+    bool addNewClause(set<int> newClause);
     void outputResult();
     vector< set<int> > models;
     
+    bool badEnd;
+    
 private:
     Solver sat; 
-    int num_lits_in_NLP;
+    int num_lits_in_NLP; 
+    int init_num;
     
 };
 

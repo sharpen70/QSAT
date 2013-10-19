@@ -52,7 +52,7 @@ public:
     ~DependenceGraph();
 //    void test();                //nonsense, just for test
     
-    vector<_formula*> computeLoopFormulas(Loop loop);
+    int computeLoopFormulas(Loop& loop);
     void operateGraph();
     vector<Loop> getLoopWithESRuleSize(int k);
     vector<int> getESRSizes();

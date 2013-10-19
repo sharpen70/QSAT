@@ -117,12 +117,10 @@ bool Utils::crossSet(set<int> l1, set<int> l2) {
     return false;
 }
 
-vector<_formula*> Utils::joinFormulas(vector<_formula*> des_list, vector<_formula*> join_list) {
+void Utils::joinFormulas(vector<_formula*>& des_list, vector<_formula*> join_list) {
     for(int i = 0; i < join_list.size(); i++) {
         des_list.push_back(join_list.at(i));
     }
-    
-    return des_list;
 }
 
 vector< set<int> > Utils::convertToSATInput(vector<_formula*> cnfDlp) {

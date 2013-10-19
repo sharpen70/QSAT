@@ -8,11 +8,9 @@ Rule::Rule(_rule* r) :
         head(r->head), type(r->type) {
     for(int i = 0; i < (r->length); i++) {
         if(r->body[i] > 0) {
-            printf("p l\n");
             this->positive_literals.insert(r->body[i]);
         }
         else {
-            printf("n l\n");
             this->negative_literals.insert(-1 * r->body[i]);
         }
     }
