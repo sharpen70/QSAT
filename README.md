@@ -1,3 +1,3 @@
-ASSAT
+QSAT
 =====
-This project is to improve ASSAT using our present study
+This project is for the experiment of query entailment of inconsistent ontology
