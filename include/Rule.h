@@ -22,9 +22,10 @@ public:
     set<int> negative_literals;
     set<int> positive_literals;
     int head;
-    
+    int sel_pred;
     RULE_TYPE type;
 public:
+    Rule();
     Rule(_rule* rule);
     Rule(const Rule& _rhs);
     ~Rule();

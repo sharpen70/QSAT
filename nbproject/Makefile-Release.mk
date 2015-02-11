@@ -39,11 +39,9 @@ OBJECTFILES= \
 	${OBJECTDIR}/minisat/Solver.o \
 	${OBJECTDIR}/src/CNFUtils.o \
 	${OBJECTDIR}/src/ClakeCompletion.o \
-	${OBJECTDIR}/src/DependenceGraph.o \
-	${OBJECTDIR}/src/GLTranslator.o \
 	${OBJECTDIR}/src/NNFUtils.o \
 	${OBJECTDIR}/src/Rule.o \
-	${OBJECTDIR}/src/SATSolver.o \
+	${OBJECTDIR}/src/RuleRepair.o \
 	${OBJECTDIR}/src/Utils.o \
 	${OBJECTDIR}/src/Vocabulary.o \
 	${OBJECTDIR}/src/global.o \
@@ -78,78 +76,68 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/assat: ${OBJECTFILES}
 
 ${OBJECTDIR}/minisat/Constraints.o: minisat/Constraints.C 
 	${MKDIR} -p ${OBJECTDIR}/minisat
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/minisat/Constraints.o minisat/Constraints.C
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/minisat/Constraints.o minisat/Constraints.C
 
 ${OBJECTDIR}/minisat/Solver.o: minisat/Solver.C 
 	${MKDIR} -p ${OBJECTDIR}/minisat
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/minisat/Solver.o minisat/Solver.C
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/minisat/Solver.o minisat/Solver.C
 
 ${OBJECTDIR}/src/CNFUtils.o: src/CNFUtils.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CNFUtils.o src/CNFUtils.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/CNFUtils.o src/CNFUtils.cpp
 
 ${OBJECTDIR}/src/ClakeCompletion.o: src/ClakeCompletion.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/ClakeCompletion.o src/ClakeCompletion.cpp
-
-${OBJECTDIR}/src/DependenceGraph.o: src/DependenceGraph.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/DependenceGraph.o src/DependenceGraph.cpp
-
-${OBJECTDIR}/src/GLTranslator.o: src/GLTranslator.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/GLTranslator.o src/GLTranslator.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ClakeCompletion.o src/ClakeCompletion.cpp
 
 ${OBJECTDIR}/src/NNFUtils.o: src/NNFUtils.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/NNFUtils.o src/NNFUtils.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/NNFUtils.o src/NNFUtils.cpp
 
 ${OBJECTDIR}/src/Rule.o: src/Rule.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Rule.o src/Rule.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Rule.o src/Rule.cpp
 
-${OBJECTDIR}/src/SATSolver.o: src/SATSolver.cpp 
+${OBJECTDIR}/src/RuleRepair.o: src/RuleRepair.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/SATSolver.o src/SATSolver.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/RuleRepair.o src/RuleRepair.cpp
 
 ${OBJECTDIR}/src/Utils.o: src/Utils.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Utils.o src/Utils.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Utils.o src/Utils.cpp
 
 ${OBJECTDIR}/src/Vocabulary.o: src/Vocabulary.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Vocabulary.o src/Vocabulary.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Vocabulary.o src/Vocabulary.cpp
 
 ${OBJECTDIR}/src/global.o: src/global.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/global.o src/global.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/global.o src/global.cpp
 
 ${OBJECTDIR}/src/lex.o: src/lex.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/lex.o src/lex.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/lex.o src/lex.cpp
 
 ${OBJECTDIR}/src/main.o: src/main.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/main.o src/main.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/main.o src/main.cpp
 
 ${OBJECTDIR}/src/parse.o: src/parse.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/parse.o src/parse.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/parse.o src/parse.cpp
 
 # Subprojects
 .build-subprojects:

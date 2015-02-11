@@ -4,17 +4,15 @@
  *
  * Created on July 10, 2013, 2:17 PM
  */
-
+#include <cstring>
 #include <cstdlib>
 #include <cstdio>
 #include <assert.h>
 #include "Vocabulary.h"
 #include "structs.h"
 #include "ClakeCompletion.h"
-#include "SATSolver.h"
-#include "DependenceGraph.h"
 #include "CNFUtils.h"
-#include "GLTranslator.h"
+#include "RuleRepair.h"
 #include <set>
 #include <iostream>
 #include <unistd.h>
@@ -28,141 +26,151 @@ using namespace std;
 FILE* fout;
 extern FILE* yyin;
 extern vector<Rule> G_NLP;
+extern vector<Rule> Queries;
 extern int yyparse();
 
 void io(const char* iPathName, const char* oPathName) {
-    yyin = fopen (iPathName, "r");
-    fout = fopen (oPathName, "w+");
+  yyin = fopen (iPathName, "r");
+  fout = fopen (oPathName, "w+");
+  
+  if (! yyin) {
+    printf("IO Error: cannot open the input file.\n" );
+    assert(0);
+  }
+  if (! fout) {
+    printf("IO Error: cannot open the output file.\n");
+    assert(0);
+  }
+}
 
-    if (! yyin) {
-        printf("IO Error: cannot open the input file.\n" );
-        assert(0);
-    }
-    if (! fout) {
-        printf("IO Error: cannot open the output file.\n");
-        assert(0);
-    }
+void testCNF() {
+  Vocabulary::instance().addAtom("a");
+  Vocabulary::instance().addAtom("b");
+  Vocabulary::instance().addAtom("c");
+  Vocabulary::instance().addAtom("d");
+  
+  _formula* a = Utils::compositeToAtom(1);
+  _formula* b = Utils::compositeToAtom(2);
+  _formula* c = Utils::compositeToAtom(3);
+  _formula* d = Utils::compositeToAtom(4);
+  
+  _formula* ac = Utils::compositeByConnective(DISJ, a, c);
+  _formula* bc = Utils::compositeByConnective(DISJ, b, c);
+  _formula* ad = Utils::compositeByConnective(DISJ, a, d);
+  _formula* bd = Utils::compositeByConnective(DISJ, b, d);
+  
+  _formula* acbc = Utils::compositeByConnective(CONJ, ac, bc);
+  _formula* adbd = Utils::compositeByConnective(CONJ, ad, bd);
+  _formula* abcd = Utils::compositeByConnective(DISJ, acbc, adbd);
+  
+  printf("before CNF\n");
+  Utils::formulaOutput(stdout, abcd);printf("\n");
+  
+  printf("after CNF\n");
+  queue<_formula*> aux;
+  abcd = CNFUtils::convertCNFWithAux(abcd, aux);
+  Utils::formulaOutput(stdout, abcd); printf("\n");
+  
+  while(!aux.empty()) {
+    _formula* faux = aux.front();
+    aux.pop();
+    CNFUtils::convertCNFWithAux(faux, aux);
+    Utils::formulaOutput(stdout, faux);printf("\n");
+  }
 }
 
 int main(int argc, char** argv) {
-    
-//    if(argc < 3) {
-//        io("res/input/sample.in","res/output/sample.out");
-//    }
-//    else {
-//        io(argv[1], argv[2]);
-//    }
-//    
-//    yyparse();
-//    fclose(yyin);
-    
-    yyin = fopen("res/input/labyin.in", "r");
-    yyparse();
-    fclose(yyin);
+  int method = 0;
+  fout = stdout;
 
-//    for(int i = 0; i < G_NLP.size(); i++) {
-//        G_NLP.at(i).output(stdout);
-//    }
-//    printf("\n");
-
-    ClakeCompletion::instance().setDlp(G_NLP);
-    vector<_formula*> completion = ClakeCompletion::instance().convert();
-    vector< set<int> > input = Utils::convertToSATInput(completion);
-    
-//    SATSolver sat(input, Vocabulary::instance().apSize());
-//    sat.invokeSAT();
-//    printf("Models: %d\n", sat.models.size());
- //   sat.outputResult();
-   
-    DependenceGraph dpg(G_NLP);
- //   dpg.operateGraph();
-    
- //   dpg.printfLoop();
-
-// ASSAT
-    vector< set<int> > AnswerSets;
-    GLTranslator glt(G_NLP);
-    
-    SATSolver sat(Vocabulary::instance().apSize());
-    sat.addNewClauses(input);
-//    sat.invokeSAT();
-//    sat.outputResult();
-    int id = 0;
-    while(sat.isExistModel()) {
-        set<int> model = sat.models.back();
-       // printf("%d", sat.models.size());
-        printf("Completion model %d ", id++);
-//        for(set<int>::iterator it = model.begin(); it != model.end(); it++) {
-//            printf("%s ", Vocabulary::instance().getAtom(*it));
-//        }
-        set<int> comp = glt.getComplementSet(model);
-        printf("comp:\n");
-        for(set<int>::iterator it = comp.begin(); it != comp.end(); it++) {
-            printf("%s ", Vocabulary::instance().getAtom(*it));
+  if(argc < 2) {
+    yyin = fopen("res/input/example", "r");
+    fout = fopen("res/output/sample.out", "w+");
+  }
+  else {
+    int extra = 0;
+    int files = 0;
+    for(int i = 0; i < argc; i++) {
+      if(extra < 1) {
+        if(strcmp(argv[i], "-qbf") == 0) method = 0;
+        if(strcmp(argv[i], "-sat") == 0) method = 1;
+      }
+      if(files < 2) {
+        if(strncmp(argv[i], "-", 1) != 0) {
+          if(files == 0) yyin = fopen(argv[i], "r");
+          if(files == 1) fout = fopen(argv[i], "w+");
         }
-        printf("\n");
-        if(comp.size() == 0) {
-            AnswerSets.push_back(model);
-            printf("is Answerset\n");
-        }
-        else {
-            printf("is't Answerset\n");
-            vector<Loop> mls = dpg.findCompMaximal(comp);
-            //dpg.findESRules(ml);
-            
-            for(vector<Loop>::iterator imls = mls.begin(); imls != mls.end();
-                    imls++) {
-                printf("\nmaximal loop ");
-                for(set<int>::iterator ct = imls->loopNodes.begin(); ct != imls->loopNodes.end();
-                        ct++) {
-                    printf("%s ", Vocabulary::instance().getAtom(*ct));
-                }
-                printf("\n");
-                int newVarNum = dpg.computeLoopFormulas(*imls);
-                
-                sat.addNewVar(newVarNum);
-                for(vector<_formula*>::iterator ilfs = imls->loopFormulas.begin(); 
-                        ilfs != imls->loopFormulas.end(); ilfs++) {
-                    set<int>  lits;
-                    Utils::convertCNFformulaToLits(*ilfs, lits);
-//                    printf("\nlits\n");
-//                    for(set<int>::iterator dt = lits.begin(); dt != lits.end(); dt++) {
-//                        printf("%d ", *dt);
-//                    }
-                    sat.addNewClause(lits);
-                }
-            }
-        }
-        if(sat.badEnd) break;
+      }
     }
+  }  
+  
+  yyparse();
+  fclose(yyin);
+
+//  for(int i = 0; i < G_NLP.size(); i++) {
+//      G_NLP.at(i).output(stdout);
+//  }
+//  printf("\n");
+  
+//  //testCNF();
+  if(method == 0) {
+    RepairQBF RQBF(G_NLP, Queries);
+    vector<_formula*> fQBF;
+    RQBF.computeRepairQBFFormula(fQBF);
+    vector< set<int> > input = Utils::convertToSATInput(fQBF);
     
-    for(vector< set<int> >::iterator it = AnswerSets.begin(); it != AnswerSets.end();
-            it++) {
-        printf("Answerset:");
-        for(set<int>::iterator sit = it->begin(); sit != it->end(); sit++) {
-            printf("%d ", *sit);
-        }
-        printf("\n");
+    int varNum = Vocabulary::instance().newAux(0) - 1;
+    fprintf(fout, "p cnf %d %ld\n", varNum, input.size());
+    vector<int> evarNum;
+    for(int i = 1; i <= varNum; i++) evarNum.push_back(i);
+    //Existential Predicate
+    fprintf(fout, "e ");
+    vector<int>& p = RQBF.choicePred;
+    for(size_t i = 0; i < p.size(); i++) {
+      fprintf(fout, "%d ", p[i]);
+      evarNum[p[i] - 1] = 0;
     }
-// use SCC to cancel model
-//    vector<int> k = dpg.getESRSizes();
-//    
-//    for(vector<int>::iterator kit = k.begin(); kit != k.end(); kit++) {
-//        vector<Loop> loops = dpg.getLoopWithESRuleSize(*kit);
-//        for(vector<Loop>::iterator it = loops.begin(); it != loops.end(); it++) {
-//            vector<_formula*> lfs = dpg.computeLoopFormulas(*it);
-//
-//            for(vector<_formula*>::iterator ilfs = lfs.begin(); ilfs != lfs.end(); ilfs++) {
-//                set<int>  lits;
-//                Utils::convertCNFformulaToLits(*ilfs, lits);
-//                input.push_back(lits);
-//            }            
-//        }
-//
-//        SATSolver sats(input, Vocabulary::instance().apSize());
-//        sats.invokeSAT();
-//        printf("Models: %d\n", sats.models.size());
-//    }
-//    
-    return 0;
+    fprintf(fout, "0\n");
+    //Universal Predicate
+    fprintf(fout, "a ");
+    vector<int>& isp = RQBF.isomChoicePred;
+    for(size_t i = 0; i < isp.size(); i++) {
+      fprintf(fout, "%d ", isp[i]);
+      evarNum[isp[i] - 1] = 0;
+    }
+    fprintf(fout, "0\n");
+    //Existential Predicate
+    fprintf(fout, "e ");
+    for(size_t i = 0; i < evarNum.size(); i++) {
+      if(evarNum[i] == 0) continue;
+      fprintf(fout, "%d ", evarNum[i]);
+    }
+    fprintf(fout, "0\n");
+    //SAT clause
+    for(size_t i = 0; i< input.size(); i++) {
+      for(set<int>::iterator it = input[i].begin(); it != input[i].end(); it++) {
+        fprintf(fout, "%d ", *it);
+      }
+      fprintf(fout, "0\n");
+    }
+  }
+  if(method == 1) {
+    RepairSAT RSAT(G_NLP, Queries);
+    vector<_formula*> fSAT;
+    RSAT.computeRepairSATFormula(fSAT);
+    
+    vector< set<int> > input = Utils::convertToSATInput(fSAT);
+    
+    int varNum = Vocabulary::instance().newAux(0) - 1;
+    fprintf(fout, "p cnf %d %ld\n", varNum, input.size());
+    
+    for(size_t i = 0; i< input.size(); i++) {
+      for(set<int>::iterator it = input[i].begin(); it != input[i].end(); it++) {
+        fprintf(fout, "%d ", *it);
+      }
+      fprintf(fout, "0\n");
+    }
+  }
+  
+  return 0;
 }

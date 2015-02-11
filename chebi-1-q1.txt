@@ -1,0 +1,750 @@
+chebi_1040(c_chebi_1040).
+acetate(c_acetate).
+sel0:-not nsel0.
+nsel0:-not sel0.
+molecule(c_chebi_1040):-sel0.
+sel1:-not nsel1.
+nsel1:-not sel1.
+n(f_chebi_1040_1(c_chebi_1040)):-sel1.
+sel2:-not nsel2.
+nsel2:-not sel2.
+c(f_chebi_1040_2(c_chebi_1040)):-sel2.
+sel3:-not nsel3.
+nsel3:-not sel3.
+n(f_chebi_1040_3(c_chebi_1040)):-sel3.
+sel4:-not nsel4.
+nsel4:-not sel4.
+c(f_chebi_1040_4(c_chebi_1040)):-sel4.
+sel5:-not nsel5.
+nsel5:-not sel5.
+n(f_chebi_1040_5(c_chebi_1040)):-sel5.
+sel6:-not nsel6.
+nsel6:-not sel6.
+c(f_chebi_1040_6(c_chebi_1040)):-sel6.
+sel7:-not nsel7.
+nsel7:-not sel7.
+o(f_chebi_1040_7(c_chebi_1040)):-sel7.
+sel8:-not nsel8.
+nsel8:-not sel8.
+o(f_chebi_1040_8(c_chebi_1040)):-sel8.
+sel9:-not nsel9.
+nsel9:-not sel9.
+cl(f_chebi_1040_9(c_chebi_1040)):-sel9.
+sel10:-not nsel10.
+nsel10:-not sel10.
+h(f_chebi_1040_10(c_chebi_1040)):-sel10.
+sel11:-not nsel11.
+nsel11:-not sel11.
+h(f_chebi_1040_11(c_chebi_1040)):-sel11.
+sel12:-not nsel12.
+nsel12:-not sel12.
+hasAtom(c_chebi_1040,f_chebi_1040_1(c_chebi_1040)):-sel12.
+sel13:-not nsel13.
+nsel13:-not sel13.
+hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040)):-sel13.
+sel14:-not nsel14.
+nsel14:-not sel14.
+hasAtom(c_chebi_1040,f_chebi_1040_3(c_chebi_1040)):-sel14.
+sel15:-not nsel15.
+nsel15:-not sel15.
+hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040)):-sel15.
+sel16:-not nsel16.
+nsel16:-not sel16.
+hasAtom(c_chebi_1040,f_chebi_1040_5(c_chebi_1040)):-sel16.
+sel17:-not nsel17.
+nsel17:-not sel17.
+hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040)):-sel17.
+sel18:-not nsel18.
+nsel18:-not sel18.
+hasAtom(c_chebi_1040,f_chebi_1040_7(c_chebi_1040)):-sel18.
+sel19:-not nsel19.
+nsel19:-not sel19.
+hasAtom(c_chebi_1040,f_chebi_1040_8(c_chebi_1040)):-sel19.
+sel20:-not nsel20.
+nsel20:-not sel20.
+hasAtom(c_chebi_1040,f_chebi_1040_9(c_chebi_1040)):-sel20.
+sel21:-not nsel21.
+nsel21:-not sel21.
+single(f_chebi_1040_2(c_chebi_1040),f_chebi_1040_1(c_chebi_1040)):-sel21.
+sel22:-not nsel22.
+nsel22:-not sel22.
+single(f_chebi_1040_1(c_chebi_1040),f_chebi_1040_2(c_chebi_1040)):-sel22.
+sel23:-not nsel23.
+nsel23:-not sel23.
+double(f_chebi_1040_6(c_chebi_1040),f_chebi_1040_1(c_chebi_1040)):-sel23.
+sel24:-not nsel24.
+nsel24:-not sel24.
+double(f_chebi_1040_1(c_chebi_1040),f_chebi_1040_6(c_chebi_1040)):-sel24.
+sel25:-not nsel25.
+nsel25:-not sel25.
+double(f_chebi_1040_3(c_chebi_1040),f_chebi_1040_2(c_chebi_1040)):-sel25.
+sel26:-not nsel26.
+nsel26:-not sel26.
+double(f_chebi_1040_2(c_chebi_1040),f_chebi_1040_3(c_chebi_1040)):-sel26.
+sel27:-not nsel27.
+nsel27:-not sel27.
+single(f_chebi_1040_7(c_chebi_1040),f_chebi_1040_2(c_chebi_1040)):-sel27.
+sel28:-not nsel28.
+nsel28:-not sel28.
+single(f_chebi_1040_2(c_chebi_1040),f_chebi_1040_7(c_chebi_1040)):-sel28.
+sel29:-not nsel29.
+nsel29:-not sel29.
+single(f_chebi_1040_4(c_chebi_1040),f_chebi_1040_3(c_chebi_1040)):-sel29.
+sel30:-not nsel30.
+nsel30:-not sel30.
+single(f_chebi_1040_3(c_chebi_1040),f_chebi_1040_4(c_chebi_1040)):-sel30.
+sel31:-not nsel31.
+nsel31:-not sel31.
+double(f_chebi_1040_5(c_chebi_1040),f_chebi_1040_4(c_chebi_1040)):-sel31.
+sel32:-not nsel32.
+nsel32:-not sel32.
+double(f_chebi_1040_4(c_chebi_1040),f_chebi_1040_5(c_chebi_1040)):-sel32.
+sel33:-not nsel33.
+nsel33:-not sel33.
+single(f_chebi_1040_8(c_chebi_1040),f_chebi_1040_4(c_chebi_1040)):-sel33.
+sel34:-not nsel34.
+nsel34:-not sel34.
+single(f_chebi_1040_4(c_chebi_1040),f_chebi_1040_8(c_chebi_1040)):-sel34.
+sel35:-not nsel35.
+nsel35:-not sel35.
+single(f_chebi_1040_6(c_chebi_1040),f_chebi_1040_5(c_chebi_1040)):-sel35.
+sel36:-not nsel36.
+nsel36:-not sel36.
+single(f_chebi_1040_5(c_chebi_1040),f_chebi_1040_6(c_chebi_1040)):-sel36.
+sel37:-not nsel37.
+nsel37:-not sel37.
+single(f_chebi_1040_9(c_chebi_1040),f_chebi_1040_6(c_chebi_1040)):-sel37.
+sel38:-not nsel38.
+nsel38:-not sel38.
+single(f_chebi_1040_6(c_chebi_1040),f_chebi_1040_9(c_chebi_1040)):-sel38.
+sel39:-not nsel39.
+nsel39:-not sel39.
+single(f_chebi_1040_6(c_chebi_1040),f_chebi_1040_10(c_chebi_1040)):-sel39.
+sel40:-not nsel40.
+nsel40:-not sel40.
+single(f_chebi_1040_10(c_chebi_1040),f_chebi_1040_6(c_chebi_1040)):-sel40.
+sel41:-not nsel41.
+nsel41:-not sel41.
+hasAtom(c_chebi_1040,f_chebi_1040_10(c_chebi_1040)):-sel41.
+sel42:-not nsel42.
+nsel42:-not sel42.
+single(f_chebi_1040_7(c_chebi_1040),f_chebi_1040_11(c_chebi_1040)):-sel42.
+sel43:-not nsel43.
+nsel43:-not sel43.
+single(f_chebi_1040_11(c_chebi_1040),f_chebi_1040_7(c_chebi_1040)):-sel43.
+sel44:-not nsel44.
+nsel44:-not sel44.
+hasAtom(c_chebi_1040,f_chebi_1040_11(c_chebi_1040)):-sel44.
+sel51:-not nsel51.
+nsel51:-not sel51.
+sel48:-not nsel48.
+nsel48:-not sel48.
+sel49:-not nsel49.
+nsel49:-not sel49.
+sel50:-not nsel50.
+nsel50:-not sel50.
+sel52:-not nsel52.
+nsel52:-not sel52.
+sel53:-not nsel53.
+nsel53:-not sel53.
+sel54:-not nsel54.
+nsel54:-not sel54.
+sel55:-not nsel55.
+nsel55:-not sel55.
+sel56:-not nsel56.
+nsel56:-not sel56.
+sel57:-not nsel57.
+nsel57:-not sel57.
+sel58:-not nsel58.
+nsel58:-not sel58.
+sel59:-not nsel59.
+nsel59:-not sel59.
+sel60:-not nsel60.
+nsel60:-not sel60.
+sel61:-not nsel61.
+nsel61:-not sel61.
+sel64:-not nsel64.
+nsel64:-not sel64.
+sel65:-not nsel65.
+nsel65:-not sel65.
+sel66:-not nsel66.
+nsel66:-not sel66.
+sel67:-not nsel67.
+nsel67:-not sel67.
+sel62:-not nsel62.
+nsel62:-not sel62.
+sel63:-not nsel63.
+nsel63:-not sel63.
+sel68:-not nsel68.
+nsel68:-not sel68.
+sel69:-not nsel69.
+nsel69:-not sel69.
+sel70:-not nsel70.
+nsel70:-not sel70.
+sel71:-not nsel71.
+nsel71:-not sel71.
+sel72:-not nsel72.
+nsel72:-not sel72.
+sel73:-not nsel73.
+nsel73:-not sel73.
+sel74:-not nsel74.
+nsel74:-not sel74.
+sel75:-not nsel75.
+nsel75:-not sel75.
+sel76:-not nsel76.
+nsel76:-not sel76.
+sel77:-not nsel77.
+nsel77:-not sel77.
+sel78:-not nsel78.
+nsel78:-not sel78.
+sel79:-not nsel79.
+nsel79:-not sel79.
+sel80:-not nsel80.
+nsel80:-not sel80.
+sel81:-not nsel81.
+nsel81:-not sel81.
+sel82:-not nsel82.
+nsel82:-not sel82.
+sel83:-not nsel83.
+nsel83:-not sel83.
+sel46:-not nsel46.
+nsel46:-not sel46.
+sel47:-not nsel47.
+nsel47:-not sel47.
+sel45:-not nsel45.
+nsel45:-not sel45.
+hasAtom(c_acetate,f_acetate_8(c_acetate)):-not r_acetate(c_acetate);sel75.
+hasAtom(c_acetate,f_acetate_7(c_acetate)):-not r_acetate(c_acetate);sel74.
+hasAtom(c_acetate,f_acetate_6(c_acetate)):-not r_acetate(c_acetate);sel73.
+hasAtom(c_acetate,f_acetate_5(c_acetate)):-not r_acetate(c_acetate);sel72.
+hasAtom(c_acetate,f_acetate_4(c_acetate)):-not r_acetate(c_acetate);sel71.
+hasAtom(c_acetate,f_acetate_3(c_acetate)):-not r_acetate(c_acetate);sel70.
+hasAtom(c_acetate,f_acetate_2(c_acetate)):-not r_acetate(c_acetate);sel69.
+hasAtom(c_acetate,f_acetate_1(c_acetate)):-not r_acetate(c_acetate);sel68.
+double(f_acetate_6(c_acetate),f_acetate_5(c_acetate)):-not r_acetate(c_acetate);sel63.
+double(f_acetate_5(c_acetate),f_acetate_6(c_acetate)):-not r_acetate(c_acetate);sel62.
+single(f_acetate_8(c_acetate),f_acetate_7(c_acetate)):-not r_acetate(c_acetate);sel67.
+single(f_acetate_7(c_acetate),f_acetate_8(c_acetate)):-not r_acetate(c_acetate);sel66.
+single(f_acetate_7(c_acetate),f_acetate_5(c_acetate)):-not r_acetate(c_acetate);sel65.
+single(f_acetate_5(c_acetate),f_acetate_7(c_acetate)):-not r_acetate(c_acetate);sel64.
+single(f_acetate_5(c_acetate),f_acetate_1(c_acetate)):-not r_acetate(c_acetate);sel61.
+single(f_acetate_1(c_acetate),f_acetate_5(c_acetate)):-not r_acetate(c_acetate);sel60.
+single(f_acetate_4(c_acetate),f_acetate_1(c_acetate)):-not r_acetate(c_acetate);sel59.
+single(f_acetate_1(c_acetate),f_acetate_4(c_acetate)):-not r_acetate(c_acetate);sel58.
+single(f_acetate_3(c_acetate),f_acetate_1(c_acetate)):-not r_acetate(c_acetate);sel57.
+single(f_acetate_1(c_acetate),f_acetate_3(c_acetate)):-not r_acetate(c_acetate);sel56.
+single(f_acetate_2(c_acetate),f_acetate_1(c_acetate)):-not r_acetate(c_acetate);sel55.
+single(f_acetate_1(c_acetate),f_acetate_2(c_acetate)):-not r_acetate(c_acetate);sel54.
+o(f_acetate_7(c_acetate)):-not r_acetate(c_acetate);sel53.
+o(f_acetate_6(c_acetate)):-not r_acetate(c_acetate);sel52.
+h(f_acetate_4(c_acetate)):-not r_acetate(c_acetate);sel50.
+h(f_acetate_3(c_acetate)):-not r_acetate(c_acetate);sel49.
+h(f_acetate_2(c_acetate)):-not r_acetate(c_acetate);sel48.
+c(f_acetate_5(c_acetate)):-not r_acetate(c_acetate);sel51.
+c(f_acetate_1(c_acetate)):-not r_acetate(c_acetate);sel47.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_4(c_acetate));h(f_acetate_4(c_acetate));h(f_acetate_4(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_8(c_acetate));single(f_acetate_8(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_8(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_8(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_4(c_acetate));h(f_acetate_4(c_acetate));h(f_acetate_4(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_5(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_4(c_acetate));h(f_acetate_4(c_acetate));h(f_acetate_3(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_8(c_acetate));single(f_acetate_8(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_8(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_8(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_4(c_acetate));h(f_acetate_4(c_acetate));h(f_acetate_3(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_5(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_4(c_acetate));h(f_acetate_4(c_acetate));h(f_acetate_2(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_8(c_acetate));single(f_acetate_8(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_8(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_8(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_4(c_acetate));h(f_acetate_4(c_acetate));h(f_acetate_2(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_5(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_4(c_acetate));h(f_acetate_3(c_acetate));h(f_acetate_4(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_8(c_acetate));single(f_acetate_8(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_8(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_8(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_4(c_acetate));h(f_acetate_3(c_acetate));h(f_acetate_4(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_5(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_4(c_acetate));h(f_acetate_3(c_acetate));h(f_acetate_3(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_8(c_acetate));single(f_acetate_8(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_8(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_8(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_4(c_acetate));h(f_acetate_3(c_acetate));h(f_acetate_3(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_5(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_4(c_acetate));h(f_acetate_3(c_acetate));h(f_acetate_2(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_8(c_acetate));single(f_acetate_8(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_8(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_8(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_4(c_acetate));h(f_acetate_3(c_acetate));h(f_acetate_2(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_5(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_4(c_acetate));h(f_acetate_2(c_acetate));h(f_acetate_4(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_8(c_acetate));single(f_acetate_8(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_8(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_8(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_4(c_acetate));h(f_acetate_2(c_acetate));h(f_acetate_4(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_5(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_4(c_acetate));h(f_acetate_2(c_acetate));h(f_acetate_3(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_8(c_acetate));single(f_acetate_8(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_8(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_8(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_4(c_acetate));h(f_acetate_2(c_acetate));h(f_acetate_3(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_5(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_4(c_acetate));h(f_acetate_2(c_acetate));h(f_acetate_2(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_8(c_acetate));single(f_acetate_8(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_8(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_8(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_4(c_acetate));h(f_acetate_2(c_acetate));h(f_acetate_2(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_5(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_3(c_acetate));h(f_acetate_4(c_acetate));h(f_acetate_4(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_8(c_acetate));single(f_acetate_8(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_8(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_8(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_3(c_acetate));h(f_acetate_4(c_acetate));h(f_acetate_4(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_5(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_3(c_acetate));h(f_acetate_4(c_acetate));h(f_acetate_3(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_8(c_acetate));single(f_acetate_8(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_8(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_8(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_3(c_acetate));h(f_acetate_4(c_acetate));h(f_acetate_3(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_5(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_3(c_acetate));h(f_acetate_4(c_acetate));h(f_acetate_2(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_8(c_acetate));single(f_acetate_8(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_8(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_8(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_3(c_acetate));h(f_acetate_4(c_acetate));h(f_acetate_2(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_5(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_3(c_acetate));h(f_acetate_3(c_acetate));h(f_acetate_4(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_8(c_acetate));single(f_acetate_8(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_8(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_8(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_3(c_acetate));h(f_acetate_3(c_acetate));h(f_acetate_4(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_5(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_3(c_acetate));h(f_acetate_3(c_acetate));h(f_acetate_3(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_8(c_acetate));single(f_acetate_8(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_8(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_8(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_3(c_acetate));h(f_acetate_3(c_acetate));h(f_acetate_3(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_5(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_3(c_acetate));h(f_acetate_3(c_acetate));h(f_acetate_2(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_8(c_acetate));single(f_acetate_8(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_8(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_8(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_3(c_acetate));h(f_acetate_3(c_acetate));h(f_acetate_2(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_5(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_3(c_acetate));h(f_acetate_2(c_acetate));h(f_acetate_4(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_8(c_acetate));single(f_acetate_8(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_8(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_8(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_3(c_acetate));h(f_acetate_2(c_acetate));h(f_acetate_4(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_5(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_3(c_acetate));h(f_acetate_2(c_acetate));h(f_acetate_3(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_8(c_acetate));single(f_acetate_8(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_8(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_8(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_3(c_acetate));h(f_acetate_2(c_acetate));h(f_acetate_3(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_5(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_3(c_acetate));h(f_acetate_2(c_acetate));h(f_acetate_2(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_8(c_acetate));single(f_acetate_8(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_8(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_8(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_3(c_acetate));h(f_acetate_2(c_acetate));h(f_acetate_2(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_5(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_2(c_acetate));h(f_acetate_4(c_acetate));h(f_acetate_4(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_8(c_acetate));single(f_acetate_8(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_8(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_8(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_2(c_acetate));h(f_acetate_4(c_acetate));h(f_acetate_4(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_5(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_2(c_acetate));h(f_acetate_4(c_acetate));h(f_acetate_3(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_8(c_acetate));single(f_acetate_8(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_8(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_8(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_2(c_acetate));h(f_acetate_4(c_acetate));h(f_acetate_3(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_5(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_2(c_acetate));h(f_acetate_4(c_acetate));h(f_acetate_2(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_8(c_acetate));single(f_acetate_8(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_8(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_8(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_2(c_acetate));h(f_acetate_4(c_acetate));h(f_acetate_2(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_5(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_2(c_acetate));h(f_acetate_3(c_acetate));h(f_acetate_4(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_8(c_acetate));single(f_acetate_8(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_8(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_8(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_2(c_acetate));h(f_acetate_3(c_acetate));h(f_acetate_4(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_5(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_2(c_acetate));h(f_acetate_3(c_acetate));h(f_acetate_3(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_8(c_acetate));single(f_acetate_8(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_8(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_8(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_2(c_acetate));h(f_acetate_3(c_acetate));h(f_acetate_3(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_5(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_2(c_acetate));h(f_acetate_3(c_acetate));h(f_acetate_2(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_8(c_acetate));single(f_acetate_8(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_8(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_8(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_2(c_acetate));h(f_acetate_3(c_acetate));h(f_acetate_2(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_5(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_2(c_acetate));h(f_acetate_2(c_acetate));h(f_acetate_4(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_8(c_acetate));single(f_acetate_8(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_8(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_8(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_2(c_acetate));h(f_acetate_2(c_acetate));h(f_acetate_4(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_4(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_5(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_2(c_acetate));h(f_acetate_2(c_acetate));h(f_acetate_3(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_8(c_acetate));single(f_acetate_8(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_8(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_8(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_2(c_acetate));h(f_acetate_2(c_acetate));h(f_acetate_3(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_3(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_5(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_2(c_acetate));h(f_acetate_2(c_acetate));h(f_acetate_2(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_8(c_acetate));single(f_acetate_8(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_8(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_8(c_acetate));sel46.
+r_acetate(c_acetate):-c(f_acetate_1(c_acetate));h(f_acetate_2(c_acetate));h(f_acetate_2(c_acetate));h(f_acetate_2(c_acetate));c(f_acetate_5(c_acetate));o(f_acetate_6(c_acetate));o(f_acetate_7(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));not g_acetate(f_acetate_1(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_2(c_acetate));not g_acetate(f_acetate_5(c_acetate));not g_acetate(f_acetate_6(c_acetate));not g_acetate(f_acetate_7(c_acetate));not g_acetate(f_acetate_5(c_acetate));sel46.
+g_acetate(f_acetate_1(c_acetate)):-not r_acetate(c_acetate);sel76.
+g_acetate(f_acetate_2(c_acetate)):-not r_acetate(c_acetate);sel77.
+g_acetate(f_acetate_3(c_acetate)):-not r_acetate(c_acetate);sel78.
+g_acetate(f_acetate_4(c_acetate)):-not r_acetate(c_acetate);sel79.
+g_acetate(f_acetate_5(c_acetate)):-not r_acetate(c_acetate);sel80.
+g_acetate(f_acetate_6(c_acetate)):-not r_acetate(c_acetate);sel81.
+g_acetate(f_acetate_7(c_acetate)):-not r_acetate(c_acetate);sel82.
+g_acetate(f_acetate_8(c_acetate)):-not r_acetate(c_acetate);sel83.
+sel84:-not nsel84.
+nsel84:-not sel84.
+bond(f_chebi_1040_2(c_chebi_1040),f_chebi_1040_1(c_chebi_1040)):-single(f_chebi_1040_2(c_chebi_1040),f_chebi_1040_1(c_chebi_1040));sel84.
+bond(f_chebi_1040_1(c_chebi_1040),f_chebi_1040_2(c_chebi_1040)):-single(f_chebi_1040_1(c_chebi_1040),f_chebi_1040_2(c_chebi_1040));sel84.
+bond(f_chebi_1040_7(c_chebi_1040),f_chebi_1040_2(c_chebi_1040)):-single(f_chebi_1040_7(c_chebi_1040),f_chebi_1040_2(c_chebi_1040));sel84.
+bond(f_chebi_1040_2(c_chebi_1040),f_chebi_1040_7(c_chebi_1040)):-single(f_chebi_1040_2(c_chebi_1040),f_chebi_1040_7(c_chebi_1040));sel84.
+bond(f_chebi_1040_4(c_chebi_1040),f_chebi_1040_3(c_chebi_1040)):-single(f_chebi_1040_4(c_chebi_1040),f_chebi_1040_3(c_chebi_1040));sel84.
+bond(f_chebi_1040_3(c_chebi_1040),f_chebi_1040_4(c_chebi_1040)):-single(f_chebi_1040_3(c_chebi_1040),f_chebi_1040_4(c_chebi_1040));sel84.
+bond(f_chebi_1040_8(c_chebi_1040),f_chebi_1040_4(c_chebi_1040)):-single(f_chebi_1040_8(c_chebi_1040),f_chebi_1040_4(c_chebi_1040));sel84.
+bond(f_chebi_1040_4(c_chebi_1040),f_chebi_1040_8(c_chebi_1040)):-single(f_chebi_1040_4(c_chebi_1040),f_chebi_1040_8(c_chebi_1040));sel84.
+bond(f_chebi_1040_6(c_chebi_1040),f_chebi_1040_5(c_chebi_1040)):-single(f_chebi_1040_6(c_chebi_1040),f_chebi_1040_5(c_chebi_1040));sel84.
+bond(f_chebi_1040_5(c_chebi_1040),f_chebi_1040_6(c_chebi_1040)):-single(f_chebi_1040_5(c_chebi_1040),f_chebi_1040_6(c_chebi_1040));sel84.
+bond(f_chebi_1040_9(c_chebi_1040),f_chebi_1040_6(c_chebi_1040)):-single(f_chebi_1040_9(c_chebi_1040),f_chebi_1040_6(c_chebi_1040));sel84.
+bond(f_chebi_1040_6(c_chebi_1040),f_chebi_1040_9(c_chebi_1040)):-single(f_chebi_1040_6(c_chebi_1040),f_chebi_1040_9(c_chebi_1040));sel84.
+bond(f_chebi_1040_6(c_chebi_1040),f_chebi_1040_10(c_chebi_1040)):-single(f_chebi_1040_6(c_chebi_1040),f_chebi_1040_10(c_chebi_1040));sel84.
+bond(f_chebi_1040_10(c_chebi_1040),f_chebi_1040_6(c_chebi_1040)):-single(f_chebi_1040_10(c_chebi_1040),f_chebi_1040_6(c_chebi_1040));sel84.
+bond(f_chebi_1040_7(c_chebi_1040),f_chebi_1040_11(c_chebi_1040)):-single(f_chebi_1040_7(c_chebi_1040),f_chebi_1040_11(c_chebi_1040));sel84.
+bond(f_chebi_1040_11(c_chebi_1040),f_chebi_1040_7(c_chebi_1040)):-single(f_chebi_1040_11(c_chebi_1040),f_chebi_1040_7(c_chebi_1040));sel84.
+bond(f_acetate_8(c_acetate),f_acetate_7(c_acetate)):-single(f_acetate_8(c_acetate),f_acetate_7(c_acetate));sel84.
+bond(f_acetate_7(c_acetate),f_acetate_8(c_acetate)):-single(f_acetate_7(c_acetate),f_acetate_8(c_acetate));sel84.
+bond(f_acetate_7(c_acetate),f_acetate_5(c_acetate)):-single(f_acetate_7(c_acetate),f_acetate_5(c_acetate));sel84.
+bond(f_acetate_5(c_acetate),f_acetate_7(c_acetate)):-single(f_acetate_5(c_acetate),f_acetate_7(c_acetate));sel84.
+bond(f_acetate_5(c_acetate),f_acetate_1(c_acetate)):-single(f_acetate_5(c_acetate),f_acetate_1(c_acetate));sel84.
+bond(f_acetate_1(c_acetate),f_acetate_5(c_acetate)):-single(f_acetate_1(c_acetate),f_acetate_5(c_acetate));sel84.
+bond(f_acetate_4(c_acetate),f_acetate_1(c_acetate)):-single(f_acetate_4(c_acetate),f_acetate_1(c_acetate));sel84.
+bond(f_acetate_1(c_acetate),f_acetate_4(c_acetate)):-single(f_acetate_1(c_acetate),f_acetate_4(c_acetate));sel84.
+bond(f_acetate_3(c_acetate),f_acetate_1(c_acetate)):-single(f_acetate_3(c_acetate),f_acetate_1(c_acetate));sel84.
+bond(f_acetate_1(c_acetate),f_acetate_3(c_acetate)):-single(f_acetate_1(c_acetate),f_acetate_3(c_acetate));sel84.
+bond(f_acetate_2(c_acetate),f_acetate_1(c_acetate)):-single(f_acetate_2(c_acetate),f_acetate_1(c_acetate));sel84.
+bond(f_acetate_1(c_acetate),f_acetate_2(c_acetate)):-single(f_acetate_1(c_acetate),f_acetate_2(c_acetate));sel84.
+sel85:-not nsel85.
+nsel85:-not sel85.
+bond(f_chebi_1040_6(c_chebi_1040),f_chebi_1040_1(c_chebi_1040)):-double(f_chebi_1040_6(c_chebi_1040),f_chebi_1040_1(c_chebi_1040));sel85.
+bond(f_chebi_1040_1(c_chebi_1040),f_chebi_1040_6(c_chebi_1040)):-double(f_chebi_1040_1(c_chebi_1040),f_chebi_1040_6(c_chebi_1040));sel85.
+bond(f_chebi_1040_3(c_chebi_1040),f_chebi_1040_2(c_chebi_1040)):-double(f_chebi_1040_3(c_chebi_1040),f_chebi_1040_2(c_chebi_1040));sel85.
+bond(f_chebi_1040_2(c_chebi_1040),f_chebi_1040_3(c_chebi_1040)):-double(f_chebi_1040_2(c_chebi_1040),f_chebi_1040_3(c_chebi_1040));sel85.
+bond(f_chebi_1040_5(c_chebi_1040),f_chebi_1040_4(c_chebi_1040)):-double(f_chebi_1040_5(c_chebi_1040),f_chebi_1040_4(c_chebi_1040));sel85.
+bond(f_chebi_1040_4(c_chebi_1040),f_chebi_1040_5(c_chebi_1040)):-double(f_chebi_1040_4(c_chebi_1040),f_chebi_1040_5(c_chebi_1040));sel85.
+bond(f_acetate_6(c_acetate),f_acetate_5(c_acetate)):-double(f_acetate_6(c_acetate),f_acetate_5(c_acetate));sel85.
+bond(f_acetate_5(c_acetate),f_acetate_6(c_acetate)):-double(f_acetate_5(c_acetate),f_acetate_6(c_acetate));sel85.
+sel86:-not nsel86.
+nsel86:-not sel86.
+sel87:-not nsel87.
+nsel87:-not sel87.
+sel88:-not nsel88.
+nsel88:-not sel88.
+sel89:-not nsel89.
+nsel89:-not sel89.
+sel90:-not nsel90.
+nsel90:-not sel90.
+sel91:-not nsel91.
+nsel91:-not sel91.
+sel92:-not nsel92.
+nsel92:-not sel92.
+sel93:-not nsel93.
+nsel93:-not sel93.
+sel94:-not nsel94.
+nsel94:-not sel94.
+sel95:-not nsel95.
+nsel95:-not sel95.
+sel96:-not nsel96.
+nsel96:-not sel96.
+sel97:-not nsel97.
+nsel97:-not sel97.
+sel98:-not nsel98.
+nsel98:-not sel98.
+sel99:-not nsel99.
+nsel99:-not sel99.
+sel100:-not nsel100.
+nsel100:-not sel100.
+sel101:-not nsel101.
+nsel101:-not sel101.
+chlorineMolEntity(c_chebi_1040):-hasAtom(c_chebi_1040,f_chebi_1040_9(c_chebi_1040));cl(f_chebi_1040_9(c_chebi_1040));sel101.
+sel102:-not nsel102.
+nsel102:-not sel102.
+sel103:-not nsel103.
+nsel103:-not sel103.
+sel104:-not nsel104.
+nsel104:-not sel104.
+sel105:-not nsel105.
+nsel105:-not sel105.
+halogenMolEntity(c_chebi_1040):-chlorineMolEntity(c_chebi_1040);sel105.
+sel106:-not nsel106.
+nsel106:-not sel106.
+sel107:-not nsel107.
+nsel107:-not sel107.
+sel108:-not nsel108.
+nsel108:-not sel108.
+sel109:-not nsel109.
+nsel109:-not sel109.
+sel110:-not nsel110.
+nsel110:-not sel110.
+sel111:-not nsel111.
+nsel111:-not sel111.
+sel112:-not nsel112.
+nsel112:-not sel112.
+sel143:-not nsel143.
+nsel143:-not sel143.
+oxygenMolEntity(c_chebi_1040):-hasAtom(c_chebi_1040,f_chebi_1040_7(c_chebi_1040));o(f_chebi_1040_7(c_chebi_1040));sel143.
+oxygenMolEntity(c_chebi_1040):-hasAtom(c_chebi_1040,f_chebi_1040_8(c_chebi_1040));o(f_chebi_1040_8(c_chebi_1040));sel143.
+oxygenMolEntity(c_acetate):-hasAtom(c_acetate,f_acetate_7(c_acetate));o(f_acetate_7(c_acetate));sel143.
+oxygenMolEntity(c_acetate):-hasAtom(c_acetate,f_acetate_6(c_acetate));o(f_acetate_6(c_acetate));sel143.
+sel113:-not nsel113.
+nsel113:-not sel113.
+chalcogenMolEntity(c_chebi_1040):-oxygenMolEntity(c_chebi_1040);sel113.
+chalcogenMolEntity(c_acetate):-oxygenMolEntity(c_acetate);sel113.
+sel114:-not nsel114.
+nsel114:-not sel114.
+sel115:-not nsel115.
+nsel115:-not sel115.
+sel116:-not nsel116.
+nsel116:-not sel116.
+sel117:-not nsel117.
+nsel117:-not sel117.
+sel118:-not nsel118.
+nsel118:-not sel118.
+sel119:-not nsel119.
+nsel119:-not sel119.
+sel120:-not nsel120.
+nsel120:-not sel120.
+sel121:-not nsel121.
+nsel121:-not sel121.
+nitrogenMolEntity(c_chebi_1040):-hasAtom(c_chebi_1040,f_chebi_1040_1(c_chebi_1040));n(f_chebi_1040_1(c_chebi_1040));sel121.
+nitrogenMolEntity(c_chebi_1040):-hasAtom(c_chebi_1040,f_chebi_1040_3(c_chebi_1040));n(f_chebi_1040_3(c_chebi_1040));sel121.
+nitrogenMolEntity(c_chebi_1040):-hasAtom(c_chebi_1040,f_chebi_1040_5(c_chebi_1040));n(f_chebi_1040_5(c_chebi_1040));sel121.
+sel122:-not nsel122.
+nsel122:-not sel122.
+sel123:-not nsel123.
+nsel123:-not sel123.
+sel124:-not nsel124.
+nsel124:-not sel124.
+sel125:-not nsel125.
+nsel125:-not sel125.
+pnictogenMolEntity(c_chebi_1040):-nitrogenMolEntity(c_chebi_1040);sel125.
+sel145:-not nsel145.
+nsel145:-not sel145.
+sel126:-not nsel126.
+nsel126:-not sel126.
+sel127:-not nsel127.
+nsel127:-not sel127.
+sel128:-not nsel128.
+nsel128:-not sel128.
+sel129:-not nsel129.
+nsel129:-not sel129.
+sel130:-not nsel130.
+nsel130:-not sel130.
+sel131:-not nsel131.
+nsel131:-not sel131.
+sel132:-not nsel132.
+nsel132:-not sel132.
+sel133:-not nsel133.
+nsel133:-not sel133.
+sel134:-not nsel134.
+nsel134:-not sel134.
+sel135:-not nsel135.
+nsel135:-not sel135.
+sel136:-not nsel136.
+nsel136:-not sel136.
+sel137:-not nsel137.
+nsel137:-not sel137.
+sel138:-not nsel138.
+nsel138:-not sel138.
+sel139:-not nsel139.
+nsel139:-not sel139.
+sel140:-not nsel140.
+nsel140:-not sel140.
+sel141:-not nsel141.
+nsel141:-not sel141.
+sel142:-not nsel142.
+nsel142:-not sel142.
+carbonMolEntity(c_chebi_1040):-hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));c(f_chebi_1040_2(c_chebi_1040));sel142.
+carbonMolEntity(c_chebi_1040):-hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));c(f_chebi_1040_4(c_chebi_1040));sel142.
+carbonMolEntity(c_chebi_1040):-hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));c(f_chebi_1040_6(c_chebi_1040));sel142.
+carbonMolEntity(c_acetate):-hasAtom(c_acetate,f_acetate_5(c_acetate));c(f_acetate_5(c_acetate));sel142.
+carbonMolEntity(c_acetate):-hasAtom(c_acetate,f_acetate_1(c_acetate));c(f_acetate_1(c_acetate));sel142.
+sel144:-not nsel144.
+nsel144:-not sel144.
+hydrogenMolEntity(c_chebi_1040):-hasAtom(c_chebi_1040,f_chebi_1040_10(c_chebi_1040));h(f_chebi_1040_10(c_chebi_1040));sel144.
+hydrogenMolEntity(c_chebi_1040):-hasAtom(c_chebi_1040,f_chebi_1040_11(c_chebi_1040));h(f_chebi_1040_11(c_chebi_1040));sel144.
+hydrogenMolEntity(c_acetate):-hasAtom(c_acetate,f_acetate_4(c_acetate));h(f_acetate_4(c_acetate));sel144.
+hydrogenMolEntity(c_acetate):-hasAtom(c_acetate,f_acetate_3(c_acetate));h(f_acetate_3(c_acetate));sel144.
+hydrogenMolEntity(c_acetate):-hasAtom(c_acetate,f_acetate_2(c_acetate));h(f_acetate_2(c_acetate));sel144.
+sel146:-not nsel146.
+nsel146:-not sel146.
+inorganic(c_chebi_1040):-molecule(c_chebi_1040);not carbonMolEntity(c_chebi_1040);sel146.
+sel147:-not nsel147.
+nsel147:-not sel147.
+notHydroCarbon(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_1(c_chebi_1040));sel147.
+notHydroCarbon(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));not c(f_chebi_1040_2(c_chebi_1040));sel147.
+notHydroCarbon(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_3(c_chebi_1040));sel147.
+notHydroCarbon(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));not c(f_chebi_1040_4(c_chebi_1040));sel147.
+notHydroCarbon(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_5(c_chebi_1040));sel147.
+notHydroCarbon(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));not c(f_chebi_1040_6(c_chebi_1040));sel147.
+notHydroCarbon(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_7(c_chebi_1040));sel147.
+notHydroCarbon(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_8(c_chebi_1040));sel147.
+notHydroCarbon(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_9(c_chebi_1040));sel147.
+notHydroCarbon(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_10(c_chebi_1040));not h(f_chebi_1040_10(c_chebi_1040));sel147.
+notHydroCarbon(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_11(c_chebi_1040));not h(f_chebi_1040_11(c_chebi_1040));sel147.
+sel148:-not nsel148.
+nsel148:-not sel148.
+hydroCarbon(c_chebi_1040):-molecule(c_chebi_1040);carbonMolEntity(c_chebi_1040);not notHydroCarbon(c_chebi_1040);sel148.
+sel149:-not nsel149.
+nsel149:-not sel149.
+notHaloHydroCarbon(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_1(c_chebi_1040));sel149.
+notHaloHydroCarbon(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));not c(f_chebi_1040_2(c_chebi_1040));sel149.
+notHaloHydroCarbon(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_3(c_chebi_1040));sel149.
+notHaloHydroCarbon(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));not c(f_chebi_1040_4(c_chebi_1040));sel149.
+notHaloHydroCarbon(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_5(c_chebi_1040));sel149.
+notHaloHydroCarbon(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));not c(f_chebi_1040_6(c_chebi_1040));sel149.
+notHaloHydroCarbon(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_7(c_chebi_1040));sel149.
+notHaloHydroCarbon(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_8(c_chebi_1040));sel149.
+notHaloHydroCarbon(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_9(c_chebi_1040));sel149.
+notHaloHydroCarbon(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_10(c_chebi_1040));not h(f_chebi_1040_10(c_chebi_1040));sel149.
+notHaloHydroCarbon(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_11(c_chebi_1040));not h(f_chebi_1040_11(c_chebi_1040));sel149.
+sel150:-not nsel150.
+nsel150:-not sel150.
+haloHydroCarbon(c_chebi_1040):-molecule(c_chebi_1040);carbonMolEntity(c_chebi_1040);halogenMolEntity(c_chebi_1040);not notHaloHydroCarbon(c_chebi_1040);sel150.
+sel151:-not nsel151.
+nsel151:-not sel151.
+atLeast2Carbons(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));c(f_chebi_1040_4(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));c(f_chebi_1040_2(c_chebi_1040));sel151.
+atLeast2Carbons(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));c(f_chebi_1040_6(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));c(f_chebi_1040_2(c_chebi_1040));sel151.
+atLeast2Carbons(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));c(f_chebi_1040_2(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));c(f_chebi_1040_4(c_chebi_1040));sel151.
+atLeast2Carbons(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));c(f_chebi_1040_6(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));c(f_chebi_1040_4(c_chebi_1040));sel151.
+atLeast2Carbons(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));c(f_chebi_1040_2(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));c(f_chebi_1040_6(c_chebi_1040));sel151.
+atLeast2Carbons(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));c(f_chebi_1040_4(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));c(f_chebi_1040_6(c_chebi_1040));sel151.
+sel152:-not nsel152.
+nsel152:-not sel152.
+exactly1Carbon(c_chebi_1040):-molecule(c_chebi_1040);carbonMolEntity(c_chebi_1040);not atLeast2Carbons(c_chebi_1040);sel152.
+sel153:-not nsel153.
+nsel153:-not sel153.
+atLeast3Carbons(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));c(f_chebi_1040_6(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));c(f_chebi_1040_2(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));c(f_chebi_1040_4(c_chebi_1040));sel153.
+atLeast3Carbons(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));c(f_chebi_1040_4(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));c(f_chebi_1040_2(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));c(f_chebi_1040_6(c_chebi_1040));sel153.
+atLeast3Carbons(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));c(f_chebi_1040_6(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));c(f_chebi_1040_4(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));c(f_chebi_1040_2(c_chebi_1040));sel153.
+atLeast3Carbons(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));c(f_chebi_1040_2(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));c(f_chebi_1040_4(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));c(f_chebi_1040_6(c_chebi_1040));sel153.
+atLeast3Carbons(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));c(f_chebi_1040_4(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));c(f_chebi_1040_6(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));c(f_chebi_1040_2(c_chebi_1040));sel153.
+atLeast3Carbons(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));c(f_chebi_1040_2(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));c(f_chebi_1040_6(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));c(f_chebi_1040_4(c_chebi_1040));sel153.
+sel154:-not nsel154.
+nsel154:-not sel154.
+exactly2Carbons(c_chebi_1040):-atLeast2Carbons(c_chebi_1040);not atLeast3Carbons(c_chebi_1040);sel154.
+sel155:-not nsel155.
+nsel155:-not sel155.
+sel156:-not nsel156.
+nsel156:-not sel156.
+exactly3Carbons(c_chebi_1040):-atLeast3Carbons(c_chebi_1040);sel156.
+sel157:-not nsel157.
+nsel157:-not sel157.
+sel158:-not nsel158.
+nsel158:-not sel158.
+sel159:-not nsel159.
+nsel159:-not sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_1(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_3(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_1(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_1(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_5(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_1(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_1(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_7(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_1(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_8(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_1(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_9(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_1(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_10(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_1(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_11(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_1(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_1(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_3(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_5(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_7(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_8(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_9(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_10(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_11(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_1(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_3(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_3(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_3(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_5(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_3(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_3(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_7(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_3(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_8(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_3(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_9(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_3(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_10(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_3(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_11(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_3(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_1(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_3(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_5(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_7(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_8(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_9(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_10(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_11(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_1(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_5(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_5(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_3(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_5(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_5(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_5(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_7(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_5(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_8(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_5(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_9(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_5(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_10(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_5(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_11(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_5(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_1(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_3(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_5(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_7(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_8(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_9(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_10(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_11(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_1(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_7(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_7(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_3(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_7(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_7(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_5(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_7(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_7(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_8(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_7(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_9(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_7(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_10(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_7(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_11(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_7(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_1(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_8(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_8(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_3(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_8(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_8(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_5(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_8(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_8(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_7(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_8(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_9(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_8(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_10(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_8(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_11(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_8(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_1(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_9(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_9(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_3(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_9(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_9(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_5(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_9(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_9(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_7(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_9(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_8(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_9(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_10(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_9(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_11(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_9(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_1(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_10(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_10(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_3(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_10(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_10(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_5(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_10(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_10(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_7(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_10(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_8(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_10(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_9(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_10(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_11(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_10(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_1(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_11(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_11(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_3(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_11(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_11(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_5(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_11(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_11(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_7(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_11(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_8(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_11(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_9(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_11(c_chebi_1040));sel159.
+polyatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_10(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_11(c_chebi_1040));sel159.
+sel160:-not nsel160.
+nsel160:-not sel160.
+monoatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_1(c_chebi_1040));not polyatomic(c_chebi_1040);sel160.
+monoatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));not polyatomic(c_chebi_1040);sel160.
+monoatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_3(c_chebi_1040));not polyatomic(c_chebi_1040);sel160.
+monoatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));not polyatomic(c_chebi_1040);sel160.
+monoatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_5(c_chebi_1040));not polyatomic(c_chebi_1040);sel160.
+monoatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));not polyatomic(c_chebi_1040);sel160.
+monoatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_7(c_chebi_1040));not polyatomic(c_chebi_1040);sel160.
+monoatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_8(c_chebi_1040));not polyatomic(c_chebi_1040);sel160.
+monoatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_9(c_chebi_1040));not polyatomic(c_chebi_1040);sel160.
+monoatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_10(c_chebi_1040));not polyatomic(c_chebi_1040);sel160.
+monoatomic(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_11(c_chebi_1040));not polyatomic(c_chebi_1040);sel160.
+sel161:-not nsel161.
+nsel161:-not sel161.
+sel162:-not nsel162.
+nsel162:-not sel162.
+sel163:-not nsel163.
+nsel163:-not sel163.
+sel164:-not nsel164.
+nsel164:-not sel164.
+sel165:-not nsel165.
+nsel165:-not sel165.
+sel166:-not nsel166.
+nsel166:-not sel166.
+saturated(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));c(f_chebi_1040_2(c_chebi_1040));sel166.
+saturated(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));c(f_chebi_1040_4(c_chebi_1040));sel166.
+saturated(c_chebi_1040):-molecule(c_chebi_1040);hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));c(f_chebi_1040_6(c_chebi_1040));sel166.
+sel167:-not nsel167.
+nsel167:-not sel167.
+sel168:-not nsel168.
+nsel168:-not sel168.
+organooxygen(c_chebi_1040):-hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));c(f_chebi_1040_2(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_7(c_chebi_1040));o(f_chebi_1040_7(c_chebi_1040));bond(f_chebi_1040_2(c_chebi_1040),f_chebi_1040_7(c_chebi_1040));bond(f_chebi_1040_7(c_chebi_1040),f_chebi_1040_2(c_chebi_1040));sel168.
+organooxygen(c_chebi_1040):-hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));c(f_chebi_1040_4(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_8(c_chebi_1040));o(f_chebi_1040_8(c_chebi_1040));bond(f_chebi_1040_4(c_chebi_1040),f_chebi_1040_8(c_chebi_1040));bond(f_chebi_1040_8(c_chebi_1040),f_chebi_1040_4(c_chebi_1040));sel168.
+organooxygen(c_acetate):-hasAtom(c_acetate,f_acetate_5(c_acetate));c(f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));o(f_acetate_7(c_acetate));bond(f_acetate_5(c_acetate),f_acetate_7(c_acetate));bond(f_acetate_7(c_acetate),f_acetate_5(c_acetate));sel168.
+organooxygen(c_acetate):-hasAtom(c_acetate,f_acetate_5(c_acetate));c(f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));o(f_acetate_6(c_acetate));bond(f_acetate_5(c_acetate),f_acetate_6(c_acetate));bond(f_acetate_6(c_acetate),f_acetate_5(c_acetate));sel168.
+sel169:-not nsel169.
+nsel169:-not sel169.
+heteroOrganic(c_chebi_1040):-hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));c(f_chebi_1040_2(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_1(c_chebi_1040));bond(f_chebi_1040_2(c_chebi_1040),f_chebi_1040_1(c_chebi_1040));bond(f_chebi_1040_1(c_chebi_1040),f_chebi_1040_2(c_chebi_1040));sel169.
+heteroOrganic(c_chebi_1040):-hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));c(f_chebi_1040_2(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_3(c_chebi_1040));bond(f_chebi_1040_2(c_chebi_1040),f_chebi_1040_3(c_chebi_1040));bond(f_chebi_1040_3(c_chebi_1040),f_chebi_1040_2(c_chebi_1040));sel169.
+heteroOrganic(c_chebi_1040):-hasAtom(c_chebi_1040,f_chebi_1040_2(c_chebi_1040));c(f_chebi_1040_2(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_7(c_chebi_1040));bond(f_chebi_1040_2(c_chebi_1040),f_chebi_1040_7(c_chebi_1040));bond(f_chebi_1040_7(c_chebi_1040),f_chebi_1040_2(c_chebi_1040));sel169.
+heteroOrganic(c_chebi_1040):-hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));c(f_chebi_1040_4(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_3(c_chebi_1040));bond(f_chebi_1040_4(c_chebi_1040),f_chebi_1040_3(c_chebi_1040));bond(f_chebi_1040_3(c_chebi_1040),f_chebi_1040_4(c_chebi_1040));sel169.
+heteroOrganic(c_chebi_1040):-hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));c(f_chebi_1040_4(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_5(c_chebi_1040));bond(f_chebi_1040_4(c_chebi_1040),f_chebi_1040_5(c_chebi_1040));bond(f_chebi_1040_5(c_chebi_1040),f_chebi_1040_4(c_chebi_1040));sel169.
+heteroOrganic(c_chebi_1040):-hasAtom(c_chebi_1040,f_chebi_1040_4(c_chebi_1040));c(f_chebi_1040_4(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_8(c_chebi_1040));bond(f_chebi_1040_4(c_chebi_1040),f_chebi_1040_8(c_chebi_1040));bond(f_chebi_1040_8(c_chebi_1040),f_chebi_1040_4(c_chebi_1040));sel169.
+heteroOrganic(c_chebi_1040):-hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));c(f_chebi_1040_6(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_1(c_chebi_1040));bond(f_chebi_1040_6(c_chebi_1040),f_chebi_1040_1(c_chebi_1040));bond(f_chebi_1040_1(c_chebi_1040),f_chebi_1040_6(c_chebi_1040));sel169.
+heteroOrganic(c_chebi_1040):-hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));c(f_chebi_1040_6(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_5(c_chebi_1040));bond(f_chebi_1040_6(c_chebi_1040),f_chebi_1040_5(c_chebi_1040));bond(f_chebi_1040_5(c_chebi_1040),f_chebi_1040_6(c_chebi_1040));sel169.
+heteroOrganic(c_chebi_1040):-hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));c(f_chebi_1040_6(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_9(c_chebi_1040));bond(f_chebi_1040_6(c_chebi_1040),f_chebi_1040_9(c_chebi_1040));bond(f_chebi_1040_9(c_chebi_1040),f_chebi_1040_6(c_chebi_1040));sel169.
+heteroOrganic(c_chebi_1040):-hasAtom(c_chebi_1040,f_chebi_1040_6(c_chebi_1040));c(f_chebi_1040_6(c_chebi_1040));hasAtom(c_chebi_1040,f_chebi_1040_10(c_chebi_1040));not h(f_chebi_1040_10(c_chebi_1040));bond(f_chebi_1040_6(c_chebi_1040),f_chebi_1040_10(c_chebi_1040));bond(f_chebi_1040_10(c_chebi_1040),f_chebi_1040_6(c_chebi_1040));sel169.
+heteroOrganic(c_acetate):-hasAtom(c_acetate,f_acetate_5(c_acetate));c(f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_7(c_acetate));bond(f_acetate_5(c_acetate),f_acetate_7(c_acetate));bond(f_acetate_7(c_acetate),f_acetate_5(c_acetate));sel169.
+heteroOrganic(c_acetate):-hasAtom(c_acetate,f_acetate_5(c_acetate));c(f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_6(c_acetate));bond(f_acetate_5(c_acetate),f_acetate_6(c_acetate));bond(f_acetate_6(c_acetate),f_acetate_5(c_acetate));sel169.
+heteroOrganic(c_acetate):-hasAtom(c_acetate,f_acetate_5(c_acetate));c(f_acetate_5(c_acetate));hasAtom(c_acetate,f_acetate_1(c_acetate));not c(f_acetate_1(c_acetate));bond(f_acetate_5(c_acetate),f_acetate_1(c_acetate));bond(f_acetate_1(c_acetate),f_acetate_5(c_acetate));sel169.
+heteroOrganic(c_acetate):-hasAtom(c_acetate,f_acetate_1(c_acetate));c(f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_5(c_acetate));not c(f_acetate_5(c_acetate));bond(f_acetate_1(c_acetate),f_acetate_5(c_acetate));bond(f_acetate_5(c_acetate),f_acetate_1(c_acetate));sel169.
+heteroOrganic(c_acetate):-hasAtom(c_acetate,f_acetate_1(c_acetate));c(f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_4(c_acetate));not h(f_acetate_4(c_acetate));bond(f_acetate_1(c_acetate),f_acetate_4(c_acetate));bond(f_acetate_4(c_acetate),f_acetate_1(c_acetate));sel169.
+heteroOrganic(c_acetate):-hasAtom(c_acetate,f_acetate_1(c_acetate));c(f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_3(c_acetate));not h(f_acetate_3(c_acetate));bond(f_acetate_1(c_acetate),f_acetate_3(c_acetate));bond(f_acetate_3(c_acetate),f_acetate_1(c_acetate));sel169.
+heteroOrganic(c_acetate):-hasAtom(c_acetate,f_acetate_1(c_acetate));c(f_acetate_1(c_acetate));hasAtom(c_acetate,f_acetate_2(c_acetate));not h(f_acetate_2(c_acetate));bond(f_acetate_1(c_acetate),f_acetate_2(c_acetate));bond(f_acetate_2(c_acetate),f_acetate_1(c_acetate));sel169.
+sel170:-not nsel170.
+nsel170:-not sel170.
+:-organooxygen(c_chebi_1040);heteroOrganic(c_chebi_1040);sel170.
+:-organooxygen(c_acetate);heteroOrganic(c_acetate);sel170.
+sel171:-not nsel171.
+nsel171:-not sel171.
+:-monoatomic(c_chebi_1040);atLeast2Carbons(c_chebi_1040);sel171.
+sel172:-not nsel172.
+nsel172:-not sel172.
+:-exactly1Carbon(c_chebi_1040);atLeast2Carbons(c_chebi_1040);sel172.
+sel173:-not nsel173.
+nsel173:-not sel173.
+sel174:-not nsel174.
+nsel174:-not sel174.
+sel175:-not nsel175.
+nsel175:-not sel175.
+sel176:-not nsel176.
+nsel176:-not sel176.
+sel177:-not nsel177.
+nsel177:-not sel177.
+sel178:-not nsel178.
+nsel178:-not sel178.
+q:-hasAtom(c_acetate,f_acetate_7(c_acetate));bond(f_acetate_7(c_acetate),f_acetate_5(c_acetate));c(f_acetate_5(c_acetate)).
+q:-hasAtom(c_acetate,f_acetate_6(c_acetate));bond(f_acetate_6(c_acetate),f_acetate_5(c_acetate));c(f_acetate_5(c_acetate)).
+q:-hasAtom(c_acetate,f_acetate_5(c_acetate));bond(f_acetate_5(c_acetate),f_acetate_1(c_acetate));c(f_acetate_1(c_acetate)).
+q:-hasAtom(c_acetate,f_acetate_4(c_acetate));bond(f_acetate_4(c_acetate),f_acetate_1(c_acetate));c(f_acetate_1(c_acetate)).
+q:-hasAtom(c_acetate,f_acetate_3(c_acetate));bond(f_acetate_3(c_acetate),f_acetate_1(c_acetate));c(f_acetate_1(c_acetate)).
+q:-hasAtom(c_acetate,f_acetate_2(c_acetate));bond(f_acetate_2(c_acetate),f_acetate_1(c_acetate));c(f_acetate_1(c_acetate)).
+q:-hasAtom(c_acetate,f_acetate_1(c_acetate));bond(f_acetate_1(c_acetate),f_acetate_5(c_acetate));c(f_acetate_5(c_acetate)).

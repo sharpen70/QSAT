@@ -14,11 +14,10 @@ private:
     vector<int> no_ipf_atoms;
     vector<Rule> constrants;
 public:
-    static ClakeCompletion& instance();
-    ClakeCompletion();
+    ClakeCompletion(const vector<Rule>& nlp);
     ~ClakeCompletion();
     vector<_formula*> convert();
-    void setDlp(const vector<Rule> nlp);
+    _formula* convertSyntaxTree();
     void test();
     void testCompletion();
 };

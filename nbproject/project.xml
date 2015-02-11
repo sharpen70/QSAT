@@ -8,14 +8,11 @@
             <cpp-extensions>C,cpp</cpp-extensions>
             <header-extensions>h</header-extensions>
             <sourceEncoding>UTF-8</sourceEncoding>
-            <formatting>
-                <project-formatting-style>false</project-formatting-style>
-            </formatting>
             <make-dep-projects/>
             <sourceRootList>
+                <sourceRootElem>src</sourceRootElem>
                 <sourceRootElem>include</sourceRootElem>
                 <sourceRootElem>res</sourceRootElem>
-                <sourceRootElem>src</sourceRootElem>
                 <sourceRootElem>parse</sourceRootElem>
                 <sourceRootElem>minisat</sourceRootElem>
             </sourceRootList>
@@ -29,6 +26,9 @@
                     <type>1</type>
                 </confElem>
             </confList>
+            <formatting>
+                <project-formatting-style>false</project-formatting-style>
+            </formatting>
         </data>
     </configuration>
 </project>

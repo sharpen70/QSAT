@@ -12,7 +12,7 @@ extern "C" {
 }
  
 extern vector<Rule> G_NLP;
-
+extern vector<Rule> Queries;
 int id;
 
 void yyerror(const char* s)
@@ -27,6 +27,7 @@ void yyerror(const char* s)
     int i;
     struct __literals* l;
     struct __rule* r;
+    struct __atom* a;
 }
 
 %token <s> S_ATOM
@@ -35,11 +36,10 @@ void yyerror(const char* s)
 %token <s> S_IMPL
 %token <s> LPAREN
 %token <s> RPAREN
-%token <s> COMMA
 %token <s> PERIOD
+%token <s> COLON
 
-%type <s> term terms atom
-%type <i> literal
+%type <a> literal
 %type <l> literals
 %type <r> rule
 
@@ -48,7 +48,6 @@ void yyerror(const char* s)
 %%
 nlp 
     : rules {
-        printf("nlp\n");
     }
     |
 ;
@@ -56,11 +55,13 @@ nlp
 rules
     : rules rule {
         Rule rule($2);
-        G_NLP.push_back(rule);
+        if(rule.type == QUERY) Queries.push_back(rule);
+        else G_NLP.push_back(rule);
     }
     | rule {
         Rule rule($1);
-        G_NLP.push_back(rule);
+        if(rule.type == QUERY) Queries.push_back(rule);
+        else G_NLP.push_back(rule);
     }
 ;
 
@@ -75,6 +76,7 @@ rule
         $$ = (_rule*)malloc(sizeof(_rule));
         $$->head = $1;
         $$->type = RULE;
+        
         for(int i = 0; i < ($3->length); i++) {
             $$->body[i] = $3->atoms[i];
         }
@@ -82,7 +84,6 @@ rule
     }
     | S_IMPL literals PERIOD{
         $$ = (_rule*)malloc(sizeof(_rule));
-        $$->head = -1;
         $$->type = CONSTRANT;
         for(int i = 0; i < ($2->length); i++) {
             $$->body[i] = $2->atoms[i];
@@ -92,60 +93,35 @@ rule
 ;
 
 literals
-    : literals COMMA literal {
+    : literals COLON literal {
         $1->atoms[$1->length] = $3;
         $1->length++;
     }
     | literal {
         $$ = (__literals*)malloc(sizeof(_literals));
-        memset($$->atoms, 0, sizeof(int) * MAX_ATOM_LENGTH);
-        
         $$->atoms[0] = $1;
         $$->length = 1;
     }
 ;
 
 literal
-    : S_NEGA atom {
-        id = Vocabulary::instance().addAtom($2);
-        $$ = -1 * id;
+    : S_NEGA S_ATOM {
+        $$ = (_atom*)malloc(sizeof(_atom));
+        $$->type = NEGATIVE;
+        $$->index = Vocabulary::instance().addMapAtom($2);
     }
-    | atom {
-        id = Vocabulary::instance().addAtom($1);
-        $$ = id;
-    }
-;
-
-atom
-    : S_ATOM LPAREN terms RPAREN {
-        char str_buff[512];
-        
-        sprintf(str_buff, "%s(%s)", $1, $3);
-        $$ = strdup(str_buff);
-    } 
     | S_ATOM {
-        $$ = strdup($1);
-    }
-;
+        $$ = (_atom*)malloc(sizeof(_atom));
 
-terms
-    : terms COMMA term {
-        char str_buff[512];
-        
-        sprintf(str_buff, "%s,%s", $1, $3);
-        $$ = strdup(str_buff);
-    }
-    | term {
-        $$ = strdup($1);
-    }
-;
-
-term
-    : S_ATOM {
-        $$ = strdup($1);
-    }
-    | S_VARI {
-        $$ = strdup($1);
+        if(strcmp($1, "q") == 0) $$->type = Q;
+        else if(strncmp($1, "sel", 3) == 0) {
+            $$->type = SELECT;
+            $$->index = Vocabulary::instance().addMapSelAtom($1);
+        }
+        else {
+            $$->type = POSITIVE;
+            $$->index = Vocabulary::instance().addMapAtom($1);
+        }
     }
 ;
 %%

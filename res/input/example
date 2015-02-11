@@ -1,0 +1,8 @@
+a :- b;sel1.
+:- a;b;sel2.
+sel1 :- not nsel1.
+nsel1 :- not sel1.
+sel2 :- not nsel2.
+nsel2 :- not sel2.
+b.
+q :- b;a.

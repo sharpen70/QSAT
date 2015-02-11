@@ -1,0 +1,28 @@
+ t(a).
+ mammal(a).
+ sel1:-not nsel1.
+ nsel1:-not sel1.
+ canfly(a):-sel1.
+ sel2:-not nsel2.
+ nsel2:-not sel2.
+ livein(a,f(a)):-sel2.
+ sel3:-not nsel3.
+ nsel3:-not sel3.
+ cave(f(a)):-sel3.
+ sel4:-not nsel4.
+ nsel4:-not sel4.
+ cavecreature(a):-livein(a,f(a));cave(f(a));sel4.
+ sel5:-not nsel5.
+ nsel5:-not sel5.
+ cannotfly(a):-not canfly(a);sel5.
+ sel6:-not nsel6.
+ nsel6:-not sel6.
+ bird(a):-canfly(a);sel6.
+ sel7:-not nsel7.
+ nsel7:-not sel7.
+ :-bird(a);cavecreature(a);sel7.
+ sel8:-not nsel8.
+ nsel8:-not sel8.
+ :-bird(a);sel8.
+ q:-cave(f(a)).
+

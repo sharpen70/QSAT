@@ -5,3 +5,4 @@
 using namespace std;
 
 vector<Rule> G_NLP;
+vector<Rule> Queries;

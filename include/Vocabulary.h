@@ -4,6 +4,7 @@
 #include "structs.h"
 #include <cstdio>
 #include <vector>
+#include <string>
 
 using namespace std;
 /*
@@ -11,8 +12,11 @@ using namespace std;
  */
 class Vocabulary {
 private:
-    unsigned int atom_id;
+    int atom_id;
+    map<string, int> atom_map;
     vector<char*> atom_list;
+    vector<int> sel_atoms;
+    int auxiliary;
 private:
     Vocabulary();
     Vocabulary(const Vocabulary&);
@@ -22,10 +26,17 @@ private:
 public:
     static Vocabulary& instance();
     void dumpVocabulary(FILE* _out);
+    int addMapAtom(char*);
     int addAtom(char*);
+    int addSelAtom(char*);
+    int addMapSelAtom(char*);
+    vector<int>& getSelAtoms();
     int apSize();
     char* getAtom(int id);
+    char* getMapAtom(int id);
     int queryAtom(char*);
+    int queryMapAtom(char*);
+    int newAux(int);
 };
 
 #endif

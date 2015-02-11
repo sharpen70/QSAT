@@ -11,57 +11,70 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 enum BOOL {
-    FALSE = 0,
-    TRUE = 1
+  FALSE = 0,
+  TRUE = 1
 };
 
 enum SYMBOL_TYPE {
-    VARIABLE = 0,
-    FUNCTION,
-    PREDICATE,
-    DOMAIN
+  VARIABLE = 0,
+  FUNCTION,
+  PREDICATE,
+  DOMAIN
 };
 
 enum RULE_TYPE {
-    FACT = 0,
-    CONSTRANT,
-    RULE
+  FACT = 0,
+  CONSTRANT,
+  RULE,
+  QUERY
+};
+
+enum ATOM_TYPE {
+  POSITIVE = 0,
+  NEGATIVE,
+  SELECT,
+  Q
 };
 
 enum FORMULA_TYPE {
-    ATOM = 0,	//atom
-    NEGA,		//negation
-    CONJ,		//conjunction
-    DISJ,		//disjunction
-    IMPL,		//implication
-    UNIV,		//universal
-    EXIS		//existential
+  ATOM = 0,	//atom
+  NEGA,		//negation
+  CONJ,		//conjunction
+  DISJ,		//disjunction
+  IMPL,		//implication
+  UNIV,		//universal
+  EXIS		//existential
 };
 
 // Structures
+typedef struct __atom {
+  ATOM_TYPE type;
+  int index;
+}_atom;
+
 typedef struct __rule {
-    int head;
-    int body[MAX_ATOM_LENGTH];
-    int length;
-    RULE_TYPE type;
+  _atom* head;
+  _atom* body[MAX_ATOM_LENGTH];
+  int length;
+  RULE_TYPE type;
 }_rule;
 
 typedef struct __literals {
-    int atoms[MAX_ATOM_LENGTH];
-    int length;    
+  _atom* atoms[MAX_ATOM_LENGTH];
+  int length;    
 }_literals;
 
 typedef struct __formula {
-    FORMULA_TYPE formula_type;
-
-    union {
-        __formula* subformula_l;   //NEGA,CONJ,DISJ,IMPL,UNIV,EXIS
-        int predicate_id;                 //ATOM
-    };
-
-    union {
-        __formula* subformula_r;   //CONJ,DISJ,IMPL
-    };
+  FORMULA_TYPE formula_type;
+  
+  union {
+    __formula* subformula_l;   //NEGA,CONJ,DISJ,IMPL,UNIV,EXIS
+    int predicate_id;                 //ATOM
+  };
+  
+  union {
+    __formula* subformula_r;   //CONJ,DISJ,IMPL
+  };
 }_formula;
 
 #endif

@@ -28,6 +28,7 @@ public:
                          _formula* _subformulaL, _formula* _subformulaR = NULL);
     static _formula* compositeToAtom(int _atom_id);
     static _formula* copyFormula(const _formula* _fml);
+    static _formula* copyIsomorFormula(const _formula*, int);
     static void deleteFormula(_formula* _fml);
     
     static void formulaOutput(FILE* out, const _formula* fml);
@@ -44,14 +45,6 @@ public:
     
     static vector< vector< vector<char*> > > readClaspAnswers(const char* AnswerSet_list);
     static vector< vector<char*> > readClaspAnswer(const char* answer);
-    
-    static bool charCmp(char* a, char* b);
-    static bool ModelCharCmp(vector<char*>& a, vector<char*>& b);
-    
-    static bool compareSingleModel(vector<char*>& claspModel, set<int>& satModel);
-    static bool compareAnswerSet(vector< vector<char*> >& claspAnswer, vector< set<int> >& satAnswer);
-
-    static bool setContains(const set<int>& a, const set<int>& b);
 };
 
 
