@@ -1,0 +1,12 @@
+batch_run.sh will run all the test case in 'Benchmarks' directory.
+
+And the output will be in the 'summary' directory. The output of cases of 
+the same category will be in the same file named by the category dir.
+
+You can set the max run time for in run.sh by the 'maxTime' variable.
+
+The initial timeout is 3600s.
+The initial interval to print loops is 500.
+
+
+

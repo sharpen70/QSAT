@@ -1,0 +1,7 @@
+command:
+./dlpparser target_ground_input [result_output] [-t] [-n number]
+
+#target_ground_input is the grounded program input file
+#if not specify result_output, it will print on console.
+#if run with -t, it will print the details of loops.
+#if run with -n, it will set the output interval by the number.
