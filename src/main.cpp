@@ -55,36 +55,39 @@ void testCNF() {
   _formula* d = Utils::compositeToAtom(4);
   
   _formula* ac = Utils::compositeByConnective(DISJ, a, c);
-  _formula* bc = Utils::compositeByConnective(DISJ, b, c);
+  _formula* bc = Utils::compositeByConnective(CONJ, b, c);
   _formula* ad = Utils::compositeByConnective(DISJ, a, d);
   _formula* bd = Utils::compositeByConnective(DISJ, b, d);
   
+  _formula* nac = Utils::compositeByConnective(NEGA, ac);
+  _formula* nbc = Utils::compositeByConnective(NEGA, bc);
+  _formula* cnac = Utils::compositeByConnective(CONJ, nac, nbc);
   _formula* acbc = Utils::compositeByConnective(CONJ, ac, bc);
   _formula* adbd = Utils::compositeByConnective(CONJ, ad, bd);
   _formula* abcd = Utils::compositeByConnective(DISJ, acbc, adbd);
   
   printf("before CNF\n");
-  Utils::formulaOutput(stdout, abcd);printf("\n");
+  Utils::formulaOutput(stdout, cnac);printf("\n");
   
   printf("after CNF\n");
-  queue<_formula*> aux;
-  abcd = CNFUtils::convertCNFWithAux(abcd, aux);
-  Utils::formulaOutput(stdout, abcd); printf("\n");
+ // queue<_formula*> aux;
+  cnac = CNFUtils::convertToNegativeNormalForm(cnac);
+  Utils::formulaOutput(stdout, cnac); printf("\n");
   
-  while(!aux.empty()) {
-    _formula* faux = aux.front();
-    aux.pop();
-    CNFUtils::convertCNFWithAux(faux, aux);
-    Utils::formulaOutput(stdout, faux);printf("\n");
-  }
+//  while(!aux.empty()) {
+//    _formula* faux = aux.front();
+//    aux.pop();
+//    CNFUtils::convertCNFWithAux(faux, aux);
+//    Utils::formulaOutput(stdout, faux);printf("\n");
+//  }
 }
 
 int main(int argc, char** argv) {
-  int method = 0;
+  int method = 1;
   fout = stdout;
 
   if(argc < 2) {
-    yyin = fopen("res/input/example", "r");
+    yyin = fopen("lubm-30000-q1", "r");
     fout = fopen("res/output/sample.out", "w+");
   }
   else {
@@ -112,7 +115,7 @@ int main(int argc, char** argv) {
 //  }
 //  printf("\n");
   
-//  //testCNF();
+//  testCNF();
   if(method == 0) {
     RepairQBF RQBF(G_NLP, Queries);
     vector<_formula*> fQBF;

@@ -26,6 +26,7 @@ _formula* Utils::compositeByConnective(FORMULA_TYPE _formulaType,
   fml->formula_type = _formulaType;
   fml->subformula_l = _subformulaL;
   fml->subformula_r = _subformulaR;
+  
   return fml;
 }
 /**
@@ -41,6 +42,7 @@ _formula* Utils::compositeToAtom(int _atom_id) {
   
   fml->formula_type = ATOM;
   fml->predicate_id = _atom_id;
+  
   return fml;
 }
 
@@ -285,7 +287,7 @@ void Utils::formulaOutput(FILE* out, const _formula* fml) {
       if(output->predicate_id > Vocabulary::instance().apSize())
         fprintf(out, "aux_%d", output->predicate_id - Vocabulary::instance().apSize());
       else
-        fprintf(out, "%s", Vocabulary::instance().getAtom(output->predicate_id));
+        fprintf(out, "%s", Vocabulary::instance().getMapAtom(output->predicate_id));
       break;
     case CONJ:
       assert(output->subformula_l);

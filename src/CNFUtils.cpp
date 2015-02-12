@@ -10,6 +10,14 @@
 #include "NNFUtils.h"
 #include <assert.h>
 
+struct Fin {
+  _formula* f;
+  _formula* prec;
+  bool left;
+  
+  Fin(_formula* ff, _formula* p, bool l):f(ff),prec(p),left(l){}
+};
+
 vector<_formula*> CNFUtils::convertCNFSet(_formula* fml) {
   fml = NNFUtils::convertToNegativeNormalForm(fml);
   fml = convertToConjuntiveNormalForm(fml);
@@ -21,60 +29,133 @@ vector<_formula*> CNFUtils::convertCNFSet(_formula* fml) {
 }
 
 _formula* CNFUtils::convertCNFWithAux(_formula* fml, queue<_formula*>& aux) {
-  fml = NNFUtils::convertToNegativeNormalForm(fml);
+//  Utils::formulaOutput(stdout, fml);printf("\n");
+  fml = CNFUtils::convertToNegativeNormalForm(fml);
+//  Utils::formulaOutput(stdout, fml);printf("\n");
   fml = convertToConjuntiveNormalFormWithAux(fml, aux);
   return fml;
 }
 
-_formula* CNFUtils::convertToNegativeNormalForm(_formula*& fml) {
-  assert(fml->formula_type);
+_formula* CNFUtils::convertToNegativeNormalForm(_formula* _originalFml) {
+  _formula* nnf = NULL; 
   
-  if(fml->formula_type == ATOM) {
-    return fml;
-  }
-  else if(fml->formula_type == CONJ || fml->formula_type == UNIV) {
-    convertToNegativeNormalForm(fml->subformula_l);
-    convertToNegativeNormalForm(fml->subformula_r);
-  }
-  else if(fml->formula_type == NEGA) {
-    if(fml->subformula_l->formula_type == ATOM) return fml;
-    else if(fml->subformula_l->formula_type == NEGA) {
-      _formula* gs = fml->subformula_l->subformula_l;
+  queue<Fin> fq;
+  fq.push(Fin(_originalFml, NULL, true));
+  
+  while(!fq.empty()) {
+    Fin fin = fq.front();
+    _formula* f = fin.f;
+    _formula* prec = fin.prec;
+    bool left = fin.left;
+    
+    fq.pop();
+    if(f->formula_type == ATOM) {
+      if(nnf == NULL) nnf = f;
+    }
+    else if(f->formula_type == NEGA) {
+      _formula* fl = f->subformula_l;
       
-      fml->formula_type = gs->formula_type;
-      
-      if(gs->formula_type == CONJ || gs->formula_type == DISJ) {
-        free(fml->subformula_l);
-        fml->subformula_l = gs->subformula_l;
-        fml->subformula_r = gs->subformula_r;
-    //    free(gs);
+      if(fl->formula_type == NEGA) {
+        if(prec == NULL) nnf = fl->subformula_l;
+        else {
+          if(left) prec->subformula_l = fl->subformula_l;
+          else prec->subformula_r = fl->subformula_l;
+        }
+        fq.push(Fin(fl->subformula_l, prec, true));
+        free(fl);
+        free(f);
       }
-      else if(gs->formula_type == NEGA) {
-        free(fml->subformula_l);
-        fml->subformula_l = gs->subformula_l;
-    //    free(gs);
+      else if(fl->formula_type == CONJ) {
+        _formula* nfl = Utils::compositeByConnective(NEGA, fl->subformula_l);
+        _formula* nfr = Utils::compositeByConnective(NEGA, fl->subformula_r);
+        _formula* cf = Utils::compositeByConnective(DISJ, nfl, nfr);
+        
+        if(prec == NULL) nnf = cf;
+        else {
+          if(left) prec->subformula_l = cf;
+          else prec->subformula_r = cf;
+        }
+        fq.push(Fin(nfl, cf, true));
+        fq.push(Fin(nfr, cf, false));
+        free(fl);
+        free(f);
       }
-      else {
-        free(fml->subformula_l);
-        fml->predicate_id = gs->predicate_id;
-     //   free(gs);
+      else if(fl->formula_type == DISJ) {
+        _formula* nfl = Utils::compositeByConnective(NEGA, fl->subformula_l);
+        _formula* nfr = Utils::compositeByConnective(NEGA, fl->subformula_r);
+        _formula* cf = Utils::compositeByConnective(CONJ, nfl, nfr);
+        
+        if(prec == NULL) nnf = cf;
+        else {
+          if(left) prec->subformula_l = cf;
+          else prec->subformula_r = cf;
+        }
+        fq.push(Fin(nfl, cf, true));
+        fq.push(Fin(nfr, cf, false));
+        free(fl);
+        free(f);        
       }
-      
-      convertToNegativeNormalForm(fml);           
     }
     else {
-      FORMULA_TYPE type = (fml->subformula_l->formula_type == CONJ) ? UNIV : CONJ;
-      fml->formula_type = type;
-      fml->subformula_l = Utils::compositeByConnective(NEGA, fml->subformula_l);
-      fml->subformula_r = Utils::compositeByConnective(NEGA, fml->subformula_r);
-      
-      convertToNegativeNormalForm(fml->subformula_l);
-      convertToNegativeNormalForm(fml->subformula_r);
+      if(nnf == NULL) nnf = f;
+      fq.push(Fin(f->subformula_l, f, true));
+      fq.push(Fin(f->subformula_r, f, false));
     }
   }
   
-  return fml;
+  return nnf;
 }
+
+
+//_formula* CNFUtils::convertToNegativeNormalForm(_formula*& fml) {
+//  assert(fml->formula_type);
+//  
+//  if(fml->formula_type == ATOM) {
+//    return fml;
+//  }
+//  else if(fml->formula_type == CONJ || fml->formula_type == UNIV) {
+//    convertToNegativeNormalForm(fml->subformula_l);
+//    convertToNegativeNormalForm(fml->subformula_r);
+//  }
+//  else if(fml->formula_type == NEGA) {
+//    if(fml->subformula_l->formula_type == ATOM) return fml;
+//    else if(fml->subformula_l->formula_type == NEGA) {
+//      _formula* gs = fml->subformula_l->subformula_l;
+//      
+//      fml->formula_type = gs->formula_type;
+//      
+//      if(gs->formula_type == CONJ || gs->formula_type == DISJ) {
+//        free(fml->subformula_l);
+//        fml->subformula_l = gs->subformula_l;
+//        fml->subformula_r = gs->subformula_r;
+//    //    free(gs);
+//      }
+//      else if(gs->formula_type == NEGA) {
+//        free(fml->subformula_l);
+//        fml->subformula_l = gs->subformula_l;
+//    //    free(gs);
+//      }
+//      else {
+//        free(fml->subformula_l);
+//        fml->predicate_id = gs->predicate_id;
+//     //   free(gs);
+//      }
+//      
+//      convertToNegativeNormalForm(fml);           
+//    }
+//    else {
+//      FORMULA_TYPE type = (fml->subformula_l->formula_type == CONJ) ? UNIV : CONJ;
+//      fml->formula_type = type;
+//      fml->subformula_l = Utils::compositeByConnective(NEGA, fml->subformula_l);
+//      fml->subformula_r = Utils::compositeByConnective(NEGA, fml->subformula_r);
+//      
+//      convertToNegativeNormalForm(fml->subformula_l);
+//      convertToNegativeNormalForm(fml->subformula_r);
+//    }
+//  }
+//  
+//  return fml;
+//}
 
 _formula* CNFUtils::convertToConjuntiveNormalFormWithAux(_formula* fml,
         queue<_formula*>& auxRules) {

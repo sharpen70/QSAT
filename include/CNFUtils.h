@@ -22,7 +22,7 @@ public:
   static _formula* convertToConjuntiveNormalFormWithAux(_formula* fml, queue<_formula*>&);
   static _formula* computeAuxiliaryRule(_formula*, int&);
   static void divideCNFFormula(_formula* fml, vector<_formula*>& division);
-  static _formula* convertToNegativeNormalForm(_formula*& fml);
+  static _formula* convertToNegativeNormalForm(_formula* fml);
 };
 
 #endif	/* CNFUTILS_H */

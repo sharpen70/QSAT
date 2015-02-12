@@ -3,6 +3,7 @@
 #include <assert.h>
 #include <cstdio>
 #include <cstdlib>
+#include <queue>
 
 bool NNFUtils::ms_bIsSM = false;
 /**
@@ -134,7 +135,7 @@ _formula* NNFUtils::negativeNormalForm_6(_formula* _originalFml) {
 /**
  * 把公式转化成否定标准式
  * @param _originalFml
- * @return 
+ * @return  
  */
 _formula* NNFUtils::convertToNegativeNormalForm(_formula* _originalFml) {
     assert(_originalFml);

@@ -14,6 +14,7 @@ class Vocabulary {
 private:
     int atom_id;
     map<string, int> atom_map;
+    map<int, string> map_atom;
     vector<char*> atom_list;
     vector<int> sel_atoms;
     int auxiliary;
@@ -33,7 +34,7 @@ public:
     vector<int>& getSelAtoms();
     int apSize();
     char* getAtom(int id);
-    char* getMapAtom(int id);
+    const char* getMapAtom(int id);
     int queryAtom(char*);
     int queryMapAtom(char*);
     int newAux(int);

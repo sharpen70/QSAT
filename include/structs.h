@@ -66,7 +66,7 @@ typedef struct __literals {
 
 typedef struct __formula {
   FORMULA_TYPE formula_type;
-  
+
   union {
     __formula* subformula_l;   //NEGA,CONJ,DISJ,IMPL,UNIV,EXIS
     int predicate_id;                 //ATOM
