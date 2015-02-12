@@ -158,49 +158,52 @@ _formula* Utils::copyIsomorFormula(const _formula* _fml, int n) {
 void Utils::deleteFormula(_formula* _fml) {
   assert(_fml);
   
-  switch (_fml->formula_type)
-  {
-    case ATOM:
-      break;
-    case CONJ:
-    case DISJ:
-    case IMPL:
-      assert(_fml->subformula_r);
-      deleteFormula(_fml->subformula_r);
-    case NEGA:
-    case UNIV:
-    case EXIS:
-      assert(_fml->subformula_l);
-      deleteFormula(_fml->subformula_l);
-      break;
-    default:
-      assert ( 0 );
-  }
+  queue<_formula*> qf;
+  qf.push(_fml);
   
-  free(_fml);
+  while(!qf.empty()) {
+    _formula* f = qf.front();
+    qf.pop();
+    switch(f->formula_type) {
+      case ATOM: break;
+      case DISJ:
+      case CONJ:
+        qf.push(f->subformula_r);
+      case NEGA:
+        qf.push(f->subformula_l);
+        break;
+      default:
+        assert(0);
+    }
+            
+    free(f);
+  }
 }
 
-bool Utils::inSet(int tag, set<int> list) {
-  if(list.find(tag) != list.end()) {
-    return true;
-  }
-  
-  return false;
-}
-
-bool Utils::crossSet(set<int> l1, set<int> l2) {
-  for(set<int>::iterator it = l1.begin(); it != l1.end(); it++) {
-    if(l2.find(*it) != l2.end()) return true;
-  }
-  
-  return false;
-}
-
-void Utils::joinFormulas(vector<_formula*>& des_list, vector<_formula*> join_list) {
-  for(int i = 0; i < join_list.size(); i++) {
-    des_list.push_back(join_list.at(i));
-  }
-}
+//void Utils::deleteFormula(_formula* _fml) {
+//  assert(_fml);
+//  
+//  switch (_fml->formula_type)
+//  {
+//    case ATOM:
+//      break;
+//    case CONJ:
+//    case DISJ:
+//    case IMPL:
+//      assert(_fml->subformula_r);
+//      deleteFormula(_fml->subformula_r);
+//    case NEGA:
+//    case UNIV:
+//    case EXIS:
+//      assert(_fml->subformula_l);
+//      deleteFormula(_fml->subformula_l);
+//      break;
+//    default:
+//      assert ( 0 );
+//  }
+//  
+//  free(_fml);
+//}
 
 vector< set<int> > Utils::convertToSATInput(vector<_formula*> cnfNlp) {
   vector< set<int> > res;
@@ -213,17 +216,34 @@ vector< set<int> > Utils::convertToSATInput(vector<_formula*> cnfNlp) {
 }
 
 void Utils::convertCNFformulaToLits(_formula* rule, set<int>& lits) {
-  if(rule->formula_type == ATOM) {
-    lits.insert(rule->predicate_id);
-  }
-  else if(rule->formula_type == NEGA) {
-    lits.insert(-1 * (rule->subformula_l->predicate_id));
-  }
-  else {
-    convertCNFformulaToLits(rule->subformula_l, lits);
-    convertCNFformulaToLits(rule->subformula_r, lits);
+  queue<_formula*> qf;
+  qf.push(rule);
+  
+  while(!qf.empty()) {
+    _formula* f = qf.front();
+    qf.pop();
+    
+    if(f->formula_type == ATOM) lits.insert(f->predicate_id);
+    else if(f->formula_type == NEGA) lits.insert(-1 * (f->subformula_l->predicate_id));
+    else {
+      qf.push(f->subformula_l);
+      qf.push(f->subformula_r);
+    }
   }
 }
+
+//void Utils::convertCNFformulaToLits(_formula* rule, set<int>& lits) {
+//  if(rule->formula_type == ATOM) {
+//    lits.insert(rule->predicate_id);
+//  }
+//  else if(rule->formula_type == NEGA) {
+//    lits.insert(-1 * (rule->subformula_l->predicate_id));
+//  }
+//  else {
+//    convertCNFformulaToLits(rule->subformula_l, lits);
+//    convertCNFformulaToLits(rule->subformula_r, lits);
+//  }
+//}
 
 _formula* Utils::convertRuleBodyToFormula(const Rule& rule) {
   _formula* fml = NULL;
@@ -249,77 +269,6 @@ _formula* Utils::convertRuleBodyToFormula(const Rule& rule) {
   }
   
   return fml;
-}
-
-vector< vector< vector<char*> > > Utils::readClaspAnswers(const char* AnswerSet_list) {
-  FILE* asl = fopen(AnswerSet_list, "r");
-  vector< vector< vector<char*> > > claspAnswers;
-  int max_line = 1000;
-  
-  while(!feof(asl)) {
-    char as[max_line];
-    fgets(as, max_line, asl);     
-    int asi = 0;
-    while(as[asi] != '\n')
-      asi++;
-    as[asi] = '\0';
-    
-    claspAnswers.push_back(readClaspAnswer(as));        
-  }
-  fclose(asl);
-  
-  return claspAnswers;
-}
-
-vector< vector<char*> > Utils::readClaspAnswer(const char* answer) {
-  vector< vector<char*> > model_answer;
-  FILE* fas = fopen(answer, "r");
-  if(fas == NULL) cout << "Open as failed.\n";
-  
-  char answer_match[] = "Answer";
-  int index = 0;
-  
-  while(!feof(fas)) {
-    char c = fgetc(fas);
-    
-    if(c == answer_match[index]) {
-      index++;
-    }
-    else {
-      index = 0;
-    }
-    
-    if(answer_match[index] == '\0') {
-      vector<char*> model;
-      
-      while(fgetc(fas) != '\n');
-      
-      while(true) {
-        char m[MAX_ATOM_LENGTH];
-        int mi = 0;
-        char tmp = fgetc(fas);
-        
-        if(tmp == '\n') break;
-        
-        while(tmp != ' ' && tmp != '\n') {
-          m[mi] = tmp;
-          mi++;
-          tmp = fgetc(fas);
-        }
-        m[mi] = '\0';
-        
-        model.push_back(strdup(m));
-        
-        if(tmp == '\n') break;
-      }
-      index = 0;
-      model_answer.push_back(model);
-    }       
-  }
-  
-  fclose(fas);  
-  
-  return model_answer;
 }
 
 void Utils::formulaOutput(FILE* out, _formula* fml) {

@@ -44,10 +44,10 @@ void io(const char* iPathName, const char* oPathName) {
 }
 
 void testCNF() {
-  Vocabulary::instance().addAtom("a");
-  Vocabulary::instance().addAtom("b");
-  Vocabulary::instance().addAtom("c");
-  Vocabulary::instance().addAtom("d");
+  Vocabulary::instance().addMapAtom("a");
+  Vocabulary::instance().addMapAtom("b");
+  Vocabulary::instance().addMapAtom("c");
+  Vocabulary::instance().addMapAtom("d");
   
   _formula* a = Utils::compositeToAtom(1);
   _formula* b = Utils::compositeToAtom(2);
@@ -55,7 +55,7 @@ void testCNF() {
   _formula* d = Utils::compositeToAtom(4);
   
   _formula* ac = Utils::compositeByConnective(DISJ, a, c);
-  _formula* bc = Utils::compositeByConnective(CONJ, b, c);
+  _formula* bc = Utils::compositeByConnective(DISJ, b, c);
   _formula* ad = Utils::compositeByConnective(DISJ, a, d);
   _formula* bd = Utils::compositeByConnective(DISJ, b, d);
   
@@ -65,29 +65,29 @@ void testCNF() {
   _formula* acbc = Utils::compositeByConnective(CONJ, ac, bc);
   _formula* adbd = Utils::compositeByConnective(CONJ, ad, bd);
   _formula* abcd = Utils::compositeByConnective(DISJ, acbc, adbd);
-  
+
   printf("before CNF\n");
-  Utils::formulaOutput(stdout, cnac);printf("\n");
+  Utils::formulaOutput(stdout, abcd);printf("\n");
   
   printf("after CNF\n");
- // queue<_formula*> aux;
-  cnac = CNFUtils::convertToNegativeNormalForm(cnac);
-  Utils::formulaOutput(stdout, cnac); printf("\n");
+  queue<_formula*> aux;
+  abcd = CNFUtils::convertCNFWithAux(abcd, aux);
+  Utils::formulaOutput(stdout, abcd); printf("\n");
   
-//  while(!aux.empty()) {
-//    _formula* faux = aux.front();
-//    aux.pop();
-//    CNFUtils::convertCNFWithAux(faux, aux);
-//    Utils::formulaOutput(stdout, faux);printf("\n");
-//  }
+  while(!aux.empty()) {
+    _formula* faux = aux.front();
+    aux.pop();
+    CNFUtils::convertCNFWithAux(faux, aux);
+    Utils::formulaOutput(stdout, faux);printf("\n");
+  }
 }
 
 int main(int argc, char** argv) {
-  int method = 1;
+  int method = 2;
   fout = stdout;
 
   if(argc < 2) {
-    yyin = fopen("lubm-30000-q1", "r");
+    yyin = fopen("res/input/example", "r");
     fout = fopen("res/output/sample.out", "w+");
   }
   else {

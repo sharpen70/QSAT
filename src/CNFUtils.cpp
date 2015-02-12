@@ -8,6 +8,7 @@
 #include "CNFUtils.h"
 #include "Utils.h"
 #include "NNFUtils.h"
+#include <stack>
 #include <assert.h>
 
 vector<_formula*> CNFUtils::convertCNFSet(_formula* fml) {
@@ -21,9 +22,9 @@ vector<_formula*> CNFUtils::convertCNFSet(_formula* fml) {
 }
 
 _formula* CNFUtils::convertCNFWithAux(_formula* fml, queue<_formula*>& aux) {
-//  Utils::formulaOutput(stdout, fml);printf("\n");
+ // Utils::formulaOutput(stdout, fml);printf("\n");
   fml = CNFUtils::convertToNegativeNormalForm(fml);
-//  Utils::formulaOutput(stdout, fml);printf("\n");
+// Utils::formulaOutput(stdout, fml);printf("\n");
   fml = convertToConjuntiveNormalFormWithAux(fml, aux);
   return fml;
 }
@@ -98,107 +99,222 @@ _formula* CNFUtils::convertToNegativeNormalForm(_formula* _originalFml) {
   return nnf;
 }
 
+_formula* CNFUtils::convertWithCNFSubTree(_formula* fml, queue<_formula*>& auxRules) {
+  queue<Fin> qf;
+  qf.push(Fin(fml, NULL, true));
+  
+  while(!qf.empty()) {
+    Fin fin = qf.front();
+    qf.pop();
+    
+    _formula* f = fin.f;
+    _formula* prec = fin.prec;
+    bool left = fin.left;
+    
+    if(f->formula_type == DISJ) {      
+      _formula* subfor_l = f->subformula_l;
+      _formula* subfor_r = f->subformula_r;
+      
+      if(subfor_l->formula_type == CONJ || subfor_r->formula_type == CONJ) {
+        if(subfor_l->formula_type == CONJ && subfor_r->formula_type == CONJ)
+        {
+          int auxA, auxB;
+          _formula* f1 = computeAuxiliaryRule(subfor_l, auxA);
+          _formula* f2 = computeAuxiliaryRule(subfor_r, auxB);
+          auxRules.push(f1);
+          auxRules.push(f2);
+          
+          f->subformula_l = Utils::compositeToAtom(auxA);
+          f->subformula_r = Utils::compositeToAtom(auxB);
+        }
+        else {
+          if(subfor_r->formula_type == CONJ) {
+            f->subformula_l = subfor_r;
+            f->subformula_r = subfor_l;
+            subfor_l = f->subformula_l;
+            subfor_r = f->subformula_r;
+          }
+          _formula* f1 = Utils::compositeByConnective(DISJ, subfor_l->subformula_l, subfor_r);
+          _formula* f2 = Utils::compositeByConnective(DISJ, subfor_l->subformula_r, Utils::copyFormula(subfor_r));
+          _formula* f12 = Utils::compositeByConnective(CONJ, f1, f2);
+          
+          if(prec == NULL) fml = f12;
+          else {
+            if(left) prec->subformula_l = f12;
+            else prec->subformula_r = f12;
+          }
+          
+          qf.push(Fin(f1, f12, true));
+          qf.push(Fin(f2, f12, false));
+        }
+      }
+    }
+  }
+  
+  return fml;
+}
 
-//_formula* CNFUtils::convertToNegativeNormalForm(_formula*& fml) {
-//  assert(fml->formula_type);
+_formula* CNFUtils::convertToConjuntiveNormalFormWithAux(_formula* fml, 
+        queue<_formula*>& auxRules) {
+  
+  queue<Fin> qf;
+  stack<Fin> sf;
+  
+  qf.push(Fin(fml, NULL, true));
+
+  while(!qf.empty()) {
+    Fin fin = qf.front();
+    qf.pop();
+    
+    sf.push(fin);
+    _formula* f = fin.f;
+    
+    if(f->formula_type == CONJ || f->formula_type == DISJ) {
+      qf.push(Fin(f->subformula_l, f, true));
+      qf.push(Fin(f->subformula_r, f, true));
+    }
+  }
+  
+  while(!sf.empty()) {
+    Fin fin = sf.top();
+    sf.pop();
+    
+    _formula* f = fin.f;
+    _formula* prec = fin.prec;
+    bool left = fin.left;
+    
+    _formula* st = convertWithCNFSubTree(f, auxRules);
+  
+    if(prec == NULL) fml = st;
+    else {
+      if(left) prec->subformula_l = st;
+      else prec->subformula_r = st;
+    }
+  }
+  
+  return fml;
+}
+
+//_formula* CNFUtils::convertToConjuntiveNormalFormWithAux(_formula* fml, 
+//        queue<_formula*>& auxRules) {
 //  
-//  if(fml->formula_type == ATOM) {
-//    return fml;
-//  }
-//  else if(fml->formula_type == CONJ || fml->formula_type == UNIV) {
-//    convertToNegativeNormalForm(fml->subformula_l);
-//    convertToNegativeNormalForm(fml->subformula_r);
-//  }
-//  else if(fml->formula_type == NEGA) {
-//    if(fml->subformula_l->formula_type == ATOM) return fml;
-//    else if(fml->subformula_l->formula_type == NEGA) {
-//      _formula* gs = fml->subformula_l->subformula_l;
+//  queue<Fin> qf;
+//  qf.push(Fin(fml, NULL, true));
+//  
+//  while(!qf.empty()) {
+//    Fin fin = qf.front();
+//    qf.pop();
+//    
+//    _formula* f = fin.f;
+//    _formula* prec = fin.prec;
+//    bool left = fin.left;
+//    
+//    if(f->formula_type == DISJ) {
+//      f->subformula_l = convertToConjuntiveNormalFormWithAux(f->subformula_l, auxRules);
+//      f->subformula_r = convertToConjuntiveNormalFormWithAux(f->subformula_r, auxRules);
 //      
-//      fml->formula_type = gs->formula_type;
+//      _formula* subfor_l = f->subformula_l;
+//      _formula* subfor_r = f->subformula_r;
 //      
-//      if(gs->formula_type == CONJ || gs->formula_type == DISJ) {
-//        free(fml->subformula_l);
-//        fml->subformula_l = gs->subformula_l;
-//        fml->subformula_r = gs->subformula_r;
-//    //    free(gs);
+//      if(subfor_l->formula_type == CONJ || subfor_r->formula_type == CONJ) {
+//        if(subfor_l->formula_type == CONJ && subfor_r->formula_type == CONJ)
+//        {
+//          int auxA, auxB;
+//          _formula* f1 = computeAuxiliaryRule(subfor_l, auxA);
+//          _formula* f2 = computeAuxiliaryRule(subfor_r, auxB);
+//          auxRules.push(f1);
+//          auxRules.push(f2);
+//          
+//          f->subformula_l = Utils::compositeToAtom(auxA);
+//          f->subformula_r = Utils::compositeToAtom(auxB);
+//        }
+//        else {
+//          if(subfor_r->formula_type == CONJ) {
+//            f->subformula_l = subfor_r;
+//            f->subformula_r = subfor_l;
+//            subfor_l = f->subformula_l;
+//            subfor_r = f->subformula_r;
+//          }
+//          _formula* f1 = Utils::compositeByConnective(DISJ, subfor_l->subformula_l, subfor_r);
+//          _formula* f2 = Utils::compositeByConnective(DISJ, subfor_l->subformula_r, Utils::copyFormula(subfor_r));
+//          _formula* f12 = Utils::compositeByConnective(CONJ, f1, f2);
+//          
+//          if(prec == NULL) fml = f12;
+//          else {
+//            if(left) prec->subformula_l = f12;
+//            else prec->subformula_r = f12;
+//          }
+//          
+//          qf.push(Fin(f1, f12, true));
+//          qf.push(Fin(f2, f12, false));
+//        }
 //      }
-//      else if(gs->formula_type == NEGA) {
-//        free(fml->subformula_l);
-//        fml->subformula_l = gs->subformula_l;
-//    //    free(gs);
-//      }
-//      else {
-//        free(fml->subformula_l);
-//        fml->predicate_id = gs->predicate_id;
-//     //   free(gs);
-//      }
-//      
-//      convertToNegativeNormalForm(fml);           
 //    }
-//    else {
-//      FORMULA_TYPE type = (fml->subformula_l->formula_type == CONJ) ? UNIV : CONJ;
-//      fml->formula_type = type;
-//      fml->subformula_l = Utils::compositeByConnective(NEGA, fml->subformula_l);
-//      fml->subformula_r = Utils::compositeByConnective(NEGA, fml->subformula_r);
-//      
-//      convertToNegativeNormalForm(fml->subformula_l);
-//      convertToNegativeNormalForm(fml->subformula_r);
+//    else if(f->formula_type == CONJ) {
+//      qf.push(Fin(f->subformula_l, f, true));
+//      qf.push(Fin(f->subformula_r, f, false));
 //    }
+//    else if(f->formula_type == NEGA) {
+//      qf.push(Fin(f->subformula_l, f, true));
+//    }
+//    else if(f->formula_type == ATOM) {
+//      
+//    }   
 //  }
 //  
 //  return fml;
 //}
 
-_formula* CNFUtils::convertToConjuntiveNormalFormWithAux(_formula* fml,
-        queue<_formula*>& auxRules) {
-  if(fml->formula_type == DISJ) {
-    fml->subformula_l = convertToConjuntiveNormalFormWithAux(fml->subformula_l, auxRules);
-    fml->subformula_r = convertToConjuntiveNormalFormWithAux(fml->subformula_r, auxRules);
-    
-    _formula* subfor_l = fml->subformula_l;
-    _formula* subfor_r = fml->subformula_r;
-    
-    if(subfor_l->formula_type == CONJ || subfor_r->formula_type == CONJ) {
-      if(subfor_l->formula_type == CONJ && subfor_r->formula_type == CONJ)
-      {
-        int auxA, auxB;
-        _formula* f1 = computeAuxiliaryRule(subfor_l, auxA);
-        _formula* f2 = computeAuxiliaryRule(subfor_r, auxB);
-        auxRules.push(f1);
-        auxRules.push(f2);
-
-        fml->subformula_l = Utils::compositeToAtom(auxA);
-        fml->subformula_r = Utils::compositeToAtom(auxB);
-      }
-      else {
-        if(subfor_r->formula_type == CONJ) {
-          fml->subformula_l = subfor_r;
-          fml->subformula_r = subfor_l;
-          subfor_l = fml->subformula_l;
-          subfor_r = fml->subformula_r;
-        }
-        _formula* f1 = Utils::compositeByConnective(DISJ, subfor_l->subformula_l, subfor_r);
-        _formula* f2 = Utils::compositeByConnective(DISJ, subfor_l->subformula_r, Utils::copyFormula(subfor_r));
-        
-        fml = Utils::compositeByConnective(CONJ, f1, f2);
-        fml->subformula_l = convertToConjuntiveNormalFormWithAux(fml->subformula_l, auxRules);
-        fml->subformula_r = convertToConjuntiveNormalFormWithAux(fml->subformula_r, auxRules);
-      }
-    }
-  }
-  else if(fml->formula_type == CONJ || fml->formula_type == IMPL) {
-    fml->subformula_l = convertToConjuntiveNormalFormWithAux(fml->subformula_l, auxRules);
-    fml->subformula_r = convertToConjuntiveNormalFormWithAux(fml->subformula_r, auxRules);
-  }
-  else if(fml->formula_type == NEGA) {
-    fml->subformula_l = convertToConjuntiveNormalFormWithAux(fml->subformula_l, auxRules);
-  }
-  else if(fml->formula_type == ATOM) {
-    
-  }
-  
-  return fml;
-}
+//_formula* CNFUtils::convertToConjuntiveNormalFormWithAux(_formula* fml,
+//        queue<_formula*>& auxRules) {
+//  if(fml->formula_type == DISJ) {
+//    fml->subformula_l = convertToConjuntiveNormalFormWithAux(fml->subformula_l, auxRules);
+//    fml->subformula_r = convertToConjuntiveNormalFormWithAux(fml->subformula_r, auxRules);
+//    
+//    _formula* subfor_l = fml->subformula_l;
+//    _formula* subfor_r = fml->subformula_r;
+//    
+//    if(subfor_l->formula_type == CONJ || subfor_r->formula_type == CONJ) {
+//      if(subfor_l->formula_type == CONJ && subfor_r->formula_type == CONJ)
+//      {
+//        int auxA, auxB;
+//        _formula* f1 = computeAuxiliaryRule(subfor_l, auxA);
+//        _formula* f2 = computeAuxiliaryRule(subfor_r, auxB);
+//        auxRules.push(f1);
+//        auxRules.push(f2);
+//
+//        fml->subformula_l = Utils::compositeToAtom(auxA);
+//        fml->subformula_r = Utils::compositeToAtom(auxB);
+//      }
+//      else {
+//        if(subfor_r->formula_type == CONJ) {
+//          fml->subformula_l = subfor_r;
+//          fml->subformula_r = subfor_l;
+//          subfor_l = fml->subformula_l;
+//          subfor_r = fml->subformula_r;
+//        }
+//        _formula* f1 = Utils::compositeByConnective(DISJ, subfor_l->subformula_l, subfor_r);
+//        _formula* f2 = Utils::compositeByConnective(DISJ, subfor_l->subformula_r, Utils::copyFormula(subfor_r));
+//        
+//        fml = Utils::compositeByConnective(CONJ, f1, f2);
+//        fml->subformula_l = convertToConjuntiveNormalFormWithAux(fml->subformula_l, auxRules);
+//        fml->subformula_r = convertToConjuntiveNormalFormWithAux(fml->subformula_r, auxRules);
+//      }
+//    }
+//  }
+//  else if(fml->formula_type == CONJ || fml->formula_type == IMPL) {
+//    fml->subformula_l = convertToConjuntiveNormalFormWithAux(fml->subformula_l, auxRules);
+//    fml->subformula_r = convertToConjuntiveNormalFormWithAux(fml->subformula_r, auxRules);
+//  }
+//  else if(fml->formula_type == NEGA) {
+//    fml->subformula_l = convertToConjuntiveNormalFormWithAux(fml->subformula_l, auxRules);
+//  }
+//  else if(fml->formula_type == ATOM) {
+//    
+//  }
+//  
+//  return fml;
+//}
 
 _formula* CNFUtils::computeAuxiliaryRule(_formula* fml, int& aux) {
   aux = Vocabulary::instance().newAux(1);

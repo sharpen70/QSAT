@@ -20,6 +20,7 @@ public:
   static _formula* convertCNFWithAux(_formula* fml, queue<_formula*>& aux);
   static _formula* convertToConjuntiveNormalForm(_formula* fml);
   static _formula* convertToConjuntiveNormalFormWithAux(_formula* fml, queue<_formula*>&);
+  static _formula* convertWithCNFSubTree(_formula*, queue<_formula*>&);
   static _formula* computeAuxiliaryRule(_formula*, int&);
   static void divideCNFFormula(_formula* fml, vector<_formula*>& division);
   static _formula* convertToNegativeNormalForm(_formula* fml);
