@@ -77,6 +77,13 @@ typedef struct __formula {
   };
 }_formula;
 
+struct Fin {
+  _formula* f;
+  _formula* prec;
+  bool left;
+  
+  Fin(_formula* ff, _formula* p, bool l):f(ff),prec(p),left(l){}
+};
 #endif
 
 

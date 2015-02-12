@@ -5,6 +5,7 @@
 #include <cstring>
 #include <iostream>
 #include <algorithm>
+#include <queue>
 
 using namespace std;
 
@@ -46,37 +47,81 @@ _formula* Utils::compositeToAtom(int _atom_id) {
   return fml;
 }
 
-_formula* Utils::copyFormula(const _formula* _fml) {
-  if (_fml == NULL) {
-    return NULL;
-  }
-	
-  _formula* newFormula = (_formula*)malloc(sizeof(_formula));
-  assert (newFormula);
+_formula* Utils::copyFormula(_formula* _fml) {
+  if(_fml == NULL) return NULL;
+
+  _formula* fml = NULL;
+
+  queue<Fin> fq;
+  fq.push(Fin(_fml, NULL, true));
   
-  memcpy(newFormula, _fml, sizeof(_formula));
-  switch (_fml->formula_type)
-  {
-    case ATOM:
-      newFormula->predicate_id = _fml->predicate_id;
-      break;
-    case CONJ:
-    case DISJ:
-    case IMPL:
-      assert(_fml->subformula_r);
-      newFormula->subformula_r = copyFormula( _fml->subformula_r);
-    case NEGA:
-    case UNIV:
-    case EXIS:
-      assert(_fml->subformula_l);
-      newFormula->subformula_l = copyFormula(_fml->subformula_l);
-      break;
-    default:
-      assert (0);
+  while(!fq.empty()) {
+    Fin fin = fq.front();
+    _formula* f = fin.f;
+    _formula* prec = fin.prec;
+    bool left = fin.left;
+    fq.pop();
+    
+    _formula* newFormula = (_formula*)malloc(sizeof(_formula));
+    memcpy(newFormula, f, sizeof(_formula));
+    
+    if(prec == NULL) fml = newFormula;
+    else {
+      if(left) prec->subformula_l = newFormula;
+      else prec->subformula_r = newFormula;
+    }
+    
+    switch(f->formula_type) {
+      case ATOM:
+        newFormula->predicate_id = f->predicate_id;
+        break;
+      case CONJ:
+      case DISJ:
+        assert(f->subformula_r);
+        fq.push(Fin(f->subformula_r, newFormula, false));
+      case NEGA:
+        assert(f->subformula_l);
+        fq.push(Fin(f->subformula_l, newFormula, true));
+        break;
+      default:
+        assert(0);
+    }
   }
   
-  return newFormula;
+  return fml;
 }
+
+//_formula* Utils::copyFormula(const _formula* _fml) {
+//  if (_fml == NULL) {
+//    return NULL;
+//  }
+//	
+//  _formula* newFormula = (_formula*)malloc(sizeof(_formula));
+//  assert (newFormula);
+//  
+//  memcpy(newFormula, _fml, sizeof(_formula));
+//  switch (_fml->formula_type)
+//  {
+//    case ATOM:
+//      newFormula->predicate_id = _fml->predicate_id;
+//      break;
+//    case CONJ:
+//    case DISJ:
+//    case IMPL:
+//      assert(_fml->subformula_r);
+//      newFormula->subformula_r = copyFormula( _fml->subformula_r);
+//    case NEGA:
+//    case UNIV:
+//    case EXIS:
+//      assert(_fml->subformula_l);
+//      newFormula->subformula_l = copyFormula(_fml->subformula_l);
+//      break;
+//    default:
+//      assert (0);
+//  }
+//  
+//  return newFormula;
+//}
 
 _formula* Utils::copyIsomorFormula(const _formula* _fml, int n) {
   if (_fml == NULL) {
@@ -277,7 +322,7 @@ vector< vector<char*> > Utils::readClaspAnswer(const char* answer) {
   return model_answer;
 }
 
-void Utils::formulaOutput(FILE* out, const _formula* fml) {
+void Utils::formulaOutput(FILE* out, _formula* fml) {
   assert(fml);
   
   _formula* output = copyFormula(fml);

@@ -27,11 +27,11 @@ public:
     static _formula* compositeByConnective(FORMULA_TYPE _formulaType, 
                          _formula* _subformulaL, _formula* _subformulaR = NULL);
     static _formula* compositeToAtom(int _atom_id);
-    static _formula* copyFormula(const _formula* _fml);
+    static _formula* copyFormula(_formula* _fml);
     static _formula* copyIsomorFormula(const _formula*, int);
     static void deleteFormula(_formula* _fml);
     
-    static void formulaOutput(FILE* out, const _formula* fml);
+    static void formulaOutput(FILE* out, _formula* fml);
     
     static void joinFormulas(vector<_formula*>& des_list, vector<_formula*> join_list);
     

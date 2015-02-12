@@ -10,14 +10,6 @@
 #include "NNFUtils.h"
 #include <assert.h>
 
-struct Fin {
-  _formula* f;
-  _formula* prec;
-  bool left;
-  
-  Fin(_formula* ff, _formula* p, bool l):f(ff),prec(p),left(l){}
-};
-
 vector<_formula*> CNFUtils::convertCNFSet(_formula* fml) {
   fml = NNFUtils::convertToNegativeNormalForm(fml);
   fml = convertToConjuntiveNormalForm(fml);
