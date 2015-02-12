@@ -386,12 +386,30 @@ _formula* CNFUtils::convertToConjuntiveNormalForm(_formula* fml) {
 }
 
 void CNFUtils::divideCNFFormula(_formula* fml, vector<_formula*>& division) {
-  if(fml->formula_type == CONJ) {
-    divideCNFFormula(fml->subformula_l, division);
-    divideCNFFormula(fml->subformula_r, division);
-  }
-  else {
-    division.push_back(fml);
+  queue<_formula*> fq;
+  fq.push(fml);
+  
+  while(!fq.empty()) {
+    _formula* f = fq.front();
+    fq.pop();
+    
+    if(f->formula_type == CONJ) {
+      fq.push(f->subformula_l);
+      fq.push(f->subformula_r);
+    }
+    else {
+      division.push_back(f);
+    }
   }
 }
+
+//void CNFUtils::divideCNFFormula(_formula* fml, vector<_formula*>& division) {
+//  if(fml->formula_type == CONJ) {
+//    divideCNFFormula(fml->subformula_l, division);
+//    divideCNFFormula(fml->subformula_r, division);
+//  }
+//  else {
+//    division.push_back(fml);
+//  }
+//}
 
