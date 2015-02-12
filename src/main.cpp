@@ -93,7 +93,7 @@ int main(int argc, char** argv) {
   else {
     int extra = 0;
     int files = 0;
-    for(int i = 0; i < argc; i++) {
+    for(int i = 1; i < argc; i++) {
       if(extra < 1) {
         if(strcmp(argv[i], "-qbf") == 0) method = 0;
         if(strcmp(argv[i], "-sat") == 0) method = 1;
@@ -102,6 +102,7 @@ int main(int argc, char** argv) {
         if(strncmp(argv[i], "-", 1) != 0) {
           if(files == 0) yyin = fopen(argv[i], "r");
           if(files == 1) fout = fopen(argv[i], "w+");
+          files++;
         }
       }
     }
