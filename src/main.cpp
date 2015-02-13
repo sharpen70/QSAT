@@ -83,7 +83,7 @@ void testCNF() {
 }
 
 int main(int argc, char** argv) {
-  int method = 2;
+  int method = 1;
   fout = stdout;
 
   if(argc < 2) {

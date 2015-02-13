@@ -5,6 +5,13 @@
 #include <cstdlib>
 #include <string>
 
+
+void free_s_rule(_rule* r) {
+  for(int i = 0; i < r->length; i++) free(r->body[i]);
+  free(r->head);
+  free(r);
+}
+
 Rule::Rule():type(RULE),head(0){}
 
 Rule::Rule(_rule* r) {
@@ -34,6 +41,8 @@ Rule::Rule(_rule* r) {
       this->negative_literals.insert(r->body[i]->index);
     }
   }
+  
+  free(r);
 }
 
 Rule::Rule(const Rule& _rhs) : 
@@ -60,13 +69,13 @@ Rule& Rule::operator = (const Rule& _rhs) {
 
 void Rule::output(FILE* _out) const {
   if(head > 0)
-    fprintf(_out, "%s", Vocabulary::instance().getAtom(head));
+    fprintf(_out, "%d", head);
   
   if(type != FACT) {
     fprintf(_out, " :- ");
     for(set<int>::iterator pit = positive_literals.begin(); pit != 
             positive_literals.end(); pit++) {
-      fprintf(_out, "%s", Vocabulary::instance().getAtom(*pit));
+      fprintf(_out, "%d", *pit);
       if(pit != (--positive_literals.end())) {
         fprintf(_out, ",");
       }
@@ -76,9 +85,33 @@ void Rule::output(FILE* _out) const {
       if(positive_literals.size() != 0) {
         fprintf(_out, ",");
       }
-      fprintf(_out, "not %s", Vocabulary::instance().getAtom(*nit));            
+      fprintf(_out, "not %d", *nit);            
     }
   }
   
-  fprintf(_out, "\n");
+  fprintf(_out, "\n");  
 }
+//void Rule::output(FILE* _out) const {
+//  if(head > 0)
+//    fprintf(_out, "%s", Vocabulary::instance().getMapAtom(head));
+//  
+//  if(type != FACT) {
+//    fprintf(_out, " :- ");
+//    for(set<int>::iterator pit = positive_literals.begin(); pit != 
+//            positive_literals.end(); pit++) {
+//      fprintf(_out, "%s", Vocabulary::instance().getMapAtom(*pit));
+//      if(pit != (--positive_literals.end())) {
+//        fprintf(_out, ",");
+//      }
+//    }
+//    for(set<int>::iterator nit = negative_literals.begin(); nit !=
+//            negative_literals.end(); nit++) {
+//      if(positive_literals.size() != 0) {
+//        fprintf(_out, ",");
+//      }
+//      fprintf(_out, "not %s", Vocabulary::instance().getAtom(*nit));            
+//    }
+//  }
+//  
+//  fprintf(_out, "\n");
+//}

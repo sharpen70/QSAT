@@ -1,8 +1,7 @@
 #ifndef STRUCTS_H
 #define	STRUCTS_H
 
-#define MAX_ATOM_LENGTH 512
-#define MAX_ATOM_NUMBER 1024
+#define MAX_ATOM_LENGTH 16
 
 #include <map>
 #include <set>

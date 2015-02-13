@@ -164,7 +164,7 @@ _formula* ClakeCompletion::convertSyntaxTree() {
     _formula* fc = Utils::convertRuleBodyToFormula(*it);     
     
     fc = Utils::compositeByConnective(NEGA, fc);
-    fc = NNFUtils::convertToNegativeNormalForm(fc);
+  //  fc = CNFUtils::convertToNegativeNormalForm(fc);
     
     if(syntaxTree == NULL) syntaxTree = fc;
     else syntaxTree = Utils::compositeByConnective(CONJ, syntaxTree, fc);

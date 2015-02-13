@@ -56,7 +56,7 @@ int Vocabulary::addMapAtom(char* atom) {
     string s(atom);
     id = this->atom_map.size() + 1;
     this->atom_map.insert(pair<string, int>(s, id));
-    this->map_atom.insert(pair<int, string>(id, s));
+//    this->map_atom.insert(pair<int, string>(id, s));
     auxiliary = id + 1;
     
     return id;
@@ -73,7 +73,7 @@ int Vocabulary::addMapSelAtom(char* atom) {
     string s(atom);
     id = this->atom_map.size() + 1;
     this->atom_map.insert(pair<string, int>(s, id));
-    this->map_atom.insert(pair<int, string>(id, s));
+//    this->map_atom.insert(pair<int, string>(id, s));
     auxiliary = id + 1;
     sel_atoms.push_back(id);
     
